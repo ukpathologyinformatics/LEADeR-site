@@ -1,0 +1,39 @@
+version: "3.2"
+services:
+  php:
+    build: './php/'
+    networks:
+      - backend
+    volumes:
+      - ../leader-frontend/:/var/www/html/
+  apache:
+    build: './apache/'
+    depends_on:
+      - php
+      - mssql
+    networks:
+      - frontend
+      - backend
+    ports:
+      - "8080:80"
+    volumes:
+      - ../leader-frontend/:/var/www/html/
+  mssql:
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      - backend
+    environment:
+      MSSQL_PID: "Standard"
+      SA_PASSWORD: "Codeman01"
+      ACCEPT_EULA: "Y"
+      TZ: "America/New_York"
+    ports:
+      - "1433:1433"
+    volumes:
+      - site-data:/var/opt/mssql
+
+networks:
+  frontend:
+  backend:
+volumes:
+  site-data:

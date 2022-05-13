@@ -9,7 +9,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link<?php if (!is_null($page) && $page == "home") { echo " active"; } ?>" href="/" data-toggle="tooltip" data-placement="bottom" title="Dashboard Overview">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fa fa-desktop"></i>
                         <span class="d-none d-md-inline">Dashboard<?php if (!is_null($page) && $page == "home") { echo' <span class="sr-only">(current)</span>'; } ?></span>
                     </a>
                 </li>

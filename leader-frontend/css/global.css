@@ -2,6 +2,19 @@ html { height: 100%; }
 
 body { min-height: 100%; }
 
+#icd-filters select, 
+#icd-filters input[type="text"] {
+    width: 100px;
+}
+
+.icd-filters {
+    margin: 15px 0;
+}
+
+button {
+    margin: 5px 0;
+}
+
 #login-user {
     color: white;
 }
@@ -453,6 +466,8 @@ a.collapsed:visited, a.d-block:visited {
     color: #0645ad;
     text-decoration: none;
 }
+
+/* CUSTOM ADDED STUFF */
 
 .rPending {
     background-color: #a7e0f4 !important;

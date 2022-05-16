@@ -124,7 +124,7 @@ include_once __DIR__ . '/_header.php';
                             <label>femur</label><br>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <i class="fa fa-arrow-right" style="padding-left:10px;font-size:20px;"></i>
+                                    <label>&#8627</label>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="right-femur-dist">dist.</label><br>
@@ -144,7 +144,7 @@ include_once __DIR__ . '/_header.php';
                             <label>tibia</label><br>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <i class="fa fa-arrow-right" style="padding-left:10px;font-size:20px;"></i>
+                                    <label>&#8627</label>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="right-tibia-dist">dist.</label><br>
@@ -162,7 +162,7 @@ include_once __DIR__ . '/_header.php';
                             <label>fibula</label><br>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <i class="fa fa-arrow-right" style="padding-left:10px;font-size:20px;"></i>
+                                    <label>&#8627</label>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="right-fibula-dist">dist.</label><br>
@@ -185,7 +185,44 @@ include_once __DIR__ . '/_header.php';
                             <label for="right-tarsals">tarsals</label><br>
                             <input type="checkbox" id="right-calcaneus" name="right-calcaneus" value="right-calcaneus">
                             <label for="right-calcaneus">calcaneus</label><br>
-                            <!-- HERERERERERERERE -->
+                            <input type="checkbox" id="right-talus" name="right-talus" value="right-talus">
+                            <label for="right-talus">talus</label><br>
+                            <input type="checkbox" id="right-navicular" name="right-navicular" value="right-navicular">
+                            <label for="right-navicular">navicular</label><br>
+                            <input type="checkbox" id="right-cuboid" name="right-cuboid" value="right-cuboid">
+                            <label for="right-cuboid">cuboid</label><br>
+                            <label>forefoot</label><br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>&#8627 phalanges</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>&nbsp;&#8627;</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="right-forefoot-5">5</label><br>
+                                    <input type="checkbox" id="right-forefoot-5" name="right-forefoot-5" value="right-forefoot-5">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="right-forefoot-4">4</label><br>
+                                    <input type="checkbox" id="right-forefoot-4" name="right-forefoot-4" value="right-forefoot-4">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="right-forefoot-3">3</label><br>
+                                    <input type="checkbox" id="right-forefoot-3" name="right-forefoot-3" value="right-forefoot-3">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="right-forefoot-2">2</label><br>
+                                    <input type="checkbox" id="right-forefoot-2" name="right-forefoot-2" value="right-forefoot-2">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="right-forefoot-1">1</label><br>
+                                    <input type="checkbox" id="right-forefoot-1" name="right-forefoot-1" value="right-forefoot-1">
+                                </div>
+                            </div>
+                        
                         </div>
                     </div>
                     <div class="row" id="right-foot-info">

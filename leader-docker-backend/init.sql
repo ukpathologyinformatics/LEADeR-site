@@ -11,7 +11,8 @@ IF NOT EXISTS(SELECT * FROM sys.databases WHERE name = 'myDB')
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='user_roles' and xtype='U')
 BEGIN
-    CREATE TABLE user_roles(id INT NOT NULL CONSTRAINT user_roles_pk PRIMARY KEY NONCLUSTERED, role_name VARCHAR(64) NOT NULL)
+    CREATE TABLE user_roles(id INT NOT NULL CONSTRAINT user_roles_pk PRIMARY KEY NONCLUSTERED, role_name VARCHAR(64) NOT NULL);
+    INSERT INTO user_roles VALUES (0, 'Admin'), (1, 'User');
 END
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='users' and xtype='U')

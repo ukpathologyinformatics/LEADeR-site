@@ -3,10 +3,10 @@
     define('MODELS_DIR', __DIR__ . '/models/');
     define('UTILITIES_DIR', __DIR__ . '/utilities/');
     define('VIEWS_DIR', __DIR__ . '/views/');
-    define('PAGE1_VIEWS_DIR', __DIR__ . '/views/page1/');
+    define('NEWENTRY_VIEWS_DIR', __DIR__ . '/views/newentry/');
 
     include_once __DIR__ . '/controllers/RootController.php';
-    include_once __DIR__ . '/controllers/Page1Controller.php';
+    include_once __DIR__ . '/controllers/NewEntryController.php';
     include_once __DIR__ . '/controllers/UsersController.php';
 
     /**
@@ -55,14 +55,17 @@
 
     /* Page1Controller routes */
     try {
-        $router->map('GET', '/page1', function() {
-            Page1Controller::index(get_session());
-        }, 'page1-index');
-        $router->map('GET', '/page1/list', function() {
-            Page1Controller::listDT(get_session());
-        }, 'page1-list-dt');
+        $router->map('GET', '/new-entry', function() {
+            NewEntryController::index(get_session());
+        }, 'newentry-index');
+        $router->map('POST', '/new-entry/add-lower-entry', function() {
+            NewEntryController::addLowerEntry(get_session());
+        }, 'newentry-addlowerentry');
+        $router->map('POST', '/new-entry/add-upper-entry', function() {
+            NewEntryController::addUpperEntry(get_session());
+        }, 'newentry-addupperentry');
     } catch (Exception $e) {
-        die("Failed to create route(s) from Page1Controller section: " . $e->getMessage());
+        die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }
 
     try {

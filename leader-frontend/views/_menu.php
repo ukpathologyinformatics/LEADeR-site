@@ -14,7 +14,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link<?php if (!is_null($page) && $page == "new-entry") { echo " active"; } ?>" href="/page1" data-toggle="tooltip" data-placement="bottom" title="New Entry">
+                    <a class="nav-link<?php if (!is_null($page) && $page == "new-entry") { echo " active"; } ?>" href="/new-entry" data-toggle="tooltip" data-placement="bottom" title="New Entry">
                         <i class="fa fa-plus-circle"></i>
                         <span class="d-none d-md-inline">New Entry<?php if (!is_null($page) && $page == "new-entry") { echo' <span class="sr-only">(current)</span>'; } ?></span>
                     </a>

@@ -1,10 +1,10 @@
 <?php
 /** @var UserSession $userSession */
-$page = 'home';
-include_once __DIR__ . '/_header.php';
+$page = 'new-entry';
+include_once __DIR__ . '/../_header.php';
 ?>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-        <h1 class="h4">Dashboard</h1>
+        <h1 class="h4">New Entry</h1>
     </div>
     
     <section id="icd-filters">
@@ -72,8 +72,8 @@ include_once __DIR__ . '/_header.php';
         <div class="lower-upper-buttons">
             <button id="lower-extremity-btn" class="active btn btn-sm btn-secondary my-2 my-sm-0 ml-2">LOWER EXTREMITY</button>
             <button id="upper-extremity-btn" class="btn btn-sm btn-secondary my-2 my-sm-0 ml-2">UPPER EXTREMITY</button>
-            <button id="submit-entry" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2">Add Entry</button>
-            <button id="clear-selections" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2">Clear</button>
+            <button id="clear-selections" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Clear</button>
+            <button id="submit-entry" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Add Entry</button>
         </div>
 
         <form id="lower-extremity-form" action="/new-entry/add-lower-entry" method="post">
@@ -963,6 +963,5 @@ include_once __DIR__ . '/_header.php';
             }
         });
     </script>
-
 <?php
-    include_once __DIR__ . '/_footer.php';
+include_once __DIR__ . '/../_footer.php';

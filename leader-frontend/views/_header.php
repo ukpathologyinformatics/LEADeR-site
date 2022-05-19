@@ -40,4 +40,4 @@
     <div class="row">
         <?php include_once __DIR__ . '/_menu.php'; ?>
 
-        <main role="main" class="col-12 col-md-10 bg-faded py-3 flex-grow-1">
+        <main role="main" class="col-12 col-md-11 bg-faded py-3 flex-grow-1">

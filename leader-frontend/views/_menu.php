@@ -2,7 +2,7 @@
 /** @var UserSession $userSession */
 /** @var string $page */
 ?>
-        <header class="col-12 col-md-2 bg-light sidebar sidebar-sticky">
+        <header class="col-12 col-md-1 bg-light sidebar sidebar-sticky">
             <ul class="flex-row flex-md-column navbar-nav justify-content-between sidebar-menu sidebar-sticky">
                 <li class="nav-item d-none d-md-inline">
                     <span class="nav-link sidebar-heading pl-0 text-nowrap">Overview</span>

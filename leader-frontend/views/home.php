@@ -78,7 +78,7 @@ include_once __DIR__ . '/_header.php';
 
 
         <form id="lower-extremity-form" action="/new-entry/add-lower-entry" method="post">
-            <div id="lower-extremity-section" class="row">
+            <div id="lower-extremity-section" class="row" style="display: flex">
                 <div class="col-md-6 lower-right-sect">
                     <div class="row">
                         <div class="col-md-6">
@@ -757,7 +757,7 @@ include_once __DIR__ . '/_header.php';
 
 
         <form id="upper-extremity-form" action="/new-entry/add-upper-entry" method="post">
-            <div id="upper-extremity-section" class="row" style="display: flex">
+            <div id="upper-extremity-section" class="row" style="display: none">
                 <div class="col-md-3">
                     <p><strong>Right</strong><br></p>
                     <input type="checkbox" id="right-longitudinal" name="right-longitudinal" value="right-longitudinal"/>

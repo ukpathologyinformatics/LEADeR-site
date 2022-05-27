@@ -117,54 +117,84 @@ include_once __DIR__ . '/_header.php';
             <div class="col-md-3">
                 <p><strong>Deformities/Missing Bones</strong><br></p>
                 <div class="row">
-                    <div class="col-6.5">
+                    <div class="col-6">
                         <input type="checkbox" id="right-scapula" name="right-scapula" value="right-scapula"/>
                         <label for="right-scapula">Scapula</label><br>
-                        <p>
                             Humerus<br>
-                            &#8627 dist. mid. prox.<br>
-                            <div style="padding:0px 0px 0px 12px">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="right-humerus-dist" value="right-humerus-dist"/>
+                            <div class="row">
+                                <div class="col-1">
+                                    &#8627
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="right-humerus-mid" value="right-humerus-mid"/>
+                                <div class="col-3">
+                                    <label for="right-humerus-dist">dist.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="right-humerus-dist" name="right-humerus-dist" value="right-humerus-dist" type="checkbox"/>
+                                    </div>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="right-humerus-prox" value="right-humerus-prox"/>
+                                <div class="col-3">
+                                    <label for="right-humerus-mid">mid.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="right-humerus-mid" name="right-humerus-mid" value="right-humerus-mid" type="checkbox"/>
+                                    </div>
+
+                                </div>
+                                <div class="col-3">
+                                    <label for="right-humerus-prox">prox.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="right-humerus-prox" name="right-humerus-prox" value="right-humerus-prox" type="checkbox"/>
+                                    </div>
                                 </div>
                             </div>
-                        </p>
-                        <p>
                             Radius<br>
-                            &#8627 dist. mid. prox.<br>
-                            <div style="padding:0px 0px 0px 12px">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="right-radius-dist" value="right-radius-dist"/>
+                            <div class="row">
+                                <div class="col-1">
+                                    &#8627
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="right-radius-mid" value="right-radius-mid"/>
+                                <div class="col-3">
+                                    <label for="right-radius-dist">dist.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="right-radius-dist" name="right-radius-dist" value="right-radius-dist" type="checkbox"/>
+                                    </div>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="right-radius-prox" value="right-radius-prox"/>
+                                <div class="col-3">
+                                    <label for="right-radius-mid">mid.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="right-radius-mid" name="right-radius-mid" value="right-radius-mid" type="checkbox"/>
+                                    </div>
+
+                                </div>
+                                <div class="col-3">
+                                    <label for="right-radius-prox">prox.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="right-radius-prox" name="right-radius-prox" value="right-radius-prox" type="checkbox"/>
+                                    </div>
                                 </div>
                             </div>
-                        </p>
-                        <p>
                             Ulna<br>
-                            &#8627 dist. mid. prox.<br>
-                            <div style="padding:0px 0px 0px 12px">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="right-ulna-dist" value="right-ulna-dist"/>
+                            <div class="row">
+                                <div class="col-1">
+                                    &#8627
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="right-ulna-mid" value="right-ulna-mid"/>
+                                <div class="col-3">
+                                    <label for="right-ulna-dist">dist.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="right-ulna-dist" name="right-ulna-dist" value="right-ulna-dist" type="checkbox"/>
+                                    </div>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="right-ulna-mid" value="right-ulna-mid"/>
+                                <div class="col-3">
+                                    <label for="right-ulna-mid">mid.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="right-ulna-mid" name="right-ulna-mid" value="right-ulna-mid" type="checkbox"/>
+                                    </div>
+
+                                </div>
+                                <div class="col-3">
+                                    <label for="right-ulna-prox">prox.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="right-ulna-prox" name="right-ulna-prox" value="right-ulna-prox" type="checkbox"/>
+                                    </div>
                                 </div>
                             </div>
-                        </p>
                     </div>
                     <div class="col-md-6">
                         <input type="checkbox" id="right-hamate" name="right-hamate" value="right-hamate"/>
@@ -183,11 +213,7 @@ include_once __DIR__ . '/_header.php';
                         <label for="right-scaphoid">Scaphoid</label><br>
                         <input type="checkbox" id="right-capitellum" name="right-capitellum" value="right-capitellum"/>
                         <label for="right-capitellum">Capitellum</label><br>
-                        <div class="container">
-                            <div class="vertical-center">
-                                <br><br><button>Hand</button>
-                            </div>
-                        </div>
+                        <button>Hand</button>
                     </div>
                 </div>
                 <u>Hand</u><br>
@@ -199,33 +225,33 @@ include_once __DIR__ . '/_header.php';
                                 &#8627
                             </div>
                             <div class="col-2">
-                                <label for="5">5</label><br>
+                                <label for="right-phalanges-5">5</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="5" name="right-phalanges-5" value="right-phalanges-5" type="checkbox"/>
+                                        <input class="form-check-input" id="right-phalanges-5" name="right-phalanges-5" value="right-phalanges-5" type="checkbox"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="4">4</label><br>
+                                <label for="right-phalanges-4">4</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="4" type="checkbox" name="right-phalanges-4" value="right-phalanges-4"/>
+                                        <input class="form-check-input" id="right-phalanges-4" type="checkbox" name="right-phalanges-4" value="right-phalanges-4"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="3">3</label><br>
+                                <label for="right-phalanges-3">3</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="3" type="checkbox" name="right-phalanges-3" value="right-phalanges-3"/>
+                                        <input class="form-check-input" id="right-phalanges-3" type="checkbox" name="right-phalanges-3" value="right-phalanges-3"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="2">2</label><br>
+                                <label for="right-phalanges-2">2</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="2" type="checkbox" name="right-phalanges-2" value="right-phalanges-2"/>
+                                        <input class="form-check-input" id="right-phalanges-2" type="checkbox" name="right-phalanges-2" value="right-phalanges-2"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="1">1</label><br>
+                                <label for="right-phalanges-1">1</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="1" type="checkbox" name="right-phalanges-1" value="right-phalanges-1"/>
+                                        <input class="form-check-input" id="right-phalanges-1" type="checkbox" name="right-phalanges-1" value="right-phalanges-1"/>
                                 </div>
                             </div>
                         </div>
@@ -235,33 +261,33 @@ include_once __DIR__ . '/_header.php';
                                 &#8627
                             </div>
                             <div class="col-2">
-                                <label for="5">5</label><br>
+                                <label for="right-metacarpals-5">5</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="5" type="checkbox" name="right-metacarpals-5" value="right-metacarpals-5"/>
+                                        <input class="form-check-input" id="right-metacarpals-5" type="checkbox" name="right-metacarpals-5" value="right-metacarpals-5"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="4">4</label><br>
+                                <label for="right-metacarpals-4">4</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="4" type="checkbox" name="right-metacarpals-4" value="right-metacarpals-4"/>
+                                        <input class="form-check-input" id="right-metacarpals-4" type="checkbox" name="right-metacarpals-4" value="right-metacarpals-4"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="3">3</label><br>
+                                <label for="right-metacarpals-3">3</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="3" type="checkbox" name="right-metacarpals-3" value="right-metacarpals-3"/>
+                                        <input class="form-check-input" id="right-metacarpals-3" type="checkbox" name="right-metacarpals-3" value="right-metacarpals-3"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="2">2</label><br>
+                                <label for="right-metacarpals-2">2</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="2" type="checkbox" name="right-metacarpals-2" value="right-metacarpals-2"/>
+                                        <input class="form-check-input" id="right-metacarpals-2" type="checkbox" name="right-metacarpals-2" value="right-metacarpals-2"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="1">1</label><br>
+                                <label for="right-metacarpals-1">1</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="1" type="checkbox" name="right-metacarpals-1" value="right-metacarpals-1"/>
+                                        <input class="form-check-input" id="right-metacarpals-1" type="checkbox" name="right-metacarpals-1" value="right-metacarpals-1"/>
                                 </div>
                             </div>
                         </div>
@@ -319,54 +345,84 @@ include_once __DIR__ . '/_header.php';
             <div class="col-md-3">
                 <p><strong>Deformities/Missing Bones</strong><br></p>
                 <div class="row">
-                    <div class="col-6.5">
+                    <div class="col-6">
                         <input type="checkbox" id="left-scapula" name="left-scapula" value="left-scapula"/>
                         <label for="left-scapula">Scapula</label><br>
-                        <p>
                             Humerus<br>
-                            &#8627 dist. mid. prox.<br>
-                            <div style="padding:0px 0px 0px 12px">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="left-humerus-dist" value="left-humerus-dist"/>
+                            <div class="row">
+                                <div class="col-1">
+                                    &#8627
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="left-humerus-mid" value="left-humerus-mid"/>
+                                <div class="col-3">
+                                    <label for="left-humerus-dist">dist.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="left-humerus-dist" name="left-humerus-dist" value="left-humerus-dist" type="checkbox"/>
+                                    </div>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="left-humerus-prox" value="left-humerus-prox"/>
+                                <div class="col-3">
+                                    <label for="left-humerus-mid">mid.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="left-humerus-mid" name="left-humerus-mid" value="left-humerus-mid" type="checkbox"/>
+                                    </div>
+
+                                </div>
+                                <div class="col-3">
+                                    <label for="left-humerus-prox">prox.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="left-humerus-prox" name="left-humerus-prox" value="left-humerus-prox" type="checkbox"/>
+                                    </div>
                                 </div>
                             </div>
-                        </p>
-                        <p>
                             Radius<br>
-                            &#8627 dist. mid. prox.<br>
-                            <div style="padding:0px 0px 0px 12px">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="left-radius-dist" value="left-radius-dist"/>
+                            <div class="row">
+                                <div class="col-1">
+                                    &#8627
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="left-radius-mid" value="left-radius-mid"/>
+                                <div class="col-3">
+                                    <label for="left-radius-dist">dist.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="left-radius-dist" name="left-radius-dist" value="left-radius-dist" type="checkbox"/>
+                                    </div>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="left-radius-prox" value="left-radius-prox"/>
+                                <div class="col-3">
+                                    <label for="left-radius-mid">mid.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="left-radius-mid" name="left-radius-mid" value="left-radius-mid" type="checkbox"/>
+                                    </div>
+
+                                </div>
+                                <div class="col-3">
+                                    <label for="left-radius-prox">prox.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="left-radius-prox" name="left-radius-prox" value="left-radius-prox" type="checkbox"/>
+                                    </div>
                                 </div>
                             </div>
-                        </p>
-                        <p>
                             Ulna<br>
-                            &#8627 dist. mid. prox.<br>
-                            <div style="padding:0px 0px 0px 12px">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="left-ulna-dist" value="left-ulna-dist"/>
+                            <div class="row">
+                                <div class="col-1">
+                                    &#8627
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="left-ulna-mid" value="left-ulna-mid"/>
+                                <div class="col-3">
+                                    <label for="left-ulna-dist">dist.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="left-ulna-dist" name="left-ulna-dist" value="left-ulna-dist" type="checkbox"/>
+                                    </div>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="left-ulna-mid" value="left-ulna-mid"/>
+                                <div class="col-3">
+                                    <label for="left-ulna-mid">mid.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="left-ulna-mid" name="left-ulna-mid" value="left-ulna-mid" type="checkbox"/>
+                                    </div>
+
+                                </div>
+                                <div class="col-3">
+                                    <label for="left-ulna-prox">prox.</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" id="left-ulna-prox" name="left-ulna-prox" value="left-ulna-prox" type="checkbox"/>
+                                    </div>
                                 </div>
                             </div>
-                        </p>
                     </div>
                     <div class="col-md-6">
                         <input type="checkbox" id="left-hamate" name="left-hamate" value="left-hamate"/>
@@ -385,11 +441,8 @@ include_once __DIR__ . '/_header.php';
                         <label for="left-scaphoid">Scaphoid</label><br>
                         <input type="checkbox" id="left-capitellum" name="left-capitellum" value="left-capitellum"/>
                         <label for="left-capitellum">Capitellum</label><br>
-                        <div class="container">
-                            <div class="vertical-center">
-                                <br><br><button>Hand</button>
-                            </div>
-                        </div>
+                        <button>Hand</button>
+
                     </div>
                 </div>
                 <u>Hand</u><br>
@@ -401,33 +454,33 @@ include_once __DIR__ . '/_header.php';
                                 &#8627
                             </div>
                             <div class="col-2">
-                                <label for="5">5</label><br>
+                                <label for="left-phalanges-5">5</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="5" name="left-phalanges-5" value="left-phalanges-5" type="checkbox"/>
+                                        <input class="form-check-input" id="left-phalanges-5" name="left-phalanges-5" value="left-phalanges-5" type="checkbox"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="4">4</label><br>
+                                <label for="left-phalanges-4">4</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="4" type="checkbox" name="left-phalanges-4" value="left-phalanges-4"/>
+                                        <input class="form-check-input" id="left-phalanges-4" type="checkbox" name="left-phalanges-4" value="left-phalanges-4"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="3">3</label><br>
+                                <label for="left-phalanges-3">3</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="3" type="checkbox" name="left-phalanges-3" value="left-phalanges-3"/>
+                                        <input class="form-check-input" id="left-phalanges-3" type="checkbox" name="left-phalanges-3" value="left-phalanges-3"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="2">2</label><br>
+                                <label for="left-phalanges-2">2</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="2" type="checkbox" name="left-phalanges-2" value="left-phalanges-2"/>
+                                        <input class="form-check-input" id="left-phalanges-2" type="checkbox" name="left-phalanges-2" value="left-phalanges-2"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="1">1</label><br>
+                                <label for="left-phalanges-1">1</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="1" type="checkbox" name="left-phalanges-1" value="left-phalanges-1"/>
+                                        <input class="form-check-input" id="left-phalanges-1" type="checkbox" name="left-phalanges-1" value="left-phalanges-1"/>
                                 </div>
                             </div>
                         </div>
@@ -437,33 +490,33 @@ include_once __DIR__ . '/_header.php';
                                 &#8627
                             </div>
                             <div class="col-2">
-                                <label for="5">5</label><br>
+                                <label for="left-metacarpals-5">5</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="5" type="checkbox" name="left-metacarpals-5" value="left-metacarpals-5"/>
+                                        <input class="form-check-input" id="left-metacarpals-5" type="checkbox" name="left-metacarpals-5" value="left-metacarpals-5"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="4">4</label><br>
+                                <label for="left-metacarpals-4">4</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="4" type="checkbox" name="left-metacarpals-4" value="left-metacarpals-4"/>
+                                        <input class="form-check-input" id="left-metacarpals-4" type="checkbox" name="left-metacarpals-4" value="left-metacarpals-4"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="3">3</label><br>
+                                <label for="left-metacarpals-3">3</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="3" type="checkbox" name="left-metacarpals-3" value="left-metacarpals-3"/>
+                                        <input class="form-check-input" id="left-metacarpals-3" type="checkbox" name="left-metacarpals-3" value="left-metacarpals-3"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="2">2</label><br>
+                                <label for="left-metacarpals-2">2</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="2" type="checkbox" name="left-metacarpals-2" value="left-metacarpals-2"/>
+                                        <input class="form-check-input" id="left-metacarpals-2" type="checkbox" name="left-metacarpals-2" value="left-metacarpals-2"/>
                                 </div>
                             </div>
                             <div class="col-2">
-                                <label for="1">1</label><br>
+                                <label for="left-metacarpals-1">1</label><br>
                                 <div class="form-check form-check-inline">
-                                        <input class="form-check-input" id="1" type="checkbox" name="left-metacarpals-1" value="left-metacarpals-1"/>
+                                        <input class="form-check-input" id="left-metacarpals-1" type="checkbox" name="left-metacarpals-1" value="left-metacarpals-1"/>
                                 </div>
                             </div>
                         </div>

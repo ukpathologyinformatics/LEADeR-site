@@ -76,6 +76,7 @@ include_once __DIR__ . '/_header.php';
             <button id="clear-selections" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2">Clear</button>
         </div>
 
+
         <form id="lower-extremity-form" action="/new-entry/add-lower-entry" method="post">
             <div id="lower-extremity-section" class="row">
                 <div class="col-md-6 lower-right-sect">
@@ -223,7 +224,6 @@ include_once __DIR__ . '/_header.php';
                                             <input type="checkbox" id="lower-right-cuneiform-lat" name="lower-right-cuneiform-lat" value="lower-right-cuneiform-lat">
                                         </div>
                                     </div>
-
                                     <label>forefoot</label><br>
                                     <div class="row">
                                         <div class="col-md-11 offset-md-1">

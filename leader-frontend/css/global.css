@@ -36,8 +36,6 @@ button {
     font-size: .7rem;
 }
 
-/* MOVE THIS */
-
 .high-z-index {
     z-index:999;
 }

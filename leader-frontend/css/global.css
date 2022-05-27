@@ -48,8 +48,8 @@ button {
     margin-top:20px;
 }
 
-#lower-extremity-section .right-sect,
-#lower-extremity-section .left-sect,
+#lower-extremity-section .lower-right-sect,
+#lower-extremity-section .lower-left-sect,
 #lower-extremity-section #other-things {
     border: 1px solid black;
     border-radius:5px;

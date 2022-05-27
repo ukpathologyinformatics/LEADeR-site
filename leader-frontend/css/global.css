@@ -2,6 +2,24 @@ html { height: 100%; }
 
 body { min-height: 100%; }
 
+#icd-filters #lower-extremity-section select, 
+#icd-filters #lower-extremity-section input[type="text"] {
+    width: 100px;
+}
+
+#icd-top-bar select,
+#icd-top-bar input[type="text"] {
+    width: 100%;
+}
+
+.icd-filters {
+    margin: 15px 0;
+}
+
+button {
+    margin: 5px 0;
+}
+
 #login-user {
     color: white;
 }
@@ -16,6 +34,89 @@ body { min-height: 100%; }
 
 .responsive-text {
     font-size: .7rem;
+}
+
+.high-z-index {
+    z-index:999;
+}
+
+#other-things {
+    margin-top: 20px;
+}
+
+#lower-extremity-section {
+    margin-top:20px;
+}
+
+#lower-extremity-section .lower-right-sect,
+#lower-extremity-section .lower-left-sect,
+#lower-extremity-section #other-things {
+    border: 1px solid black;
+    border-radius:5px;
+}
+
+#lower-extremity-section #other-things {
+    margin-left:auto;
+    margin-right:auto;
+    padding-left: 10px;
+}
+
+.dropdown-check-list {
+    display: inline-block;
+    padding:5px 0;
+    width:100%;
+}
+
+.dropdown-check-list .anchor {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 50px 5px 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.dropdown-check-list .anchor:after {
+    position: absolute;
+    content: "";
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    padding: 5px;
+    right: 10px;
+    top: 20%;
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.dropdown-check-list .anchor:active:after {
+    right: 8px;
+    top: 21%;
+}
+
+.dropdown-check-list ul.items {
+    padding: 2px;
+    display: none;
+    margin: 0;
+    border: 1px solid #ccc;
+    /* border-top: none; */
+    position:absolute;
+    width:97%;
+    background-color: white;
+}
+
+.dropdown-check-list ul.items li {
+    list-style: none;
+}
+
+.dropdown-check-list.visible .anchor {
+    color: #0094ff;
+}
+
+.dropdown-check-list.visible .items {
+    display: block;
 }
 
 @media (min-width: 576px) {
@@ -453,6 +554,8 @@ a.collapsed:visited, a.d-block:visited {
     color: #0645ad;
     text-decoration: none;
 }
+
+/* CUSTOM ADDED STUFF */
 
 .rPending {
     background-color: #a7e0f4 !important;

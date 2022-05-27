@@ -11,6 +11,7 @@
     <title>LEADeR Interface Website</title>
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/popper.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
     <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="/css/floating-labels.css">
     <link type="text/css" rel="stylesheet" href="/css/dataTables.bootstrap4.min.css">
@@ -39,4 +40,4 @@
     <div class="row">
         <?php include_once __DIR__ . '/_menu.php'; ?>
 
-        <main role="main" class="col-12 col-md-10 bg-faded py-3 flex-grow-1">
+        <main role="main" class="col-12 col-md-11 bg-faded py-3 flex-grow-1">

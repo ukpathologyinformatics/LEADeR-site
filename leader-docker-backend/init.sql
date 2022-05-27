@@ -1,8 +1,6 @@
 IF NOT EXISTS(SELECT * FROM sys.databases WHERE name = 'myDB')
   BEGIN
     CREATE DATABASE [myDB]
-
-
     END
     GO
        USE [myDB]
@@ -11,7 +9,8 @@ IF NOT EXISTS(SELECT * FROM sys.databases WHERE name = 'myDB')
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='user_roles' and xtype='U')
 BEGIN
-    CREATE TABLE user_roles(id INT NOT NULL CONSTRAINT user_roles_pk PRIMARY KEY NONCLUSTERED, role_name VARCHAR(64) NOT NULL)
+    CREATE TABLE user_roles(id INT NOT NULL CONSTRAINT user_roles_pk PRIMARY KEY NONCLUSTERED, role_name VARCHAR(64) NOT NULL);
+    INSERT INTO user_roles VALUES (0, 'Admin'), (1, 'User');
 END
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='users' and xtype='U')
@@ -23,8 +22,6 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='user_sessions' and xtype='U'
 BEGIN
     CREATE TABLE user_sessions(session_id VARCHAR(36) NOT NULL CONSTRAINT user_sessions_pk PRIMARY KEY NONCLUSTERED, user_id VARCHAR(36) NOT NULL CONSTRAINT user_sessions_users_id_fk REFERENCES users ON DELETE CASCADE, last_seen   DATETIME DEFAULT getdate() NOT NULL, remember_me BIT DEFAULT 0 NOT NULL)
 END
-
-
 
 BEGIN
     CREATE UNIQUE INDEX user_linkblue_uindex ON users (linkblue)

@@ -2,19 +2,19 @@
 /** @var UserSession $userSession */
 /** @var string $page */
 ?>
-        <header class="col-12 col-md-2 bg-light sidebar sidebar-sticky">
+        <header class="col-12 col-md-1 bg-light sidebar sidebar-sticky">
             <ul class="flex-row flex-md-column navbar-nav justify-content-between sidebar-menu sidebar-sticky">
                 <li class="nav-item d-none d-md-inline">
                     <span class="nav-link sidebar-heading pl-0 text-nowrap">Overview</span>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link<?php if (!is_null($page) && $page == "home") { echo " active"; } ?>" href="/" data-toggle="tooltip" data-placement="bottom" title="Dashboard Overview">
-                        <i class="fas fa-desktop"></i>
+                        <i class="fa fa-desktop"></i>
                         <span class="d-none d-md-inline">Dashboard<?php if (!is_null($page) && $page == "home") { echo' <span class="sr-only">(current)</span>'; } ?></span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link<?php if (!is_null($page) && $page == "new-entry") { echo " active"; } ?>" href="/page1" data-toggle="tooltip" data-placement="bottom" title="New Entry">
+                    <a class="nav-link<?php if (!is_null($page) && $page == "new-entry") { echo " active"; } ?>" href="/new-entry" data-toggle="tooltip" data-placement="bottom" title="New Entry">
                         <i class="fa fa-plus-circle"></i>
                         <span class="d-none d-md-inline">New Entry<?php if (!is_null($page) && $page == "new-entry") { echo' <span class="sr-only">(current)</span>'; } ?></span>
                     </a>

@@ -4,9 +4,13 @@
     define('UTILITIES_DIR', __DIR__ . '/utilities/');
     define('VIEWS_DIR', __DIR__ . '/views/');
     define('NEWENTRY_VIEWS_DIR', __DIR__ . '/views/newentry/');
+    define('NEWQUERY_VIEWS_DIR', __DIR__ . '/views/newquery/');
+    define('VIEWALL_VIEWS_DIR', __DIR__ . '/views/viewall/');
 
     include_once __DIR__ . '/controllers/RootController.php';
     include_once __DIR__ . '/controllers/NewEntryController.php';
+    include_once __DIR__ . '/controllers/NewQueryController.php';
+    include_once __DIR__ . '/controllers/ViewAllController.php';
     include_once __DIR__ . '/controllers/UsersController.php';
 
     /**
@@ -53,7 +57,7 @@
         die("Failed to create route(s) from RootController section: " . $e->getMessage());
     }
 
-    /* Page1Controller routes */
+    /* NewEntryController routes */
     try {
         $router->map('GET', '/new-entry', function() {
             NewEntryController::index(get_session());
@@ -64,6 +68,24 @@
         $router->map('POST', '/new-entry/add-upper-entry', function() {
             NewEntryController::addUpperEntry(get_session());
         }, 'newentry-addupperentry');
+    } catch (Exception $e) {
+        die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
+    }
+
+    /* NewQueryController routes */
+    try {
+        $router->map('GET', '/new-query', function() {
+            NewQueryController::index(get_session());
+        }, 'newquery-index');
+    } catch (Exception $e) {
+        die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
+    }
+
+    /* ViewAllController routes */
+    try {
+        $router->map('GET', '/view-all', function() {
+            ViewAllController::index(get_session());
+        }, 'viewall-index');
     } catch (Exception $e) {
         die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }

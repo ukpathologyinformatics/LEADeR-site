@@ -511,6 +511,40 @@ a.collapsed:visited, a.d-block:visited {
     transition: background-color 100ms linear;
 }
 
+#surgicalModal .modal-dialog {
+    max-width: 75vw;
+}
+
+#surgicalModal #surg-procs {
+    width: 100%;
+}
+
+#surgicalModal .left-modal-stuff {
+    margin:10px 0 10px 0;
+}
+
+#surgicalModal .left-modal-stuff label {
+    width: 125px;
+}
+
+#surgicalModal .left-modal-stuff input {
+    width: 55%;
+}
+
+#surgicalModal .right-modal-stuff label {
+    width: 9%;
+    vertical-align: top;
+}
+
+#surgicalModal .right-modal-stuff textarea {
+    width: 90%;
+    height: 55vh;
+}
+
+#lower-right-surgery-list {
+    width: 100%;
+}
+
 /******************************
     Mobile Responsive Stuff
 ******************************/

@@ -122,8 +122,8 @@ include_once __DIR__ . '/../_header.php';
                             <input id="lower-right-other" type="text" placeholder="Other"><br><br>
                             <textarea id="lower-right-classification" name="lower-right-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
                             <textarea id="lower-right-notes" name="lower-right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
-                            <textarea id="lower-right-surgical-pro" name="lower-right-surgical-pro" placeholder="Surgical Procedures" rows="2" cols="25"></textarea>
-                            <input id="lower-right-surgical-pro-date" type="text" placeholder="mm/dd/yyyy"><br>
+                            <button id="lower-right-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal(this)">+ Surgery</button><br>
+                            <select id="lower-right-surgery-list" name="lower-right-surgery-list" style="display:none;" size="3" multiple></select>
                         </div>
                         <div class="col-md-6">
                             <h5>Deformities/Missing Bones</h5><br>
@@ -1218,203 +1218,302 @@ include_once __DIR__ . '/../_header.php';
                 </div>
             </div>
         </form>
-
-        
     </section>
 
+    <!-- Surgical Procedure Modal -->
+    <div class="modal fade" id="surgicalModal" tabindex="-1" role="dialog" aria-labelledby="surgicalModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="surgicalModalLabel">Add Surgical Procedures</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 left-modal-stuff">
+                            <label for="surgery-name">Surgery Name: </label>
+                            <input type="text" id="surgery-name" name="surgery-name"/><br>
+                            
+                            <label for="surgery-date">Surgery Date: </label>
+                            <input type="text" id="surgery-date" name="surgery-date" placeholder="mm/dd/yyyy"/><br>
+
+                            <label for="surgeon">Attending Surgeon: </label>
+                            <input type="text" id="surgeon" name="surgeon"/><br>
+
+                            <label for="age">Age: </label>
+                            <input type="text" id="age" name="age"/><br>
+                        </div>
+                        <div class="col-md-8 right-modal-stuff">
+                            <label for="surgery-notes">Notes: </label>
+                            <textarea id="surgery-notes" name="surgery-notes"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="addSurgery()">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript">
-        // clear everything on page either upper or lower
-        $('#clear-selections').click(function(){
-            if(confirm("Are you sure you want to clear the form?")) {
-                if ($('#upper-extremity-btn').hasClass('active')) {
-                    $('#upper-extremity-form').trigger('reset');
-                } else {
-                    $('#lower-extremity-form').trigger('reset');
+
+        function showSurgicalModal(event) {
+            callerID = event.id;
+            $('#surgicalModal').modal('show');
+        }
+
+        function clear_surgical_form() {
+            $('#surgicalModal #surgery-name').val('');
+            $('#surgicalModal #surgery-date').val('');
+            $('#surgicalModal #surgeon').val('');
+            $('#surgicalModal #age').val('');
+            $('#surgicalModal #surgery-notes').val('');
+        }
+
+        function addSurgery(){
+            if ($('#lower-right-surgery-list').css('display') == 'none'){
+                $('#lower-right-surgery-list').css('display', '');
+            }
+            let surg_name = $('#surgicalModal #surgery-name').val();
+            if (surg_name == "") {
+                showError("Surgery name cannot be blank.");
+                return false;
+            }
+            let surg_date = $('#surgicalModal #surgery-name').val();
+            if (surg_date == "") {
+                showError("Date cannot be blank.");
+            }
+            try {
+                surg_date = Date.parse();
+            } catch (error) {
+                showError("Check date format.");
+                return false;
+            }
+            let surgeon = $('#surgicalModal #surgeon').val();
+            if (surgeon == "") {
+                showError("Surgeon name cannot be blank.");
+                return false;
+            }
+            let age = $('#surgicalModal #age').val();
+            if (age == ""){
+                showError("Age cannot be blank.");
+                return false;
+            }
+            let notes = $('#surgicalModal #surgery-notes').val();
+
+            var surgery_info = {
+                "surg-name": surg_name,
+                "surg-date": /////////////////HERHEHRHERHEHREHREHRHEHREHREHREHH   
+            }
+            $('#lower-right-surgery-list').append("<option data-value='{\"surg-name\":>yep</option>")
+            $('#surgical-modal').modal('hide');
+            showSuccess("Added Surgery");
+        }
+       
+
+        // jQuery Below
+        $(document).ready(function() {
+            $("#surgicalModal").on('hidden.bs.modal', function() {
+                clear_surgical_form();
+            });
+
+            // clear everything on page either upper or lower
+            $('#clear-selections').click(function(){
+                if(confirm("Are you sure you want to clear the form?")) {
+                    if ($('#upper-extremity-btn').hasClass('active')) {
+                        $('#upper-extremity-form').trigger('reset');
+                    } else {
+                        $('#lower-extremity-form').trigger('reset');
+                    }
                 }
-            }
-        });
+            });
 
-        // submit whatever is on the screen either upper or lower
-        $('#submit-entry').click(function(){
-            if(confirm("Are you sure you want to submit entry?")) {
-                if ($('#upper-extremity-btn').hasClass('active')) {
-                    $('#upper-extremity-form').trigger('submit');
-                } else {
-                    $('#lower-extremity-form').trigger('submit');
+            // submit whatever is on the screen either upper or lower
+            $('#submit-entry').click(function(){
+                if(confirm("Are you sure you want to submit entry?")) {
+                    if ($('#upper-extremity-btn').hasClass('active')) {
+                        $('#upper-extremity-form').trigger('submit');
+                    } else {
+                        $('#lower-extremity-form').trigger('submit');
+                    }
                 }
-            }
-        });
+            });
 
-        // this makes the buttons show diff things
-        $('#lower-extremity-btn').click(function(){
-            if ($('#upper-extremity-btn').hasClass('active')) {
-                $('#upper-extremity-btn').removeClass('active');
-                $('#upper-extremity-section').css('display', 'none');
-                $('#lower-extremity-btn').addClass('active');
-                $('#lower-extremity-section').css('display', 'flex');
-            }
-        });
-        $('#upper-extremity-btn').click(function(){
-            if ($('#lower-extremity-btn').hasClass('active')) {
-                $('#lower-extremity-btn').removeClass('active');
-                $('#lower-extremity-section').css('display', 'none');
-                $('#upper-extremity-btn').addClass('active');
-                $('#upper-extremity-section').css('display', 'flex');
-            }
-        });
+            // this makes the buttons show diff things
+            $('#lower-extremity-btn').click(function(){
+                if ($('#upper-extremity-btn').hasClass('active')) {
+                    $('#upper-extremity-btn').removeClass('active');
+                    $('#upper-extremity-section').css('display', 'none');
+                    $('#lower-extremity-btn').addClass('active');
+                    $('#lower-extremity-section').css('display', 'flex');
+                }
+            });
+            $('#upper-extremity-btn').click(function(){
+                if ($('#lower-extremity-btn').hasClass('active')) {
+                    $('#lower-extremity-btn').removeClass('active');
+                    $('#lower-extremity-section').css('display', 'none');
+                    $('#upper-extremity-btn').addClass('active');
+                    $('#upper-extremity-section').css('display', 'flex');
+                }
+            });
 
-        // fuzzy date pickers
-        // $(document).ready(function(){
-        //     $("#dob").datepicker();
-        //     $("#start-date").datepicker();
-        //     $("#end-date").datepicker();
-        //     $("#acquired-date").datepicker();
-        //     //$("#tumor-date").datepicker();
-        // });
-        
-        // Right foot options
-        $('#lower-right-birch-anchor').click(function() {
-            if ($('#lower-right-birch').hasClass('visible')) {
-                $('#lower-right-birch').removeClass('visible');
-                $('#lower-right-birch .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-right-birch').addClass('visible');
-                $('#lower-right-birch .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-right-jones-anchor').click(function() {
-            if ($('#lower-right-jones').hasClass('visible')) {
-                $('#lower-right-jones').removeClass('visible');
-                $('#lower-right-jones .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-right-jones').addClass('visible');
-                $('#lower-right-jones .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-right-aitken-anchor').click(function() {
-            if ($('#lower-right-aitken').hasClass('visible')){
-                $('#lower-right-aitken').removeClass('visible');
-                $('#lower-right-aitken .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-right-aitken').addClass('visible');
-                $('#lower-right-aitken .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-right-AK-anchor').click(function() {
-            if ($('#lower-right-AK').hasClass('visible')){
-                $('#lower-right-AK').removeClass('visible');
-                $('#lower-right-AK .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-right-AK').addClass('visible');
-                $('#lower-right-AK .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-right-paley-tibia-anchor').click(function() {
-            if ($('#lower-right-paley-tibia').hasClass('visible')) {
-                $('#lower-right-paley-tibia').removeClass('visible');
-                $('#lower-right-paley-tibia .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-right-paley-tibia').addClass('visible');
-                $('#lower-right-paley-tibia .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-right-paley-femur-anchor').click(function() {
-            if ($('#lower-right-paley-femur').hasClass('visible')) {
-                $('#lower-right-paley-femur').removeClass('visible');
-                $('#lower-right-paley-femur .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-right-paley-femur').addClass('visible');
-                $('#lower-right-paley-femur .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-right-paley-fibula-anchor').click(function() {
-            if ($('#lower-right-paley-fibula').hasClass('visible')) {
-                $('#lower-right-paley-fibula').removeClass('visible');
-                $('#lower-right-paley-fibula .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-right-paley-fibula').addClass('visible');
-                $('#lower-right-paley-fibula .items').addClass('high-z-index');
-            }
-        });
+            // fuzzy date pickers
+            // $(document).ready(function(){
+            //     $("#dob").datepicker();
+            //     $("#start-date").datepicker();
+            //     $("#end-date").datepicker();
+            //     $("#acquired-date").datepicker();
+            //     //$("#tumor-date").datepicker();
+            // });
+            
+            // Right foot options
+            $('#lower-right-birch-anchor').click(function() {
+                if ($('#lower-right-birch').hasClass('visible')) {
+                    $('#lower-right-birch').removeClass('visible');
+                    $('#lower-right-birch .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-right-birch').addClass('visible');
+                    $('#lower-right-birch .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-right-jones-anchor').click(function() {
+                if ($('#lower-right-jones').hasClass('visible')) {
+                    $('#lower-right-jones').removeClass('visible');
+                    $('#lower-right-jones .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-right-jones').addClass('visible');
+                    $('#lower-right-jones .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-right-aitken-anchor').click(function() {
+                if ($('#lower-right-aitken').hasClass('visible')){
+                    $('#lower-right-aitken').removeClass('visible');
+                    $('#lower-right-aitken .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-right-aitken').addClass('visible');
+                    $('#lower-right-aitken .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-right-AK-anchor').click(function() {
+                if ($('#lower-right-AK').hasClass('visible')){
+                    $('#lower-right-AK').removeClass('visible');
+                    $('#lower-right-AK .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-right-AK').addClass('visible');
+                    $('#lower-right-AK .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-right-paley-tibia-anchor').click(function() {
+                if ($('#lower-right-paley-tibia').hasClass('visible')) {
+                    $('#lower-right-paley-tibia').removeClass('visible');
+                    $('#lower-right-paley-tibia .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-right-paley-tibia').addClass('visible');
+                    $('#lower-right-paley-tibia .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-right-paley-femur-anchor').click(function() {
+                if ($('#lower-right-paley-femur').hasClass('visible')) {
+                    $('#lower-right-paley-femur').removeClass('visible');
+                    $('#lower-right-paley-femur .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-right-paley-femur').addClass('visible');
+                    $('#lower-right-paley-femur .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-right-paley-fibula-anchor').click(function() {
+                if ($('#lower-right-paley-fibula').hasClass('visible')) {
+                    $('#lower-right-paley-fibula').removeClass('visible');
+                    $('#lower-right-paley-fibula .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-right-paley-fibula').addClass('visible');
+                    $('#lower-right-paley-fibula .items').addClass('high-z-index');
+                }
+            });
 
-        // lower-left foot options
-        $('#lower-left-birch-anchor').click(function() {
-            if ($('#lower-left-birch').hasClass('visible')) {
-                $('#lower-left-birch').removeClass('visible');
-                $('#lower-left-birch .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-left-birch').addClass('visible');
-                $('#lower-left-birch .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-left-jones-anchor').click(function() {
-            if ($('#lower-left-jones').hasClass('visible')) {
-                $('#lower-left-jones').removeClass('visible');
-                $('#lower-left-jones .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-left-jones').addClass('visible');
-                $('#lower-left-jones .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-left-aitken-anchor').click(function() {
-            if ($('#lower-left-aitken').hasClass('visible')){
-                $('#lower-left-aitken').removeClass('visible');
-                $('#lower-left-aitken .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-left-aitken').addClass('visible');
-                $('#lower-left-aitken .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-left-AK-anchor').click(function() {
-            if ($('#lower-left-AK').hasClass('visible')){
-                $('#lower-left-AK').removeClass('visible');
-                $('#lower-left-AK .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-left-AK').addClass('visible');
-                $('#lower-left-AK .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-left-paley-tibia-anchor').click(function() {
-            if ($('#lower-left-paley-tibia').hasClass('visible')) {
-                $('#lower-left-paley-tibia').removeClass('visible');
-                $('#lower-left-paley-tibia .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-left-paley-tibia').addClass('visible');
-                $('#lower-left-paley-tibia .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-left-paley-femur-anchor').click(function() {
-            if ($('#lower-left-paley-femur').hasClass('visible')) {
-                $('#lower-left-paley-femur').removeClass('visible');
-                $('#lower-left-paley-femur .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-left-paley-femur').addClass('visible');
-                $('#lower-left-paley-femur .items').addClass('high-z-index');
-            }
-        });
-        $('#lower-left-paley-fibula-anchor').click(function() {
-            if ($('#lower-left-paley-fibula').hasClass('visible')) {
-                $('#lower-left-paley-fibula').removeClass('visible');
-                $('#lower-left-paley-fibula .items').removeClass('high-z-index');
-            }
-            else {
-                $('#lower-left-paley-fibula').addClass('visible');
-                $('#lower-left-paley-fibula .items').addClass('high-z-index');
-            }
-        });
+            // lower-left foot options
+            $('#lower-left-birch-anchor').click(function() {
+                if ($('#lower-left-birch').hasClass('visible')) {
+                    $('#lower-left-birch').removeClass('visible');
+                    $('#lower-left-birch .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-left-birch').addClass('visible');
+                    $('#lower-left-birch .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-left-jones-anchor').click(function() {
+                if ($('#lower-left-jones').hasClass('visible')) {
+                    $('#lower-left-jones').removeClass('visible');
+                    $('#lower-left-jones .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-left-jones').addClass('visible');
+                    $('#lower-left-jones .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-left-aitken-anchor').click(function() {
+                if ($('#lower-left-aitken').hasClass('visible')){
+                    $('#lower-left-aitken').removeClass('visible');
+                    $('#lower-left-aitken .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-left-aitken').addClass('visible');
+                    $('#lower-left-aitken .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-left-AK-anchor').click(function() {
+                if ($('#lower-left-AK').hasClass('visible')){
+                    $('#lower-left-AK').removeClass('visible');
+                    $('#lower-left-AK .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-left-AK').addClass('visible');
+                    $('#lower-left-AK .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-left-paley-tibia-anchor').click(function() {
+                if ($('#lower-left-paley-tibia').hasClass('visible')) {
+                    $('#lower-left-paley-tibia').removeClass('visible');
+                    $('#lower-left-paley-tibia .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-left-paley-tibia').addClass('visible');
+                    $('#lower-left-paley-tibia .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-left-paley-femur-anchor').click(function() {
+                if ($('#lower-left-paley-femur').hasClass('visible')) {
+                    $('#lower-left-paley-femur').removeClass('visible');
+                    $('#lower-left-paley-femur .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-left-paley-femur').addClass('visible');
+                    $('#lower-left-paley-femur .items').addClass('high-z-index');
+                }
+            });
+            $('#lower-left-paley-fibula-anchor').click(function() {
+                if ($('#lower-left-paley-fibula').hasClass('visible')) {
+                    $('#lower-left-paley-fibula').removeClass('visible');
+                    $('#lower-left-paley-fibula .items').removeClass('high-z-index');
+                }
+                else {
+                    $('#lower-left-paley-fibula').addClass('visible');
+                    $('#lower-left-paley-fibula .items').addClass('high-z-index');
+                }
+            });
+        }); // end document ready
     </script>
 <?php
 include_once __DIR__ . '/../_footer.php';

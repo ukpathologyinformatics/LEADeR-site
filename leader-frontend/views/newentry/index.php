@@ -80,7 +80,7 @@ include_once __DIR__ . '/../_header.php';
 
         <form id="lower-extremity-form" action="/new-entry/add-lower-entry" method="post">
             <div id="lower-extremity-section" class="row" style="display: flex">
-                <div class="col-md-6 lower-right-sect">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6">
                             <h4><strong>Right</strong></h4><br>
@@ -408,7 +408,7 @@ include_once __DIR__ . '/../_header.php';
                         </div>
                     </div>
                 </div> <!-- col-md-6 -->
-                <div class="col-md-6 lower-left-sect">
+                <div class="col-md-6 border-left">
                     <div class="row">
                         <div class="col-md-6">
                             <h4><strong>Left</strong></h4><br>
@@ -760,7 +760,7 @@ include_once __DIR__ . '/../_header.php';
         <form id="upper-extremity-form" action="/new-entry/add-upper-entry" method="post">
             <div id="upper-extremity-section" class="row" style="display: none">
                 <div class="col-md-3">
-                    <p><strong>Right</strong><br></p>
+                    <h4><strong>Right</strong></h4><br>
                     <input type="checkbox" id="right-longitudinal" name="right-longitudinal" value="right-longitudinal"/>
                     <label for="right-longitudinal">Longitudinal</label><br>
                     <input type="checkbox" id="right-transverse" name="right-transverse" value="right-transverse"/>
@@ -808,7 +808,7 @@ include_once __DIR__ . '/../_header.php';
 
                 </div>
                 <div class="col-md-3">
-                    <p><strong>Deformities/Missing Bones</strong><br></p>
+                    <h5>Deformities/Missing Bones</h5><br>
                     <div class="row">
                         <div class="col-6">
                             <input type="checkbox" id="right-scapula" name="right-scapula" value="right-scapula"/>
@@ -988,7 +988,7 @@ include_once __DIR__ . '/../_header.php';
                     </div>
                 </div>
                 <div class="col-md-3 border-left">
-                    <p><strong>Left</strong><br></p>
+                    <h4><strong>Left</strong></h4><br>
                     <input type="checkbox" id="left-longitudinal" name="left-longitudinal" value="left-longitudinal"/>
                     <label for="left-longitudinal">Longitudinal</label><br>
                     <input type="checkbox" id="left-transverse" name="left-transverse" value="left-transverse"/>
@@ -1036,7 +1036,7 @@ include_once __DIR__ . '/../_header.php';
 
                 </div>
                 <div class="col-md-3">
-                    <p><strong>Deformities/Missing Bones</strong><br></p>
+                    <h5>Deformities/Missing Bones</h5><br>
                     <div class="row">
                         <div class="col-6">
                             <input type="checkbox" id="left-scapula" name="left-scapula" value="left-scapula"/>

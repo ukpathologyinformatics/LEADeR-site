@@ -385,6 +385,10 @@ a.collapsed:visited, a.d-block:visited {
     margin-top:20px;
 }
 
+#upper-extremity-section {
+    margin-top:20px;
+}
+
 #lower-extremity-section .lower-right-sect,
 #lower-extremity-section .lower-left-sect,
 #lower-extremity-section #other-things {

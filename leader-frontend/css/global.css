@@ -472,15 +472,43 @@ a.collapsed:visited, a.d-block:visited {
 
 .home .title-text {
     text-align:center;
-    margin: 10% 0 10% 0;
+    margin: 5% 0 5% 0;
+}
+
+.home .selection-btns {
+    margin: 0 10% 0 10%;
+}
+
+.home .selection-btns a {
+    text-decoration: none;
 }
 
 .home .center-home-sects {
     text-align:center;
+    border-radius: 5%;
+    padding: 5% 0 5% 0;
+    margin:0;
+    color: #606060;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+.home .center-home-sects:hover {
+    color: #fff;
+    background-color: #606060;
+}
+
+.home .center-home-sects:hover i{
+    color: #fff;
 }
 
 .home .center-home-sects i {
     font-size: 10vw;
+    color: #606060;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
 }
 
 /******************************

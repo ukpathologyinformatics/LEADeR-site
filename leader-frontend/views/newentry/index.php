@@ -6,8 +6,9 @@ include_once __DIR__ . '/../_header.php';
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
         <h1 class="h4">New Entry</h1>
     </div>
-    
+
     <section id="icd-filters">
+        <form id="extremity-form">
         <!-- This is the top bar -->
         <div id="icd-top-bar" class="row">
             <div class="col-md">
@@ -55,30 +56,30 @@ include_once __DIR__ . '/../_header.php';
                 </select> 
             </div>
             <div class="col-md">
-                <input id="dob" type="text" placeholder="mm/dd/yyyy">
+                <input id="dob" name="dob" type="text" placeholder="mm/dd/yyyy">
                 <label for="dob">Date of Birth</label>
             </div>
             <div class="col-md">
-                <input id="start-date" type="text" placeholder="mm/dd/yyyy">    
+                <input id="start-date" name="start-date" type="text" placeholder="mm/dd/yyyy">
                 <label for="start-date">First Recorded</label>
             </div>
             <div class="col-md">
-                <input id="end-date" type="text" placeholder="mm/dd/yyyy">    
+                <input id="end-date" name="end-date" type="text" placeholder="mm/dd/yyyy">
                 <label for="end-date">Last Recorded</label>
             </div>
         </div>
 
         <!-- Buttons to select which page to see -->
         <div class="lower-upper-buttons">
-            <button id="lower-extremity-btn" class="active btn btn-sm btn-secondary my-2 my-sm-0 ml-2">LOWER EXTREMITY</button>
-            <button id="upper-extremity-btn" class="btn btn-sm btn-secondary my-2 my-sm-0 ml-2">UPPER EXTREMITY</button>
-            <button id="clear-selections" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Clear</button>
-            <button id="submit-entry" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Add Entry</button>
+            <button id="lower-extremity-btn" type="button" class="active btn btn-sm btn-secondary my-2 my-sm-0 ml-2">LOWER EXTREMITY</button>
+            <button id="upper-extremity-btn" type="button" class="btn btn-sm btn-secondary my-2 my-sm-0 ml-2">UPPER EXTREMITY</button>
+            <button id="clear-selections" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Clear</button>
+            <button id="submit-entry" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Add Entry</button>
             
         </div>
 
 
-        <form id="lower-extremity-form" action="/new-entry/add-lower-entry" method="post">
+
             <div id="lower-extremity-section" class="row" style="display: flex">
                 <div class="col-md-6">
                     <div class="row">
@@ -754,51 +755,47 @@ include_once __DIR__ . '/../_header.php';
                     </div>
                 </div>
             </div>
-        </form>
-
-
-        <form id="upper-extremity-form" action="/new-entry/add-upper-entry" method="post">
             <div id="upper-extremity-section" class="row" style="display: none">
                 <div class="col-md-3">
                     <h4><strong>Right</strong></h4><br>
                     <input type="checkbox" id="right-longitudinal" name="right-longitudinal" value="right-longitudinal"/>
-                    <label for="right-longitudinal">Longitudinal</label><br>
+                    <label for="right-longitudinal">longitudinal</label><br>
                     <input type="checkbox" id="right-transverse" name="right-transverse" value="right-transverse"/>
-                    <label for="right-transverse">Transverse</label><br>
+                    <label for="right-transverse">transverse</label><br>
                     <input type="checkbox" id="right-ears" name="right-ears" value="right-ears"/>
                     <label for="right-ears">EARS</label><br>
                     <input type="checkbox" id="right-congenital" name="right-congenital" value="right-congenital"/>
-                    <label for="right-congenital">Congenital</label><br>
+                    <label for="right-congenital">congenital</label><br>
                     <input type="checkbox" id="right-acquired" name="right-acquired" value="right-acquired"/>
-                    <label for="right-acquired">Acquired</label><br>
+                    <label for="right-acquired">acquired</label><br>
                     <div class="row">
                         <div class="col-5">
                             <input type="checkbox" id="right-tumor" name="right-tumor" value="right-tumor"/>
-                            <label for="right-tumor">Tumor</label><br>
+                            <label for="right-tumor">tumor</label><br>
                             <input type="checkbox" id="right-trauma" name="right-trauma" value="right-trauma"/>
-                            <label for="right-trauma">Trauma</label><br>
+                            <label for="right-trauma">trauma</label><br>
                         </div>
                         <div class="col-7">
-                            <input type="date" id="right-tumor-date" name="right-tumor-date" value="right-tumor-date"><br>
-                            <input type="date" id="right-trauma-date" name="right-trauma-date" value="right-trauma-date"><br>
+                            <input id="right-tumor-date" type="text" size=12 placeholder="mm/dd/yyyy"><br>
+                            <input id="right-trauma-date" type="text" size=12 placeholder="mm/dd/yyyy"><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-5">
                             <input type="checkbox" id="right-burn" name="right-burn" value="right-burn"/>
-                            <label for="right-burn">Burn</label><br>
+                            <label for="right-burn">burn</label><br>
                             <input type="checkbox" id="right-mvc" name="right-mvc" value="right-mvc"/>
                             <label for="right-mvc">MVC</label><br>
                             <input type="checkbox" id="right-vascular" name="right-vascular" value="right-vascular"/>
-                            <label for="right-vascular">Vascular</label><br>
+                            <label for="right-vascular">vascular</label><br>
                         </div>
                         <div class="col-7">
                             <input type="checkbox" id="right-recreational" name="right-recreational" value="right-recreational"/>
-                            <label for="right-recreational">Recreational</label><br>
+                            <label for="right-recreational">recreational</label><br>
                             <input type="checkbox" id="right-infection" name="right-infection" value="right-infection"/>
-                            <label for="right-infection">Infection</label><br>
+                            <label for="right-infection">infection</label><br>
                             <input type="checkbox" id="right-lawnmower" name="right-lawnmower" value="right-lawnmower"/>
-                            <label for="right-lawnmower">Lawnmower</label><br>
+                            <label for="right-lawnmower">lawnmower</label><br>
                         </div>
                     </div>
 
@@ -812,8 +809,8 @@ include_once __DIR__ . '/../_header.php';
                     <div class="row">
                         <div class="col-6">
                             <input type="checkbox" id="right-scapula" name="right-scapula" value="right-scapula"/>
-                            <label for="right-scapula">Scapula</label><br>
-                                Humerus<br>
+                            <label for="right-scapula">scapula</label><br>
+                                humerus<br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -838,7 +835,7 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
-                                Radius<br>
+                                radius<br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -863,7 +860,7 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
-                                Ulna<br>
+                                ulna<br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -891,28 +888,28 @@ include_once __DIR__ . '/../_header.php';
                         </div>
                         <div class="col-md-6">
                             <input type="checkbox" id="right-hamate" name="right-hamate" value="right-hamate"/>
-                            <label for="right-hamate">Hamate</label><br>
+                            <label for="right-hamate">hamate</label><br>
                             <input type="checkbox" id="right-pistiform" name="right-pistiform" value="right-pistiform"/>
-                            <label for="right-pistiform">Pistiform</label><br>
+                            <label for="right-pistiform">pistiform</label><br>
                             <input type="checkbox" id="right-triquetral" name="right-triquetral" value="right-triquetral"/>
-                            <label for="right-triquetral">Triquetral</label><br>
+                            <label for="right-triquetral">triquetral</label><br>
                             <input type="checkbox" id="right-lunate" name="right-lunate" value="right-lunate"/>
-                            <label for="right-lunate">Lunate</label><br>
+                            <label for="right-lunate">lunate</label><br>
                             <input type="checkbox" id="right-trapezoid" name="right-trapezoid" value="right-trapezoid"/>
-                            <label for="right-trapezoid">Trapezoid</label><br>
+                            <label for="right-trapezoid">trapezoid</label><br>
                             <input type="checkbox" id="right-trapezium" name="right-trapezium" value="right-trapezium"/>
-                            <label for="right-trapezium">Trapezium</label><br>
+                            <label for="right-trapezium">trapezium</label><br>
                             <input type="checkbox" id="right-scaphoid" name="right-scaphoid" value="right-scaphoid"/>
-                            <label for="right-scaphoid">Scaphoid</label><br>
+                            <label for="right-scaphoid">scaphoid</label><br>
                             <input type="checkbox" id="right-capitellum" name="right-capitellum" value="right-capitellum"/>
-                            <label for="right-capitellum">Capitellum</label><br>
-                            <button>Hand</button>
+                            <label for="right-capitellum">capitellum</label><br>
+                            <button type="button">Hand</button>
                         </div>
                     </div>
                     <u>Hand</u><br>
                     <div class="row">
                         <div class="col-10 border-left">
-                            Phalanges<br>
+                            phalanges<br>
                             <div class="row">
                                 <div class="col-2">
                                     &#8627
@@ -948,7 +945,7 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                 </div>
                             </div>
-                            Metacarpals<br>
+                            metacarpals<br>
                             <div class="row">
                                 <div class="col-2">
                                     &#8627
@@ -990,43 +987,43 @@ include_once __DIR__ . '/../_header.php';
                 <div class="col-md-3 border-left">
                     <h4><strong>Left</strong></h4><br>
                     <input type="checkbox" id="left-longitudinal" name="left-longitudinal" value="left-longitudinal"/>
-                    <label for="left-longitudinal">Longitudinal</label><br>
+                    <label for="left-longitudinal">longitudinal</label><br>
                     <input type="checkbox" id="left-transverse" name="left-transverse" value="left-transverse"/>
-                    <label for="left-transverse">Transverse</label><br>
+                    <label for="left-transverse">transverse</label><br>
                     <input type="checkbox" id="left-ears" name="left-ears" value="left-ears"/>
                     <label for="left-ears">EARS</label><br>
                     <input type="checkbox" id="left-congenital" name="left-congenital" value="left-congenital"/>
-                    <label for="left-congenital">Congenital</label><br>
+                    <label for="left-congenital">congenital</label><br>
                     <input type="checkbox" id="left-acquired" name="left-acquired" value="left-acquired"/>
-                    <label for="left-acquired">Acquired</label><br>
+                    <label for="left-acquired">acquired</label><br>
                     <div class="row">
                         <div class="col-5">
                             <input type="checkbox" id="left-tumor" name="left-tumor" value="left-tumor"/>
-                            <label for="left-tumor">Tumor</label><br>
+                            <label for="left-tumor">tumor</label><br>
                             <input type="checkbox" id="left-trauma" name="left-trauma" value="left-trauma"/>
-                            <label for="left-trauma">Trauma</label><br>
+                            <label for="left-trauma">trauma</label><br>
                         </div>
                         <div class="col-7">
-                            <input type="date" id="left-tumor-date" name="left-tumor-date" value="left-tumor-date"><br>
-                            <input type="date" id="left-trauma-date" name="left-trauma-date" value="left-trauma-date"><br>
+                            <input id="right-tumor-date" type="text" size=12 placeholder="mm/dd/yyyy"><br>
+                            <input id="right-trauma-date" type="text" size=12 placeholder="mm/dd/yyyy"><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-5">
                             <input type="checkbox" id="left-burn" name="left-burn" value="left-burn"/>
-                            <label for="left-burn">Burn</label><br>
+                            <label for="left-burn">burn</label><br>
                             <input type="checkbox" id="left-mvc" name="left-mvc" value="left-mvc"/>
                             <label for="left-mvc">MVC</label><br>
                             <input type="checkbox" id="left-vascular" name="left-vascular" value="left-vascular"/>
-                            <label for="left-vascular">Vascular</label><br>
+                            <label for="left-vascular">vascular</label><br>
                         </div>
                         <div class="col-7">
                             <input type="checkbox" id="left-recreational" name="left-recreational" value="left-recreational"/>
-                            <label for="left-recreational">Recreational</label><br>
+                            <label for="left-recreational">recreational</label><br>
                             <input type="checkbox" id="left-infection" name="left-infection" value="left-infection"/>
-                            <label for="left-infection">Infection</label><br>
+                            <label for="left-infection">infection</label><br>
                             <input type="checkbox" id="left-lawnmower" name="left-lawnmower" value="left-lawnmower"/>
-                            <label for="left-lawnmower">Lawnmower</label><br>
+                            <label for="left-lawnmower">lawnmower</label><br>
                         </div>
                     </div>
 
@@ -1040,8 +1037,8 @@ include_once __DIR__ . '/../_header.php';
                     <div class="row">
                         <div class="col-6">
                             <input type="checkbox" id="left-scapula" name="left-scapula" value="left-scapula"/>
-                            <label for="left-scapula">Scapula</label><br>
-                                Humerus<br>
+                            <label for="left-scapula">scapula</label><br>
+                                humerus<br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -1066,7 +1063,7 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
-                                Radius<br>
+                                radius<br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -1091,7 +1088,7 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
-                                Ulna<br>
+                                ulna<br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -1119,21 +1116,21 @@ include_once __DIR__ . '/../_header.php';
                         </div>
                         <div class="col-md-6">
                             <input type="checkbox" id="left-hamate" name="left-hamate" value="left-hamate"/>
-                            <label for="left-hamate">Hamate</label><br>
+                            <label for="left-hamate">hamate</label><br>
                             <input type="checkbox" id="left-pistiform" name="left-pistiform" value="left-pistiform"/>
-                            <label for="left-pistiform">Pistiform</label><br>
+                            <label for="left-pistiform">pistiform</label><br>
                             <input type="checkbox" id="left-triquetral" name="left-triquetral" value="left-triquetral"/>
-                            <label for="left-triquetral">Triquetral</label><br>
+                            <label for="left-triquetral">triquetral</label><br>
                             <input type="checkbox" id="left-lunate" name="left-lunate" value="left-lunate"/>
-                            <label for="left-lunate">Lunate</label><br>
+                            <label for="left-lunate">lunate</label><br>
                             <input type="checkbox" id="left-trapezoid" name="left-trapezoid" value="left-trapezoid"/>
-                            <label for="left-trapezoid">Trapezoid</label><br>
+                            <label for="left-trapezoid">trapezoid</label><br>
                             <input type="checkbox" id="left-trapezium" name="left-trapezium" value="left-trapezium"/>
-                            <label for="left-trapezium">Trapezium</label><br>
+                            <label for="left-trapezium">trapezium</label><br>
                             <input type="checkbox" id="left-scaphoid" name="left-scaphoid" value="left-scaphoid"/>
-                            <label for="left-scaphoid">Scaphoid</label><br>
+                            <label for="left-scaphoid">scaphoid</label><br>
                             <input type="checkbox" id="left-capitellum" name="left-capitellum" value="left-capitellum"/>
-                            <label for="left-capitellum">Capitellum</label><br>
+                            <label for="left-capitellum">capitellum</label><br>
                             <button>Hand</button>
 
                         </div>
@@ -1141,7 +1138,7 @@ include_once __DIR__ . '/../_header.php';
                     <u>Hand</u><br>
                     <div class="row">
                         <div class="col-10 border-left">
-                            Phalanges<br>
+                            phalanges<br>
                             <div class="row">
                                 <div class="col-2">
                                     &#8627
@@ -1177,7 +1174,7 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                 </div>
                             </div>
-                            Metacarpals<br>
+                            metacarpals<br>
                             <div class="row">
                                 <div class="col-2">
                                     &#8627
@@ -1234,16 +1231,6 @@ include_once __DIR__ . '/../_header.php';
             }
         });
 
-        // submit whatever is on the screen either upper or lower
-        $('#submit-entry').click(function(){
-            if(confirm("Are you sure you want to submit entry?")) {
-                if ($('#upper-extremity-btn').hasClass('active')) {
-                    $('#upper-extremity-form').trigger('submit');
-                } else {
-                    $('#lower-extremity-form').trigger('submit');
-                }
-            }
-        });
 
         // this makes the buttons show diff things
         $('#lower-extremity-btn').click(function(){
@@ -1271,7 +1258,25 @@ include_once __DIR__ . '/../_header.php';
         //     $("#acquired-date").datepicker();
         //     //$("#tumor-date").datepicker();
         // });
-        
+        $('#submit-entry').click(function(){
+            if(confirm("Are you sure you want to submit entry?")) {
+                $.ajax({
+
+                    url : '/new-entry/add-entry',
+                    type : 'POST',
+                    data :$('#extremity-form :input').serialize(),
+
+                    success : function(data) {
+                        console.log('Data: '+JSON.stringify(data));
+                    },
+                    error : function(request,error)
+                    {
+                        console.log("Request: "+JSON.stringify(request));
+                    }
+                });
+            }
+        });
+
         // Right foot options
         $('#lower-right-birch-anchor').click(function() {
             if ($('#lower-right-birch').hasClass('visible')) {

@@ -8,35 +8,20 @@ class NewEntryController {
         require NEWENTRY_VIEWS_DIR . 'index.php';
     }
 
-    public static function addLowerEntry(UserSession $userSession) {
+    public static function addEntry(UserSession $userSession) {
         header('Content-Type: application/json');
 
         $success = false;
         $error_message = null;
         $non_empty_elems = array();
         foreach($_POST as $key=>$value) {
-            if ($value != ""){
+            #if ($value != ""){
                 $non_empty_elems[$key] = $value;
-            }
+            #}
         }
-
+        //DB::run("INSERT INTO ", [$itemId]);
         $ret = array('success' => $success, 'error_message' => $error_message, 'data' => $non_empty_elems);
         echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
     }
 
-    public static function addUpperEntry(UserSession $userSession) {
-        header('Content-Type: application/json');
-
-        $success = false;
-        $error_message = null;
-        $non_empty_elems = array();
-        foreach($_POST as $key=>$value) {
-            if ($value != ""){
-                $non_empty_elems[$key] = $value;
-            }
-        }
-
-        $ret = array('success' => $success, 'error_message' => $error_message, 'data' => $non_empty_elems);
-        echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
-    }
 }

@@ -377,6 +377,11 @@ a.collapsed:visited, a.d-block:visited {
     color: #ef4138 !important;
 }
 
+.nopadding {
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
 #other-things {
     margin-top: 20px;
 }

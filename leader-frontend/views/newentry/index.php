@@ -82,7 +82,7 @@ include_once __DIR__ . '/../_header.php';
             <div id="lower-extremity-section" class="row" style="display: flex">
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <h4><strong>Right</strong></h4><br>
                             <input type="checkbox" id="lower-right-longitudinal" name="lower-right-longitudinal" value="lower-right-longitudinal">
                             <label for="lower-right-longitudinal">longitudinal</label><br>
@@ -125,7 +125,7 @@ include_once __DIR__ . '/../_header.php';
                             <textarea id="lower-right-surgical-pro" name="lower-right-surgical-pro" placeholder="Surgical Procedures" rows="2" cols="25"></textarea>
                             <input id="lower-right-surgical-pro-date" type="text" placeholder="mm/dd/yyyy"><br>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             <h5>Deformities/Missing Bones</h5><br>
                             <div class="row">
                                 <div class="col-md-6">
@@ -133,7 +133,7 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-right-pelvis">pelvis</label><br>
                                     <label>femur</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -169,7 +169,7 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-md-5">
                                     <label>tibia</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -187,7 +187,7 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                     <label>fibula</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -209,7 +209,7 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-md-7">
                                     <label>cuneiform</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -232,26 +232,26 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&nbsp;&#8627;</label>
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-5">5</label><br>
                                             <input type="checkbox" id="lower-right-phalanges-5" name="lower-right-phalanges-5" value="lower-right-phalanges-5">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-4">4</label><br>
                                             <input type="checkbox" id="lower-right-phalanges-4" name="lower-right-phalanges-4" value="lower-right-phalanges-4">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-3">3</label><br>
                                             <input type="checkbox" id="lower-right-phalanges-3" name="lower-right-phalanges-3" value="lower-right-phalanges-3">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-2">2</label><br>
                                             <input type="checkbox" id="lower-right-phalanges-2" name="lower-right-phalanges-2" value="lower-right-phalanges-2">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-1">1</label><br>
                                             <input type="checkbox" id="lower-right-phalanges-1" name="lower-right-phalanges-1" value="lower-right-phalanges-1">
                                         </div>
@@ -262,26 +262,26 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&nbsp;&#8627;</label>
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-5">5</label><br>
                                             <input type="checkbox" id="lower-right-metatarsals-5" name="lower-right-metatarsals-5" value="lower-right-metatarsals-5">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-4">4</label><br>
                                             <input type="checkbox" id="lower-right-metatarsals-4" name="lower-right-metatarsals-4" value="lower-right-metatarsals-4">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-3">3</label><br>
                                             <input type="checkbox" id="lower-right-metatarsals-3" name="lower-right-metatarsals-3" value="lower-right-metatarsals-3">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-2">2</label><br>
                                             <input type="checkbox" id="lower-right-metatarsals-2" name="lower-right-metatarsals-2" value="lower-right-metatarsals-2">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-1">1</label><br>
                                             <input type="checkbox" id="lower-right-metatarsals-1" name="lower-right-metatarsals-1" value="lower-right-metatarsals-1">
                                         </div>
@@ -410,7 +410,7 @@ include_once __DIR__ . '/../_header.php';
                 </div> <!-- col-md-6 -->
                 <div class="col-md-6 border-left">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <h4><strong>Left</strong></h4><br>
                             <input type="checkbox" id="lower-left-longitudinal" name="lower-left-longitudinal" value="lower-left-longitudinal">
                             <label for="lower-left-longitudinal">longitudinal</label><br>
@@ -453,7 +453,7 @@ include_once __DIR__ . '/../_header.php';
                             <textarea id="lower-left-surgical-pro" name="lower-left-surgical-pro" placeholder="Surgical Procedures" rows="2" cols="25"></textarea>
                             <input id="lower-left-surgical-pro-date" type="text" placeholder="mm/dd/yyyy"><br>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             <h5>Deformities/Missing Bones</h5><br>
                             <div class="row">
                                 <div class="col-md-6">
@@ -461,7 +461,7 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-left-pelvis">pelvis</label><br>
                                     <label>femur</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -497,7 +497,7 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-md-5">
                                     <label>tibia</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -515,7 +515,7 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                     <label>fibula</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -537,7 +537,7 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-md-7">
                                     <label>cuneiform</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -561,26 +561,26 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&nbsp;&#8627;</label>
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-5">5</label><br>
                                             <input type="checkbox" id="lower-left-phalanges-5" name="lower-left-phalanges-5" value="lower-left-phalanges-5">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-4">4</label><br>
                                             <input type="checkbox" id="lower-left-phalanges-4" name="lower-left-phalanges-4" value="lower-left-phalanges-4">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-3">3</label><br>
                                             <input type="checkbox" id="lower-left-phalanges-3" name="lower-left-phalanges-3" value="lower-left-phalanges-3">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-2">2</label><br>
                                             <input type="checkbox" id="lower-left-phalanges-2" name="lower-left-phalanges-2" value="lower-left-phalanges-2">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-1">1</label><br>
                                             <input type="checkbox" id="lower-left-phalanges-1" name="lower-left-phalanges-1" value="lower-left-phalanges-1">
                                         </div>
@@ -591,26 +591,26 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1">
+                                        <div class="col-md-1 offset-md-1 nopadding">
                                             <label>&nbsp;&#8627;</label>
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-5">5</label><br>
                                             <input type="checkbox" id="lower-left-metatarsals-5" name="lower-left-metatarsals-5" value="lower-left-metatarsals-5">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-4">4</label><br>
                                             <input type="checkbox" id="lower-left-metatarsals-4" name="lower-left-metatarsals-4" value="lower-left-metatarsals-4">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-3">3</label><br>
                                             <input type="checkbox" id="lower-left-metatarsals-3" name="lower-left-metatarsals-3" value="lower-left-metatarsals-3">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-2">2</label><br>
                                             <input type="checkbox" id="lower-left-metatarsals-2" name="lower-left-metatarsals-2" value="lower-left-metatarsals-2">
                                         </div>
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-1">1</label><br>
                                             <input type="checkbox" id="lower-left-metatarsals-1" name="lower-left-metatarsals-1" value="lower-left-metatarsals-1">
                                         </div>

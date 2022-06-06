@@ -377,11 +377,20 @@ a.collapsed:visited, a.d-block:visited {
     color: #ef4138 !important;
 }
 
+.nopadding {
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
 #other-things {
     margin-top: 20px;
 }
 
 #lower-extremity-section {
+    margin-top:20px;
+}
+
+#upper-extremity-section {
     margin-top:20px;
 }
 

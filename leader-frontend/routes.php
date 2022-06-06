@@ -62,12 +62,9 @@
         $router->map('GET', '/new-entry', function() {
             NewEntryController::index(get_session());
         }, 'newentry-index');
-        $router->map('POST', '/new-entry/add-lower-entry', function() {
-            NewEntryController::addLowerEntry(get_session());
-        }, 'newentry-addlowerentry');
-        $router->map('POST', '/new-entry/add-upper-entry', function() {
-            NewEntryController::addUpperEntry(get_session());
-        }, 'newentry-addupperentry');
+        $router->map('POST', '/new-entry/add-entry', function() {
+            NewEntryController::addEntry(get_session());
+        }, 'newentry-addentry');
     } catch (Exception $e) {
         die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }

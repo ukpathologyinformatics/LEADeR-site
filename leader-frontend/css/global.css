@@ -481,15 +481,98 @@ a.collapsed:visited, a.d-block:visited {
 
 .home .title-text {
     text-align:center;
-    margin: 10% 0 10% 0;
+    margin: 5% 0 5% 0;
+}
+
+.home .selection-btns {
+    margin: 0 10% 0 10%;
+}
+
+.home .selection-btns a {
+    text-decoration: none;
 }
 
 .home .center-home-sects {
     text-align:center;
+    border-radius: 5%;
+    padding: 5% 0 5% 0;
+    margin:0;
+    color: #606060;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+.home .center-home-sects:hover {
+    color: #fff;
+    background-color: #606060;
+}
+
+.home .center-home-sects:hover i{
+    color: #fff;
 }
 
 .home .center-home-sects i {
     font-size: 10vw;
+    color: #606060;
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+#surgicalModal .modal-dialog {
+    max-width: 75vw;
+}
+
+#surgicalModal #surg-procs {
+    width: 100%;
+}
+
+#surgicalModal .left-modal-stuff {
+    margin:10px 0 10px 0;
+}
+
+#surgicalModal .left-modal-stuff label {
+    width: 125px;
+}
+
+#surgicalModal .left-modal-stuff input {
+    width: 55%;
+}
+
+#surgicalModal .right-modal-stuff label {
+    width: 9%;
+    vertical-align: top;
+}
+
+#surgicalModal .right-modal-stuff textarea {
+    width: 90%;
+    height: 55vh;
+}
+
+#lower-right-surgery-list,
+#lower-left-surgery-list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin:0;
+    border: 1px solid #000;
+}
+
+#lower-right-surgery-list li,
+#lower-left-surgery-list li {
+    padding: 1px 0 1px 20px;
+    border-bottom: 1px solid #828282;
+}
+
+#lower-right-surgery-list li::before,
+#lower-left-surgery-list li::before {
+    content: "\f044";
+    font-family: "Font Awesome 5 Free";
+    display:inline-block;
+    margin-left: -20px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 /******************************

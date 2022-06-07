@@ -122,7 +122,7 @@ include_once __DIR__ . '/../_header.php';
                             <input id="lower-right-other" type="text" placeholder="Other"><br><br>
                             <textarea id="lower-right-classification" name="lower-right-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
                             <textarea id="lower-right-notes" name="lower-right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
-                            <button id="lower-right-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
+                            <button id="lower-right-surgical-pro" class="btn btn-primary" type="button">+ Surgery</button><br>
                             <ul id="lower-right-surgery-list" name="lower-right-surgery-list" style="display:none;"></ul>
                         </div>
                         <div class="col-md-6">
@@ -450,8 +450,8 @@ include_once __DIR__ . '/../_header.php';
                             <input id="lower-left-other" type="text" placeholder="Other"><br><br>
                             <textarea id="lower-left-classification" name="lower-left-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
                             <textarea id="lower-left-notes" name="lower-left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
-                            <textarea id="lower-left-surgical-pro" name="lower-left-surgical-pro" placeholder="Surgical Procedures" rows="2" cols="25"></textarea>
-                            <input id="lower-left-surgical-pro-date" type="text" placeholder="mm/dd/yyyy"><br>
+                            <button id="lower-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
+                            <ul id="lower-left-surgery-list" name="lower-left-surgery-list" style="display:none;"></ul>
                         </div>
                         <div class="col-md-6">
                             <h5>Deformities/Missing Bones</h5><br>
@@ -1252,6 +1252,7 @@ include_once __DIR__ . '/../_header.php';
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <button id="delete-surgery" style="display:none" type="button" class="btn btn-danger">Delete</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <button id="add-surgery-submit" type="button" class="btn btn-primary" data-update-id="" onclick="addSurgery(this)">Add</button>
                 </div>
@@ -1261,9 +1262,11 @@ include_once __DIR__ . '/../_header.php';
 
     <script type="text/javascript">
         var surgery_counter = 0;
-
+        var surgery_side = null;
+        
         function showSurgicalModal() {
             $('#add-surgery-submit').html('Add');
+            $('#delete-surgery').css('display', 'none');
             $('#surgicalModal').modal('show');
         }
 
@@ -1291,8 +1294,8 @@ include_once __DIR__ . '/../_header.php';
         function addSurgery(el){
             let sub_button = $(el);
             if (sub_button.attr('data-update-id') == ''){
-                if ($('#lower-right-surgery-list').css('display') == 'none'){
-                    $('#lower-right-surgery-list').css('display', '');
+                if ($('#'+surgery_side+'-surgery-list').css('display') == 'none'){
+                    $('#'+surgery_side+'-surgery-list').css('display', '');
                 }
                 let surg_name = $('#surgicalModal #surgery-name').val();
                 if (surg_name == "") {
@@ -1334,13 +1337,12 @@ include_once __DIR__ . '/../_header.php';
                 }
                 //base64 encode json obj
                 let encoded_surg = btoa(JSON.stringify(surgery_info));
-                $('#lower-right-surgery-list').append("<li id='lr-surgery-"+surgery_counter+"' data-value="+ encoded_surg +">"+ surg_name +"</li>");
+                $('#'+surgery_side+'-surgery-list').append("<li id='"+surgery_side+"-surgery-"+surgery_counter+"' data-value="+ encoded_surg +">"+ surg_name +"</li>");
                 surgery_counter += 1;
                 $('#surgicalModal').modal('hide');
                 showSuccess("Added Surgery");
             } else {
                 let target_li = sub_button.attr('data-update-id');
-                $('#add-surgery-submit').html('Update');
                 let surg_name = $('#surgicalModal #surgery-name').val();
                 if (surg_name == "") {
                     showError("Surgery name cannot be blank.");
@@ -1391,6 +1393,13 @@ include_once __DIR__ . '/../_header.php';
         // jQuery Below
         $("#surgicalModal").on('hidden.bs.modal', function() {
             clear_surgical_form();
+            $('#add-surgery-submit').attr('data-update-id', '');
+        });
+
+        $('#lower-right-surgical-pro, #lower-left-surgical-pro').click(function(){
+            showSurgicalModal();
+            const tempArr = this.id.split('-');
+            surgery_side = tempArr.slice(0, 2).join('-');
         });
 
         // clear everything on page either upper or lower
@@ -1404,9 +1413,37 @@ include_once __DIR__ . '/../_header.php';
             }
         });
 
+        $('#delete-surgery').click(function (){
+            if(confirm('Are you sure you want to delete this surgery?')){
+                let id_delete = $('#add-surgery-submit').attr('data-update-id');
+                $('#'+id_delete).remove();
+                if ($('#'+surgery_side+'-surgery-list li').length == 0){
+                    $('#'+surgery_side+'-surgery-list').css('display', 'none') 
+                }
+                $('#surgicalModal').modal('hide');
+            }
+        });
+
         $('#lower-right-surgery-list').on('click', 'li', function(){
+            const tempArr = this.parentNode.id.split('-');
+            surgery_side = tempArr.slice(0, 2).join('-');
+
             surgery_info = JSON.parse(atob(this.dataset.value));
             $('#add-surgery-submit').attr('data-update-id', this.id);
+            $('#add-surgery-submit').html('Update');
+            $('#delete-surgery').css('display', '');
+            fill_surgical_form(surgery_info);
+            $('#surgicalModal').modal('show');
+        });
+
+        $('#lower-left-surgery-list').on('click', 'li', function(){
+            const tempArr = this.parentNode.id.split('-');
+            surgery_side = tempArr.slice(0, 2).join('-');
+            
+            surgery_info = JSON.parse(atob(this.dataset.value));
+            $('#add-surgery-submit').attr('data-update-id', this.id);
+            $('#add-surgery-submit').html('Update');
+            $('#delete-surgery').css('display', '');
             fill_surgical_form(surgery_info);
             $('#surgicalModal').modal('show');
         });

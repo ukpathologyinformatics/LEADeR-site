@@ -541,7 +541,8 @@ a.collapsed:visited, a.d-block:visited {
     height: 55vh;
 }
 
-#lower-right-surgery-list {
+#lower-right-surgery-list,
+#lower-left-surgery-list {
     width: 100%;
     list-style: none;
     padding: 0;
@@ -549,12 +550,14 @@ a.collapsed:visited, a.d-block:visited {
     border: 1px solid #000;
 }
 
-#lower-right-surgery-list li {
+#lower-right-surgery-list li,
+#lower-left-surgery-list li {
     padding: 1px 0 1px 20px;
     border-bottom: 1px solid #828282;
 }
 
-#lower-right-surgery-list li::before {
+#lower-right-surgery-list li::before,
+#lower-left-surgery-list li::before {
     content: "\f044";
     font-family: "Font Awesome 5 Free";
     display:inline-block;

@@ -123,7 +123,7 @@ include_once __DIR__ . '/../_header.php';
                             <textarea id="lower-right-classification" name="lower-right-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
                             <textarea id="lower-right-notes" name="lower-right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                             <button id="lower-right-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal(this)">+ Surgery</button><br>
-                            <select id="lower-right-surgery-list" name="lower-right-surgery-list" style="display:none;" size="3" multiple></select>
+                            <ul id="lower-right-surgery-list" name="lower-right-surgery-list" style="display:none;"></ul>
                         </div>
                         <div class="col-md-6">
                             <h5>Deformities/Missing Bones</h5><br>
@@ -1274,6 +1274,16 @@ include_once __DIR__ . '/../_header.php';
             $('#surgicalModal #surgery-notes').val('');
         }
 
+        function fill_surgical_form(selected_json) {
+            if (selected_json !== null) {
+                $('#surgicalModal #surgery-name').val(selected_json["surg-name"]);
+                $('#surgicalModal #surgery-date').val(selected_json["surg-date"]);
+                $('#surgicalModal #surgeon').val(selected_json["surgeon"]);
+                $('#surgicalModal #age').val(selected_json["age"]);
+                $('#surgicalModal #surgery-notes').val(selected_json["notes"]);   
+            }
+        }
+
         function addSurgery(){
             if ($('#lower-right-surgery-list').css('display') == 'none'){
                 $('#lower-right-surgery-list').css('display', '');
@@ -1303,17 +1313,27 @@ include_once __DIR__ . '/../_header.php';
                 showError("Age cannot be blank.");
                 return false;
             }
+            if(isNaN(age)){
+                showError("Age must be a number.");
+                return false;
+            }
             let notes = $('#surgicalModal #surgery-notes').val();
 
             var surgery_info = {
                 "surg-name": surg_name,
-                "surg-date": /////////////////HERHEHRHERHEHREHREHRHEHREHREHREHH   
+                "surg-date": surg_date,
+                "surgeon": surgeon,
+                "age": age,
+                "notes": notes
             }
-            $('#lower-right-surgery-list').append("<option data-value='{\"surg-name\":>yep</option>")
-            $('#surgical-modal').modal('hide');
+            //base64 encode json obj
+            encoded_surg = btoa(surgery_info);
+            $('#lower-right-surgery-list').append("<li data-value="+ encoded_surg +">"+ surg_name +"</li>")
+            $('#surgicalModal').modal('hide');
             showSuccess("Added Surgery");
         }
-       
+
+
 
         // jQuery Below
         $(document).ready(function() {
@@ -1331,6 +1351,14 @@ include_once __DIR__ . '/../_header.php';
                     }
                 }
             });
+
+            $('#lower-right-surgery-list').on('click', 'li', function(){
+                surgery_info = atob(this.dataset.value);
+                console.log(surgery_info);
+                fill_surgical_form(surgery_info);
+                $('#surgicalModal').modal('show');
+            });
+
 
             // submit whatever is on the screen either upper or lower
             $('#submit-entry').click(function(){

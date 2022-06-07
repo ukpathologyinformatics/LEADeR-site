@@ -20,6 +20,8 @@ class NewEntryController {
             }
         }
 
+        
+
         $ret = array('success' => $success, 'error_message' => $error_message, 'data' => $non_empty_elems);
         echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
     }

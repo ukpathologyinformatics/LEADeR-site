@@ -74,7 +74,7 @@ include_once __DIR__ . '/../_header.php';
             <button id="lower-extremity-btn" type="button" class="active btn btn-sm btn-secondary my-2 my-sm-0 ml-2">LOWER EXTREMITY</button>
             <button id="upper-extremity-btn" type="button" class="btn btn-sm btn-secondary my-2 my-sm-0 ml-2">UPPER EXTREMITY</button>
             <button id="clear-selections" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Clear</button>
-            <input type="submit" id="submit-entry" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Add Entry</input>
+            <input type="submit" id="submit-entry" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right"></input>
             
         </div>
 

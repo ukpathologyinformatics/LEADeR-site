@@ -8,14 +8,14 @@ include_once __DIR__ . '/../_header.php';
     </div>
 
     <section id="icd-filters">
-        <form id="extremity-form">
+        <form id="extremity-form"  onsubmit="event.preventDefault();">
         <!-- This is the top bar -->
         <div id="icd-top-bar" class="row">
             <div class="col-md">
-                <input type="text" id="icd-codes" name="icd-codes" placeholder="Enter ICD Codes">
+                <input type="text" id="icd-codes" name="icd-codes" placeholder="Enter ICD Codes" required>
             </div>
             <div class="col-md">
-                <select name="gender" id="gender">
+                <select name="gender" id="gender" required>
                     <option value="" disabled selected hidden>Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -23,7 +23,7 @@ include_once __DIR__ . '/../_header.php';
                 </select> 
             </div>
             <div class="col-md">
-                <select name="race" id="race">
+                <select name="race" id="race" required>
                     <option value="" disabled selected hidden>Race</option>
                     <option value="amer-ind-alaska">American Indian or Alaska Native</option>
                     <option value="asian">Asian</option>
@@ -35,36 +35,36 @@ include_once __DIR__ . '/../_header.php';
                 </select> 
             </div>
             <div class="col-md">
-                <select name="ethnicity" id="ethnicity">
+                <select name="ethnicity" id="ethnicity" required>
                     <option value="" disabled selected hidden>Ethnicity</option>
                     <option value="eth1">ethnicity 1</option>
                     <option value="eth2">ethnicity 2</option>
                 </select> 
             </div>
             <div class="col-md">
-                <select name="file" id="file">
+                <select name="file" id="file" required>
                     <option value="" disabled selected hidden>Status</option>
                     <option value="pending">Pending</option>
                     <option value="complete">Complete</option>
                 </select> 
             </div>
             <div class="col-md">
-                <select name="subject-id" id="subject-id">
+                <select name="subject-id" id="subject-id" required>
                     <option value="" disabled selected hidden>Subject ID</option>
                     <option value="id-1">1</option>
                     <option value="id-2">2</option>
                 </select> 
             </div>
             <div class="col-md">
-                <input id="dob" name="dob" type="text" placeholder="mm/dd/yyyy">
+                <input id="dob" name="dob" type="text" placeholder="mm/dd/yyyy" required>
                 <label for="dob">Date of Birth</label>
             </div>
             <div class="col-md">
-                <input id="start-date" name="start-date" type="text" placeholder="mm/dd/yyyy">
+                <input id="start-date" name="start-date" type="text" placeholder="mm/dd/yyyy" required>
                 <label for="start-date">First Recorded</label>
             </div>
             <div class="col-md">
-                <input id="end-date" name="end-date" type="text" placeholder="mm/dd/yyyy">
+                <input id="end-date" name="end-date" type="text" placeholder="mm/dd/yyyy" required>
                 <label for="end-date">Last Recorded</label>
             </div>
         </div>
@@ -74,7 +74,7 @@ include_once __DIR__ . '/../_header.php';
             <button id="lower-extremity-btn" type="button" class="active btn btn-sm btn-secondary my-2 my-sm-0 ml-2">LOWER EXTREMITY</button>
             <button id="upper-extremity-btn" type="button" class="btn btn-sm btn-secondary my-2 my-sm-0 ml-2">UPPER EXTREMITY</button>
             <button id="clear-selections" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Clear</button>
-            <button id="submit-entry" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Add Entry</button>
+            <input type="submit" id="submit-entry" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right"></input>
             
         </div>
 
@@ -800,9 +800,10 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <input type="text" name="right-other" placeholder="Other"><br><br><br>
-                    <textarea name="right-notes" placeholder="Notes" value="right-notes" rows="4" cols="25"></textarea>
-                    <textarea name="right-classification" placeholder="Classification" value="right-classification" rows="4" cols="25"></textarea>
-
+                    <textarea id="right-classification" name="right-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+                    <textarea id="right-notes" name="right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
+                    <button id="upper-right-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
+                    <ul id="upper-right-surgery-list" name="upper-right-surgery-list" style="display:none;"></ul>
                 </div>
                 <div class="col-md-3">
                     <h5>Deformities/Missing Bones</h5><br>
@@ -1028,9 +1029,10 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <input type="text" name="left-other" placeholder="Other"><br><br><br>
-                    <textarea name="left-notes" placeholder="Notes" value="left-notes" rows="4" cols="25"></textarea>
-                    <textarea name="left-classification" placeholder="Classification" value="left-classification" rows="4" cols="25"></textarea>
-
+                    <textarea id="left-classification" name="left-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+                    <textarea id="left-notes" name="left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
+                    <button id="upper-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
+                    <ul id="upper-left-surgery-list" name="upper-left-surgery-list" style="display:none;"></ul>
                 </div>
                 <div class="col-md-3">
                     <h5>Deformities/Missing Bones</h5><br>
@@ -1393,7 +1395,7 @@ include_once __DIR__ . '/../_header.php';
             $('#add-surgery-submit').attr('data-update-id', '');
         });
 
-        $('#lower-right-surgical-pro, #lower-left-surgical-pro').click(function(){
+        $('#lower-right-surgical-pro, #lower-left-surgical-pro, #upper-right-surgical-pro, #upper-left-surgical-pro').click(function(){
             showSurgicalModal();
             const tempArr = this.id.split('-');
             surgery_side = tempArr.slice(0, 2).join('-');
@@ -1402,11 +1404,9 @@ include_once __DIR__ . '/../_header.php';
         // clear everything on page either upper or lower
         $('#clear-selections').click(function(){
             if(confirm("Are you sure you want to clear the form?")) {
-                if ($('#upper-extremity-btn').hasClass('active')) {
-                    $('#upper-extremity-form').trigger('reset');
-                } else {
-                    $('#lower-extremity-form').trigger('reset');
-                }
+                $('#extremity-form').trigger('reset');
+                $('#lower-right-surgery-list, #lower-left-surgery-list, #upper-right-surgery-list, #upper-left-surgery-list').empty();
+                $('#lower-right-surgery-list, #lower-left-surgery-list, #upper-right-surgery-list, #upper-left-surgery-list').css("display","none");
             }
         });
 
@@ -1445,17 +1445,40 @@ include_once __DIR__ . '/../_header.php';
             $('#surgicalModal').modal('show');
         });
 
+        $('#upper-right-surgery-list').on('click', 'li', function(){
+            const tempArr = this.parentNode.id.split('-');
+            surgery_side = tempArr.slice(0, 2).join('-');
+
+            surgery_info = JSON.parse(atob(this.dataset.value));
+            $('#add-surgery-submit').attr('data-update-id', this.id);
+            $('#add-surgery-submit').html('Update');
+            $('#delete-surgery').css('display', '');
+            fill_surgical_form(surgery_info);
+            $('#surgicalModal').modal('show');
+        });
+
+        $('#upper-left-surgery-list').on('click', 'li', function(){
+            const tempArr = this.parentNode.id.split('-');
+            surgery_side = tempArr.slice(0, 2).join('-');
+
+            surgery_info = JSON.parse(atob(this.dataset.value));
+            $('#add-surgery-submit').attr('data-update-id', this.id);
+            $('#add-surgery-submit').html('Update');
+            $('#delete-surgery').css('display', '');
+            fill_surgical_form(surgery_info);
+            $('#surgicalModal').modal('show');
+        });
 
         // submit whatever is on the screen either upper or lower
-        $('#submit-entry').click(function(){
-            if(confirm("Are you sure you want to submit entry?")) {
-                if ($('#upper-extremity-btn').hasClass('active')) {
-                    $('#upper-extremity-form').trigger('submit');
-                } else {
-                    $('#lower-extremity-form').trigger('submit');
-                }
-            }
-        });
+        //$('#submit-entry').click(function(){
+        //    if(confirm("Are you sure you want to submit entry?")) {
+        //        if ($('#upper-extremity-btn').hasClass('active')) {
+        //            $('#upper-extremity-form').trigger('submit');
+        //        } else {
+        //            $('#lower-extremity-form').trigger('submit');
+        //        }
+        //    }
+        //});
 
 
         // this makes the buttons show diff things
@@ -1485,6 +1508,7 @@ include_once __DIR__ . '/../_header.php';
         //     //$("#tumor-date").datepicker();
         // });
         $('#submit-entry').click(function(){
+
             if(confirm("Are you sure you want to submit entry?")) {
                 $.ajax({
 

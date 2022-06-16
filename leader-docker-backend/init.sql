@@ -10,7 +10,7 @@ IF NOT EXISTS(SELECT * FROM sys.databases WHERE name = 'myDB')
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='user_roles' and xtype='U')
 BEGIN
     CREATE TABLE user_roles(id INT NOT NULL CONSTRAINT user_roles_pk PRIMARY KEY NONCLUSTERED, role_name VARCHAR(64) NOT NULL);
-    INSERT INTO user_roles VALUES (0, 'Admin'), (1, 'User');
+	INSERT INTO user_roles VALUES (0, 'Admin'), (1, 'User');
 END
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='users' and xtype='U')
@@ -23,27 +23,63 @@ BEGIN
     CREATE TABLE user_sessions(session_id VARCHAR(36) NOT NULL CONSTRAINT user_sessions_pk PRIMARY KEY NONCLUSTERED, user_id VARCHAR(36) NOT NULL CONSTRAINT user_sessions_users_id_fk REFERENCES users ON DELETE CASCADE, last_seen   DATETIME DEFAULT getdate() NOT NULL, remember_me BIT DEFAULT 0 NOT NULL)
 END
 
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID('users') AND name='user_linkblue_uindex')
 BEGIN
     CREATE UNIQUE INDEX user_linkblue_uindex ON users (linkblue)
 END
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Patient' and xtype='U')
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='patient' and xtype='U')
 BEGIN
-CREATE TABLE Patient (patient_id INT IDENTITY(1,1), 
-	last_updated_date DATE default NULL, file_status VARCHAR(15) default '', 
-	gender VARCHAR(10) default '', race VARCHAR(41) default '', ethnicity VARCHAR(20) default '', 
-	dob DATE default NULL, entry NVARCHAR(MAX), constraint patient_PK PRIMARY KEY (patient_id))
-END
-
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Surgery' and xtype='U')
-BEGIN
-CREATE TABLE Surgery (patient_id INT, surgery_name VARCHAR(2) default'', surgery_date DATE default NULL, 
-	surgery_notes VARCHAR(250) default '', attending_surgeon VARCHAR(40) default '', age FLOAT default NULL,
-	CONSTRAINT patient_FK FOREIGN KEY (patient_id) REFERENCES dbo.Patient (patient_ID))
+CREATE TABLE patient ( 
+    patient_id			BIGINT IDENTITY(1,1) PRIMARY KEY,
+	last_updated_date	DATE DEFAULT NULL, 
+	file_status			VARCHAR(15) DEFAULT '', 
+	gender				VARCHAR(10) DEFAULT '', 
+	race				VARCHAR(41) DEFAULT '', 
+	ethnicity			VARCHAR(20) DEFAULT '', 
+	dob					DATE DEFAULT NULL, 
+	entry				NVARCHAR(MAX)
+); 
 END
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='icd' and xtype='U')
 BEGIN
-CREATE TABLE icd (patient_id INT, icd VARCHAR(8) NOT NULL DEFAULT '', 
-	CONSTRAINT patient_icd_FK FOREIGN KEY (patient_id) REFERENCES dbo.Patient (patient_ID))
+CREATE TABLE icd (
+	icd_code	VARCHAR (7) NOT NULL PRIMARY KEY,
+	icd_desc	VARCHAR (100) NOT NULL
+);
 END
+
+/* Join Table for patient and ICD codes */
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='patient_icd' and xtype='U')
+BEGIN
+CREATE TABLE patient_icd (
+	patient_id	BIGINT REFERENCES patient(patient_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	icd_code	VARCHAR(7) REFERENCES icd(icd_code) ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT PK_patient_icd PRIMARY KEY (patient_id, icd_code)
+);
+END
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='surgery' and xtype='U')
+BEGIN
+CREATE TABLE surgery (
+	CPT_code		CHAR(5) PRIMARY KEY,
+	surgery_name	VARCHAR(64) NOT NULL,
+);
+END
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='patient_surgery' and xtype='U')
+BEGIN
+CREATE TABLE patient_surgery (
+	patient_id	BIGINT REFERENCES patient(patient_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	surgery_id	CHAR(5) REFERENCES surgery(CPT_code) ON UPDATE CASCADE ON DELETE CASCADE,
+	surgery_date DATE default NULL, 
+	surgery_notes VARCHAR(250) default '', 
+	attending_surgeon VARCHAR(40) default '',
+	age FLOAT default NULL,
+	CONSTRAINT PK_patient_surgery PRIMARY KEY (patient_id, surgery_id)
+);
+END
+
+
+/* RETURN ID CREATED BY AUTOINCREMENT BY USING `SELECT SCOPE_IDENTITY()` AFTER THE INSERT*/

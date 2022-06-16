@@ -121,7 +121,12 @@ include_once __DIR__ . '/../_header.php';
                                 </div>
                             </div>
                             <input id="lower-right-other" type="text" placeholder="Other"><br><br>
-                            <textarea id="lower-right-classification" name="lower-right-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+
+                            <label for="lower-right-classification">Classification:</label>
+                            <select id="lower-right-classification" name="lower-right-classification">
+                                <option value="NULL">-</option>
+                            </select><br>
+                        
                             <textarea id="lower-right-notes" name="lower-right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                             <button id="lower-right-surgical-pro" class="btn btn-primary" type="button">+ Surgery</button><br>
                             <ul id="lower-right-surgery-list" name="lower-right-surgery-list" style="display:none;"></ul>
@@ -449,7 +454,12 @@ include_once __DIR__ . '/../_header.php';
                                 </div>
                             </div>
                             <input id="lower-left-other" type="text" placeholder="Other"><br><br>
-                            <textarea id="lower-left-classification" name="lower-left-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+
+                            <label for="lower-left-classification">Classification:</label>
+                            <select id="lower-left-classification" name="lower-left-classification">
+                                <option value="NULL">-</option>
+                            </select><br>
+
                             <textarea id="lower-left-notes" name="lower-left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                             <button id="lower-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
                             <ul id="lower-left-surgery-list" name="lower-left-surgery-list" style="display:none;"></ul>
@@ -800,7 +810,12 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <input type="text" name="right-other" placeholder="Other"><br><br><br>
-                    <textarea id="right-classification" name="right-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+
+                    <label for="right-classification">Classification:</label>
+                            <select id="right-classification" name="right-classification">
+                                <option value="NULL">-</option>
+                            </select><br>
+            
                     <textarea id="right-notes" name="right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                     <button id="upper-right-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
                     <ul id="upper-right-surgery-list" name="upper-right-surgery-list" style="display:none;"></ul>
@@ -1029,7 +1044,12 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <input type="text" name="left-other" placeholder="Other"><br><br><br>
-                    <textarea id="left-classification" name="left-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+
+                    <label for="left-classification">Classification:</label>
+                            <select id="left-classification" name="left-classification">
+                                <option value="NULL">-</option>
+                            </select><br>
+                    
                     <textarea id="left-notes" name="left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                     <button id="upper-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
                     <ul id="upper-left-surgery-list" name="upper-left-surgery-list" style="display:none;"></ul>

@@ -74,7 +74,7 @@ include_once __DIR__ . '/../_header.php';
             <button id="lower-extremity-btn" type="button" class="active btn btn-sm btn-secondary my-2 my-sm-0 ml-2">LOWER EXTREMITY</button>
             <button id="upper-extremity-btn" type="button" class="btn btn-sm btn-secondary my-2 my-sm-0 ml-2">UPPER EXTREMITY</button>
             <button id="clear-selections" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">Clear</button>
-            <input type="submit" id="submit-entry" type="button" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right"></input>
+            <input type="submit" id="submit-entry" value="Add Entry" class="btn btn-sm btn-primary my-2 my-sm-0 ml-2 float-right">
             
         </div>
 
@@ -94,8 +94,7 @@ include_once __DIR__ . '/../_header.php';
                             <input type="checkbox" id="lower-right-congenital" name="lower-right-congenital" value="lower-right-congenital">
                             <label for="lower-right-congenital">congenital</label><br>
                             <input type="checkbox" id="lower-right-acquired" name="lower-right-acquired" value="lower-right-acquired">
-                            <label for="lower-right-acquired">acquired</label>
-                            <input id="lower-right-acquired-date" type="text" placeholder="mm/dd/yyyy"><br>
+                            <label for="lower-right-acquired">acquired</label><br>
                             <input type="checkbox" id="lower-right-tumor" name="lower-right-tumor" value="lower-right-tumor">
                             <label for="lower-right-tumor">tumor</label>
                             <input id="lower-right-tumor-date" type="text" placeholder="mm/dd/yyyy"><br>
@@ -121,7 +120,13 @@ include_once __DIR__ . '/../_header.php';
                                 </div>
                             </div>
                             <input id="lower-right-other" type="text" placeholder="Other"><br><br>
-                            <textarea id="lower-right-classification" name="lower-right-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+
+                            <select id="lower-right-classification" name="lower-right-classification" style="width: 125px;" data-id="lr">
+                                <option value="" disabled selected hidden>Classification</option>
+                                <option value="NULL">-</option>
+                            </select>
+                            <button id = "lower-right-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+
                             <textarea id="lower-right-notes" name="lower-right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                             <button id="lower-right-surgical-pro" class="btn btn-primary" type="button">+ Surgery</button><br>
                             <ul id="lower-right-surgery-list" name="lower-right-surgery-list" style="display:none;"></ul>
@@ -422,8 +427,7 @@ include_once __DIR__ . '/../_header.php';
                             <input type="checkbox" id="lower-left-congenital" name="lower-left-congenital" value="lower-left-congenital">
                             <label for="lower-left-congenital">congenital</label><br>
                             <input type="checkbox" id="lower-left-acquired" name="lower-left-acquired" value="lower-left-acquired">
-                            <label for="lower-left-acquired">acquired</label>
-                            <input id="lower-left-acquired-date" type="text" placeholder="mm/dd/yyyy"><br>
+                            <label for="lower-left-acquired">acquired</label><br>
                             <input type="checkbox" id="lower-left-tumor" name="lower-left-tumor" value="lower-left-tumor">
                             <label for="lower-left-tumor">tumor</label>
                             <input id="lower-left-tumor-date" type="text" placeholder="mm/dd/yyyy"><br>
@@ -449,7 +453,12 @@ include_once __DIR__ . '/../_header.php';
                                 </div>
                             </div>
                             <input id="lower-left-other" type="text" placeholder="Other"><br><br>
-                            <textarea id="lower-left-classification" name="lower-left-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+                            <select id="lower-left-classification" name="lower-left-classification" style="width: 125px;">
+                                <option value="" disabled selected hidden>Classification</option>
+                                <option value="NULL">-</option>
+                            </select>
+                            <button id = "lower-left-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+
                             <textarea id="lower-left-notes" name="lower-left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                             <button id="lower-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
                             <ul id="lower-left-surgery-list" name="lower-left-surgery-list" style="display:none;"></ul>
@@ -800,7 +809,11 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <input type="text" name="right-other" placeholder="Other"><br><br><br>
-                    <textarea id="right-classification" name="right-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+                    <select id="right-classification" name="right-classification" style="width: 125px;">
+                        <option value="NULL">-</option>
+                        <option value="" disabled selected hidden>Classification</option>
+                    </select>
+                    <button id = "right-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
                     <textarea id="right-notes" name="right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                     <button id="upper-right-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
                     <ul id="upper-right-surgery-list" name="upper-right-surgery-list" style="display:none;"></ul>
@@ -1029,7 +1042,11 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <input type="text" name="left-other" placeholder="Other"><br><br><br>
-                    <textarea id="left-classification" name="left-classification" placeholder="Classification" rows="2" cols="25"></textarea><br>
+                    <select id="left-classification" name="left-classification" style="width: 125px;">
+                        <option value="" disabled selected hidden>Classification</option>
+                        <option value="NULL">-</option>
+                    </select>
+                    <button id = "left-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
                     <textarea id="left-notes" name="left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                     <button id="upper-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
                     <ul id="upper-left-surgery-list" name="upper-left-surgery-list" style="display:none;"></ul>
@@ -1259,6 +1276,37 @@ include_once __DIR__ . '/../_header.php';
         </div>
     </div>
 
+    <!--Classification Model-->
+    <div class="modal fade" id="classificationModal" tabindex="-1" role="dialog" aria-labelledby="classificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="classificationModalLabel">Add Classification</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 mb-3 form-floating">
+                            <input class="form-control" type="text" style="pointer-events: auto;" name="classificationModalName" id="classificationModalName" placeholder="Name" />
+                            <label for="classificationModalName">Name</label>
+                        </div>
+                        <div class="col-sm-12 mb-3 form-floating">
+                            <input class="form-control" type="text" style="pointer-events: auto;" name="classificationModalCode" id="classificationModalCode" placeholder="Code" />
+                            <label for="classificationModalCode">Code</label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="add_classification();">Add Classification</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript">
         var surgery_counter = 0;
         var surgery_side = null;
@@ -1389,7 +1437,32 @@ include_once __DIR__ . '/../_header.php';
             }
         }
 
+        var classificationId;
+
+        function add_classification() {
+            let name = $('#classificationModalName').val();
+            if (name == "") {
+                showError("Classification name cannot be blank.");
+                return false;
+            }
+            let code = $('#classificationModalCode').val();
+            if (code == "") {
+                showError("Classification code cannot be blank.");
+                return false;
+            }
+
+            dropdown = classificationId.slice(0, -4);
+            select = document.getElementById(dropdown);
+            select.add(new Option(name));
+            $('#classificationModal').modal('hide');
+        }
+
         // jQuery Below
+
+        $('#lower-right-classification-add, #lower-left-classification-add, #right-classification-add, #left-classification-add').click(function() {
+            classificationId = $(this).attr('id');
+        });
+
         $("#surgicalModal").on('hidden.bs.modal', function() {
             clear_surgical_form();
             $('#add-surgery-submit').attr('data-update-id', '');
@@ -1507,14 +1580,42 @@ include_once __DIR__ . '/../_header.php';
         //     $("#acquired-date").datepicker();
         //     //$("#tumor-date").datepicker();
         // });
-        $('#submit-entry').click(function(){
+//         $('#submit-entry').click(function(){
+//
+//             if(confirm("Are you sure you want to submit entry?")) {
+//                 $.ajax({
+//
+//                     url : '/new-entry/add-entry',
+//                     type : 'POST',
+//                     data :$('#extremity-form :input').serialize(),
+//
+//                     success : function(data) {
+//                         console.log('Data: '+JSON.stringify(data));
+//                     },
+//                     error : function(request,error)
+//                     {
+//                         console.log("Request: "+JSON.stringify(request));
+//                     }
+//                 });
+//             }
+//         });
+
+        $('#extremity-form').submit(function(){
 
             if(confirm("Are you sure you want to submit entry?")) {
+                $(this).find('[placeholder]').each(function() {
+                    var input = $(this);
+                    if (input.val() === input.attr('placeholder')) {
+                        event.preventDefault();
+                        input.val('');
+                    }
+                });
+
                 $.ajax({
 
                     url : '/new-entry/add-entry',
                     type : 'POST',
-                    data :$('#extremity-form :input').serialize(),
+                    data :$('#extremity-form :input').serializeArray(),
 
                     success : function(data) {
                         console.log('Data: '+JSON.stringify(data));

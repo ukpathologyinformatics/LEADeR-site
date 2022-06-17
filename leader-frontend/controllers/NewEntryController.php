@@ -13,14 +13,15 @@ class NewEntryController {
 
         $success = false;
         $error_message = null;
-        $non_empty_elems = array();
+        $entry = array();
         foreach($_POST as $key=>$value) {
             #if ($value != ""){
-                $non_empty_elems[$key] = $value;
+                $entry[$key] = $value;
             #}
         }
-        //DB::run("INSERT INTO ", [$itemId])
-        $ret = array('success' => $success, 'error_message' => $error_message, 'data' => $non_empty_elems);
+        //var_dump($entry);
+        //DB::run("INSERT INTO patient VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [$entry["?"], $entry["subject-id"], $entry["start-date"], $entry["end-date"], $entry["file"], $entry["gender"], $entry["race"], $entry["ethnicity"], $entry["dob"], $entry["?"]]);
+        $ret = array('success' => $success, 'error_message' => $error_message, 'data' => $entry);
         echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
     }
 

@@ -211,6 +211,28 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                     <input type="checkbox" id="lower-right-foot" name="lower-right-foot" value="lower-right-foot">
                                     <label for="lower-right-foot">foot</label><br>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6">
+                                            <h6>Foot:</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <div class="col-md-10">
+                                            <div id="lower-right-birch" class="dropdown-check-list" tabindex="100">
+                                            <span id="lower-right-birch-anchor" class="anchor">Birch</span>
+                                            <ul class="items">
+                                            <li><input type="checkbox" value="lower-right-birch-1"> Type 1</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1A"> 1A</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1B"> 1B</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1C"> 1C</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1C"> 1D</li>
+                                            <li><input type="checkbox" value="lower-right-birch-2"> Type 2</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-2A"> 2A</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-2B"> 2B</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                                 <div class="col-md-7">
                                     <label>cuneiform</label><br>
@@ -295,23 +317,8 @@ include_once __DIR__ . '/../_header.php';
                                 
                                 </div>
                             </div>
-                            <h6>Foot:</h6>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div id="lower-right-birch" class="dropdown-check-list" tabindex="100">
-                                        <span id="lower-right-birch-anchor" class="anchor">Birch</span>
-                                        <ul class="items">
-                                            <li><input type="checkbox" value="lower-right-birch-1"> Type 1</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1A"> 1A</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1B"> 1B</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1C"> 1C</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1C"> 1D</li>
-                                            <li><input type="checkbox" value="lower-right-birch-2"> Type 2</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-2A"> 2A</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-2B"> 2B</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            
+                            <div class="row mt-2">
                                 <div class="col-md-4">
                                     <div id="lower-right-jones" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-right-jones-anchor" class="anchor">Jones</span>
@@ -338,8 +345,6 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-4">
                                     <div id="lower-right-AK" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-right-AK-anchor" class="anchor">A+K</span>
@@ -351,6 +356,8 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row mt-1">
                                 <div class="col-md-4">
                                     <div id="lower-right-paley-tibia" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-right-paley-tibia-anchor" class="anchor">Paley Tibia</span>
@@ -391,8 +398,6 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-4">
                                 <div id="lower-right-paley-fibula" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-right-paley-fibula-anchor" class="anchor">Paley Fibula</span>
@@ -408,6 +413,9 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4"></div>
                             </div>
@@ -543,6 +551,28 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                     <input type="checkbox" id="lower-left-foot" name="lower-left-foot" value="lower-left-foot">
                                     <label for="lower-left-foot">foot</label><br>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6">
+                                            <h6>Foot:</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <div class="col-md-10">
+                                            <div id="lower-left-birch" class="dropdown-check-list" tabindex="100">
+                                                <span id="lower-left-birch-anchor" class="anchor">Birch</span>
+                                                <ul class="items">
+                                                    <li><input type="checkbox" value="lower-left-birch-1"> Type 1</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-1A"> 1A</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-1B"> 1B</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-1C"> 1C</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-1C"> 1D</li>
+                                                    <li><input type="checkbox" value="lower-left-birch-2"> Type 2</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-2A"> 2A</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-2B"> 2B</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-7">
                                     <label>cuneiform</label><br>
@@ -628,23 +658,9 @@ include_once __DIR__ . '/../_header.php';
                                 
                                 </div>
                             </div>
-                            <h6>Foot:</h6>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div id="lower-left-birch" class="dropdown-check-list" tabindex="100">
-                                        <span id="lower-left-birch-anchor" class="anchor">Birch</span>
-                                        <ul class="items">
-                                            <li><input type="checkbox" value="lower-left-birch-1"> Type 1</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-1A"> 1A</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-1B"> 1B</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-1C"> 1C</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-1C"> 1D</li>
-                                            <li><input type="checkbox" value="lower-left-birch-2"> Type 2</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-2A"> 2A</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-2B"> 2B</li>
-                                        </ul>
-                                    </div>
-                                </div>
+        
+                            <div class="row mt-2">
+                                
                                 <div class="col-md-4">
                                     <div id="lower-left-jones" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-left-jones-anchor" class="anchor">Jones</span>
@@ -671,8 +687,6 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-4">
                                     <div id="lower-left-AK" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-left-AK-anchor" class="anchor">A+K</span>
@@ -684,6 +698,9 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row mt-1">
+                                
                                 <div class="col-md-4">
                                     <div id="lower-left-paley-tibia" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-left-paley-tibia-anchor" class="anchor">Paley Tibia</span>
@@ -724,8 +741,6 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-4">
                                 <div id="lower-left-paley-fibula" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-left-paley-fibula-anchor" class="anchor">Paley Fibula</span>
@@ -741,6 +756,9 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4"></div>
                             </div>
@@ -754,14 +772,19 @@ include_once __DIR__ . '/../_header.php';
                     <div class="row">
                         <div class="col-md-4">
                             <input type="checkbox" id="UE" name="UE" value="UE">
-                            <label for="UE">UE</label><br>
-                            <textarea id="other-skel-probs" name="other-skel-probs" placeholder="Other Skeletal Problems" rows="2" cols="30"></textarea>
+                            <label for="UE">UE</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            
+                            <textarea id="other-skel-probs" name="other-skel-probs" placeholder="Other Skeletal Problems" rows="3" cols="30"></textarea>
                         </div>
                         <div class="col-md-4">
-                            <br><textarea id="other-medical-probs" name="other-medical-probs" placeholder="Other Medical Problems" rows="3" cols="30"></textarea>
+                            <textarea id="other-medical-probs" name="other-medical-probs" placeholder="Other Medical Problems" rows="3" cols="30"></textarea>
                         </div>
                         <div class="col-md-4">
-                            <br><textarea id="family-history" name="family-history" placeholder="Family History" rows="3" cols="30"></textarea>
+                            <textarea id="family-history" name="family-history" placeholder="Family History" rows="3" cols="30"></textarea>
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,25 @@ include_once __DIR__ . '/../_header.php';
                 <input type="text" id="icd-codes" name="icd-codes" placeholder="Enter ICD Codes" required>
             </div>
             <div class="col-md">
+                <select name="subject-id" id="subject-id" required>
+                    <option value="" disabled selected hidden>Subject ID</option>
+                    <option value="id-1">1</option>
+                    <option value="id-2">2</option>
+                </select> 
+            </div>
+            <div class="col-md">
+                <input id="dob" name="dob" type="text" placeholder="mm/dd/yyyy" required>
+                <label for="dob">Date of Birth</label>
+            </div>
+            <div class="col-md">
+                <input id="start-date" name="start-date" type="text" placeholder="mm/dd/yyyy" required>
+                <label for="start-date">First Recorded</label>
+            </div>
+            <div class="col-md">
+                <input id="end-date" name="end-date" type="text" placeholder="mm/dd/yyyy" required>
+                <label for="end-date">Last Recorded</label>
+            </div>
+            <div class="col-md">
                 <select name="gender" id="gender" required>
                     <option value="" disabled selected hidden>Gender</option>
                     <option value="male">Male</option>
@@ -48,25 +67,7 @@ include_once __DIR__ . '/../_header.php';
                     <option value="complete">Complete</option>
                 </select> 
             </div>
-            <div class="col-md">
-                <select name="subject-id" id="subject-id" required>
-                    <option value="" disabled selected hidden>Subject ID</option>
-                    <option value="id-1">1</option>
-                    <option value="id-2">2</option>
-                </select> 
-            </div>
-            <div class="col-md">
-                <input id="dob" name="dob" type="text" placeholder="mm/dd/yyyy" required>
-                <label for="dob">Date of Birth</label>
-            </div>
-            <div class="col-md">
-                <input id="start-date" name="start-date" type="text" placeholder="mm/dd/yyyy" required>
-                <label for="start-date">First Recorded</label>
-            </div>
-            <div class="col-md">
-                <input id="end-date" name="end-date" type="text" placeholder="mm/dd/yyyy" required>
-                <label for="end-date">Last Recorded</label>
-            </div>
+            
         </div>
 
         <!-- Buttons to select which page to see -->
@@ -121,11 +122,13 @@ include_once __DIR__ . '/../_header.php';
                             </div>
                             <input id="lower-right-other" type="text" placeholder="Other"><br><br>
 
+
                             <select id="lower-right-classification" name="lower-right-classification" style="width: 125px;" data-id="lr">
                                 <option value="" disabled selected hidden>Classification</option>
                                 <option value="NULL">-</option>
                             </select>
                             <button id = "lower-right-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+
 
                             <textarea id="lower-right-notes" name="lower-right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                             <button id="lower-right-surgical-pro" class="btn btn-primary" type="button">+ Surgery</button><br>
@@ -211,6 +214,28 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                     <input type="checkbox" id="lower-right-foot" name="lower-right-foot" value="lower-right-foot">
                                     <label for="lower-right-foot">foot</label><br>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6">
+                                            <h6>Foot:</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <div class="col-md-10">
+                                            <div id="lower-right-birch" class="dropdown-check-list" tabindex="100">
+                                            <span id="lower-right-birch-anchor" class="anchor">Birch</span>
+                                            <ul class="items">
+                                            <li><input type="checkbox" value="lower-right-birch-1"> Type 1</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1A"> 1A</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1B"> 1B</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1C"> 1C</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1C"> 1D</li>
+                                            <li><input type="checkbox" value="lower-right-birch-2"> Type 2</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-2A"> 2A</li>
+                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-2B"> 2B</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                                 <div class="col-md-7">
                                     <label>cuneiform</label><br>
@@ -295,23 +320,8 @@ include_once __DIR__ . '/../_header.php';
                                 
                                 </div>
                             </div>
-                            <h6>Foot:</h6>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div id="lower-right-birch" class="dropdown-check-list" tabindex="100">
-                                        <span id="lower-right-birch-anchor" class="anchor">Birch</span>
-                                        <ul class="items">
-                                            <li><input type="checkbox" value="lower-right-birch-1"> Type 1</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1A"> 1A</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1B"> 1B</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1C"> 1C</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-1C"> 1D</li>
-                                            <li><input type="checkbox" value="lower-right-birch-2"> Type 2</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-2A"> 2A</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-right-birch-2B"> 2B</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            
+                            <div class="row mt-2">
                                 <div class="col-md-4">
                                     <div id="lower-right-jones" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-right-jones-anchor" class="anchor">Jones</span>
@@ -338,8 +348,6 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-4">
                                     <div id="lower-right-AK" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-right-AK-anchor" class="anchor">A+K</span>
@@ -351,6 +359,8 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row mt-1">
                                 <div class="col-md-4">
                                     <div id="lower-right-paley-tibia" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-right-paley-tibia-anchor" class="anchor">Paley Tibia</span>
@@ -391,8 +401,6 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-4">
                                 <div id="lower-right-paley-fibula" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-right-paley-fibula-anchor" class="anchor">Paley Fibula</span>
@@ -408,6 +416,9 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4"></div>
                             </div>
@@ -453,11 +464,13 @@ include_once __DIR__ . '/../_header.php';
                                 </div>
                             </div>
                             <input id="lower-left-other" type="text" placeholder="Other"><br><br>
+
                             <select id="lower-left-classification" name="lower-left-classification" style="width: 125px;">
                                 <option value="" disabled selected hidden>Classification</option>
                                 <option value="NULL">-</option>
                             </select>
                             <button id = "lower-left-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+
 
                             <textarea id="lower-left-notes" name="lower-left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                             <button id="lower-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
@@ -543,6 +556,28 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                     <input type="checkbox" id="lower-left-foot" name="lower-left-foot" value="lower-left-foot">
                                     <label for="lower-left-foot">foot</label><br>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6">
+                                            <h6>Foot:</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <div class="col-md-10">
+                                            <div id="lower-left-birch" class="dropdown-check-list" tabindex="100">
+                                                <span id="lower-left-birch-anchor" class="anchor">Birch</span>
+                                                <ul class="items">
+                                                    <li><input type="checkbox" value="lower-left-birch-1"> Type 1</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-1A"> 1A</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-1B"> 1B</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-1C"> 1C</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-1C"> 1D</li>
+                                                    <li><input type="checkbox" value="lower-left-birch-2"> Type 2</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-2A"> 2A</li>
+                                                    <li>&nbsp;<input type="checkbox" value="lower-left-birch-2B"> 2B</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-7">
                                     <label>cuneiform</label><br>
@@ -628,23 +663,9 @@ include_once __DIR__ . '/../_header.php';
                                 
                                 </div>
                             </div>
-                            <h6>Foot:</h6>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div id="lower-left-birch" class="dropdown-check-list" tabindex="100">
-                                        <span id="lower-left-birch-anchor" class="anchor">Birch</span>
-                                        <ul class="items">
-                                            <li><input type="checkbox" value="lower-left-birch-1"> Type 1</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-1A"> 1A</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-1B"> 1B</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-1C"> 1C</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-1C"> 1D</li>
-                                            <li><input type="checkbox" value="lower-left-birch-2"> Type 2</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-2A"> 2A</li>
-                                            <li>&nbsp;<input type="checkbox" value="lower-left-birch-2B"> 2B</li>
-                                        </ul>
-                                    </div>
-                                </div>
+        
+                            <div class="row mt-2">
+                                
                                 <div class="col-md-4">
                                     <div id="lower-left-jones" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-left-jones-anchor" class="anchor">Jones</span>
@@ -671,8 +692,6 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-4">
                                     <div id="lower-left-AK" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-left-AK-anchor" class="anchor">A+K</span>
@@ -684,6 +703,9 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row mt-1">
+                                
                                 <div class="col-md-4">
                                     <div id="lower-left-paley-tibia" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-left-paley-tibia-anchor" class="anchor">Paley Tibia</span>
@@ -724,8 +746,6 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-4">
                                 <div id="lower-left-paley-fibula" class="dropdown-check-list" tabindex="100">
                                         <span id="lower-left-paley-fibula-anchor" class="anchor">Paley Fibula</span>
@@ -741,6 +761,9 @@ include_once __DIR__ . '/../_header.php';
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4"></div>
                             </div>
@@ -752,14 +775,21 @@ include_once __DIR__ . '/../_header.php';
                 <div id="other-things">
                     <h5>Other</h5>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <input type="checkbox" id="UE" name="UE" value="UE">
-                            <label for="UE">UE</label><br><br><br>
-                            <textarea id="other-skel-probs" name="other-skel-probs" placeholder="Other Skeletal Problems" rows="2" cols="25"></textarea>
+                            <label for="UE">UE</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            
+                            <textarea id="other-skel-probs" name="other-skel-probs" placeholder="Other Skeletal Problems" rows="3" cols="30"></textarea>
                         </div>
-                        <div class="col-md-6">
-                            <textarea id="other-medical-probs" name="other-medical-probs" placeholder="Other Medical Problems" rows="2" cols="25"></textarea>
-                            <textarea id="family-history" name="family-history" placeholder="Family History" rows="2" cols="25"></textarea>
+                        <div class="col-md-4">
+                            <textarea id="other-medical-probs" name="other-medical-probs" placeholder="Other Medical Problems" rows="3" cols="30"></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <textarea id="family-history" name="family-history" placeholder="Family History" rows="3" cols="30"></textarea>
                         </div>
                     </div>
                 </div>
@@ -809,11 +839,13 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <input type="text" name="right-other" placeholder="Other"><br><br><br>
+
                     <select id="right-classification" name="right-classification" style="width: 125px;">
                         <option value="NULL">-</option>
                         <option value="" disabled selected hidden>Classification</option>
                     </select>
                     <button id = "right-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+
                     <textarea id="right-notes" name="right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                     <button id="upper-right-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
                     <ul id="upper-right-surgery-list" name="upper-right-surgery-list" style="display:none;"></ul>
@@ -1042,11 +1074,13 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <input type="text" name="left-other" placeholder="Other"><br><br><br>
+
                     <select id="left-classification" name="left-classification" style="width: 125px;">
                         <option value="" disabled selected hidden>Classification</option>
                         <option value="NULL">-</option>
                     </select>
                     <button id = "left-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+
                     <textarea id="left-notes" name="left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                     <button id="upper-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
                     <ul id="upper-left-surgery-list" name="upper-left-surgery-list" style="display:none;"></ul>

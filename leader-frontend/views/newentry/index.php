@@ -917,7 +917,7 @@ include_once __DIR__ . '/../_header.php';
                             <label for="right-scaphoid">scaphoid</label><br>
                             <input type="checkbox" id="right-capitellum" name="right-capitellum" value="right-capitellum"/>
                             <label for="right-capitellum">capitellum</label><br>
-                            <button type="button">Hand</button>
+                            <button type="button" id="right-hand" onclick="fillRightCheckboxes()">Hand/Wrist</button>
                         </div>
                     </div>
                     <u>Hand</u><br>
@@ -1150,7 +1150,7 @@ include_once __DIR__ . '/../_header.php';
                             <label for="left-scaphoid">scaphoid</label><br>
                             <input type="checkbox" id="left-capitellum" name="left-capitellum" value="left-capitellum"/>
                             <label for="left-capitellum">capitellum</label><br>
-                            <button>Hand</button>
+                            <button type="button" id="left-hand" onclick="fillLeftCheckboxes()">Hand/Wrist</button>
 
                         </div>
                     </div>
@@ -1435,6 +1435,68 @@ include_once __DIR__ . '/../_header.php';
                 $('#surgicalModal').modal('hide');
                 showSuccess("Updated Surgery");
             }
+        }
+
+        function fillRightCheckboxes() {
+            document.getElementById("right-hamate").checked = true;
+            document.getElementById("right-pistiform").checked = true;
+            document.getElementById("right-triquetral").checked = true;
+            document.getElementById("right-lunate").checked = true;
+            document.getElementById("right-trapezoid").checked = true;
+            document.getElementById("right-trapezium").checked = true;
+            document.getElementById("right-scaphoid").checked = true;
+            document.getElementById("right-capitellum").checked = true;
+            document.getElementById("right-scapula").checked = true;
+            document.getElementById("right-humerus-dist").checked = true;
+            document.getElementById("right-humerus-mid").checked = true;
+            document.getElementById("right-humerus-prox").checked = true;
+            document.getElementById("right-radius-dist").checked = true;
+            document.getElementById("right-radius-mid").checked = true;
+            document.getElementById("right-radius-prox").checked = true;
+            document.getElementById("right-ulna-dist").checked = true;
+            document.getElementById("right-ulna-mid").checked = true;
+            document.getElementById("right-ulna-prox").checked = true;
+            document.getElementById("right-phalanges-5").checked = true;
+            document.getElementById("right-phalanges-4").checked = true;
+            document.getElementById("right-phalanges-3").checked = true;
+            document.getElementById("right-phalanges-2").checked = true;
+            document.getElementById("right-phalanges-1").checked = true;
+            document.getElementById("right-metacarpals-5").checked = true;
+            document.getElementById("right-metacarpals-4").checked = true;
+            document.getElementById("right-metacarpals-3").checked = true;
+            document.getElementById("right-metacarpals-2").checked = true;
+            document.getElementById("right-metacarpals-1").checked = true;
+        }
+
+        function fillLeftCheckboxes() {
+            document.getElementById("left-hamate").checked = true;
+            document.getElementById("left-pistiform").checked = true;
+            document.getElementById("left-triquetral").checked = true;
+            document.getElementById("left-lunate").checked = true;
+            document.getElementById("left-trapezoid").checked = true;
+            document.getElementById("left-trapezium").checked = true;
+            document.getElementById("left-scaphoid").checked = true;
+            document.getElementById("left-capitellum").checked = true;
+            document.getElementById("left-scapula").checked = true;
+            document.getElementById("left-humerus-dist").checked = true;
+            document.getElementById("left-humerus-mid").checked = true;
+            document.getElementById("left-humerus-prox").checked = true;
+            document.getElementById("left-radius-dist").checked = true;
+            document.getElementById("left-radius-mid").checked = true;
+            document.getElementById("left-radius-prox").checked = true;
+            document.getElementById("left-ulna-dist").checked = true;
+            document.getElementById("left-ulna-mid").checked = true;
+            document.getElementById("left-ulna-prox").checked = true;
+            document.getElementById("left-phalanges-5").checked = true;
+            document.getElementById("left-phalanges-4").checked = true;
+            document.getElementById("left-phalanges-3").checked = true;
+            document.getElementById("left-phalanges-2").checked = true;
+            document.getElementById("left-phalanges-1").checked = true;
+            document.getElementById("left-metacarpals-5").checked = true;
+            document.getElementById("left-metacarpals-4").checked = true;
+            document.getElementById("left-metacarpals-3").checked = true;
+            document.getElementById("left-metacarpals-2").checked = true;
+            document.getElementById("left-metacarpals-1").checked = true;
         }
 
         var classificationId;

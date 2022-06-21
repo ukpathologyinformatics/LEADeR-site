@@ -12,6 +12,7 @@
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/popper.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap-datepicker.js"></script>
+    
     <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="/css/floating-labels.css">
     <link type="text/css" rel="stylesheet" href="/css/dataTables.bootstrap4.min.css">
@@ -21,6 +22,8 @@
     <link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="/css/toastify.min.css">
     <link type="text/css" rel="stylesheet" href="/css/global.css">
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap-select.css" />
+    
 </head>
 <body>
 <nav class="navbar navbar-dark sticky-top navbar-expand-lg flex-md-nowrap p-0">

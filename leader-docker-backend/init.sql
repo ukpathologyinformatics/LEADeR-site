@@ -32,11 +32,10 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='patient' and xtype='U')
 BEGIN
 CREATE TABLE patient ( 
     patient_id			BIGINT IDENTITY(1,1) PRIMARY KEY,
-    status              VARCHAR(32) NOT NULL,
+    file_status              VARCHAR(32) NOT NULL,
     subj_id             VARCHAR(32) NOT NULL,
     first_recorded      DATE DEFAULT NULL,
 	last_updated_date	DATE DEFAULT NULL, 
-	file_status			VARCHAR(15) DEFAULT NULL, 
 	gender				VARCHAR(10) DEFAULT NULL, 
 	race				VARCHAR(41) DEFAULT NULL, 
 	ethnicity			VARCHAR(20) DEFAULT NULL, 

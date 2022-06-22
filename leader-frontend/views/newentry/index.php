@@ -84,7 +84,7 @@ include_once __DIR__ . '/../_header.php';
             <div id="lower-extremity-section" class="row" style="display: flex">
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <h4><strong>Right</strong></h4><br>
                             <input type="checkbox" id="lower-right-longitudinal" name="lower-right-longitudinal" value="lower-right-longitudinal">
                             <label for="lower-right-longitudinal">longitudinal</label><br>
@@ -96,14 +96,12 @@ include_once __DIR__ . '/../_header.php';
                             <label for="lower-right-congenital">congenital</label><br>
                             <input type="checkbox" id="lower-right-acquired" name="lower-right-acquired" value="lower-right-acquired">
                             <label for="lower-right-acquired">acquired</label><br>
-                            <input type="checkbox" id="lower-right-tumor" name="lower-right-tumor" value="lower-right-tumor">
-                            <label for="lower-right-tumor">tumor</label>
-                            <input id="lower-right-tumor-date" type="text" placeholder="mm/dd/yyyy"><br>
-                            <input type="checkbox" id="lower-right-trauma" name="lower-right-trauma" value="lower-right-trauma">
-                            <label for="lower-right-trauma">trauma</label>
-                            <input id="lower-right-trauma-date" type="text" placeholder="mm/dd/yyyy"><br>
                             <div class="row">
                                 <div class="col-md-6">
+                                    <input type="checkbox" id="lower-right-tumor" name="lower-right-tumor" value="lower-right-tumor">
+                                    <label for="lower-right-tumor">tumor</label><br>
+                                    <input type="checkbox" id="lower-right-trauma" name="lower-right-trauma" value="lower-right-trauma">
+                                    <label for="lower-right-trauma">trauma</label><br>
                                     <input type="checkbox" id="lower-right-burn" name="lower-right-burn" value="lower-right-burn">
                                     <label for="lower-right-burn">burn</label><br>
                                     <input type="checkbox" id="lower-right-infection" name="lower-right-infection" value="lower-right-infection">
@@ -112,6 +110,8 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-right-lawnmower">lawnmower</label><br>
                                 </div>
                                 <div class="col-md-6">
+                                    <input id="lower-right-tumor-date" name="lower-right-tumor-date" type="text" placeholder="mm/dd/yyyy" disabled><br>
+                                    <input id="lower-right-trauma-date" name="lower-right-trauma-date" type="text" placeholder="mm/dd/yyyy" disabled><br>
                                     <input type="checkbox" id="lower-right-mvc" name="lower-right-mvc" value="lower-right-mvc">
                                     <label for="lower-right-mvc">MVC</label><br>
                                     <input type="checkbox" id="lower-right-recreational" name="lower-right-recreational" value="lower-right-recreational">
@@ -122,19 +122,27 @@ include_once __DIR__ . '/../_header.php';
                             </div>
                             <input id="lower-right-other" type="text" placeholder="Other"><br><br>
 
-
-                            <select id="lower-right-classification" name="lower-right-classification" style="width: 125px;" data-id="lr">
-                                <option value="" disabled selected hidden>Classification</option>
-                                <option value="NULL">-</option>
-                            </select>
-                            <button id = "lower-right-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
-
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <select class="selectpicker" id="lower-right-classification" name="lower-right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                </div>
+                                <div class="col-md-5">
+                                    <button id = "lower-right-classification-add" type="button" class="btn btn-sm btn-primary no-top-margin"  data-toggle="modal" data-target="#classificationModal">+Add</button>
+                                </div>
+                            </div>
 
                             <textarea id="lower-right-notes" name="lower-right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
-                            <button id="lower-right-surgical-pro" class="btn btn-primary" type="button">+ Surgery</button><br>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <select class="selectpicker" id="lower-right-surgeries" name="lower-right-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                </div>
+                                <div class="col-md-5">
+                                    <button id="lower-right-surgical-pro" class="btn btn-primary btn-sm no-top-margin" type="button">+Add</button>
+                                </div>
+                            </div>
                             <ul id="lower-right-surgery-list" name="lower-right-surgery-list" style="display:none;"></ul>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <h5>Deformities/Missing Bones</h5><br>
                             <div class="row">
                                 <div class="col-md-6">
@@ -142,18 +150,18 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-right-pelvis">pelvis</label><br>
                                     <label>femur</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1 nopadding">
+                                        <div class="col-md-1">
                                             <label>&#8627;</label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-right-femur-dist">dist.</label><br>
                                             <input type="checkbox" id="lower-right-femur-dist" name="lower-right-femur-dist" value="lower-right-femur-dist">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-right-femur-mid">mid.</label><br>
                                             <input type="checkbox" id="lower-right-femur-mid" name="lower-right-femur-mid" value="lower-right-femur-mid">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-right-femur-prox">prox.</label><br>
                                             <input type="checkbox" id="lower-right-femur-prox" name="lower-right-femur-prox" value="lower-right-femur-prox">
                                         </div>
@@ -178,36 +186,36 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-md-5">
                                     <label>tibia</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1 nopadding">
+                                        <div class="col-md-1">
                                             <label>&#8627;</label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-right-tibia-dist">dist.</label><br>
                                             <input type="checkbox" id="lower-right-tibia-dist" name="lower-right-tibia-dist" value="lower-right-tibia-dist">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-right-tibia-mid">mid.</label><br>
                                             <input type="checkbox" id="lower-right-tibia-mid" name="lower-right-tibia-mid" value="lower-right-tibia-mid">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-right-tibia-prox">prox.</label><br>
                                             <input type="checkbox" id="lower-right-tibia-prox" name="lower-right-tibia-prox" value="lower-right-tibia-prox">
                                         </div>
                                     </div>
                                     <label>fibula</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1 nopadding">
+                                        <div class="col-md-1">
                                             <label>&#8627;</label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-right-fibula-dist">dist.</label><br>
                                             <input type="checkbox" id="lower-right-fibula-dist" name="lower-right-fibula-dist" value="lower-right-fibula-dist">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-right-fibula-mid">mid.</label><br>
                                             <input type="checkbox" id="lower-right-fibula-mid" name="lower-right-fibula-mid" value="lower-right-fibula-mid">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-right-fibula-prox">prox.</label><br>
                                             <input type="checkbox" id="lower-right-fibula-prox" name="lower-right-fibula-prox" value="lower-right-fibula-prox">
                                         </div>
@@ -216,7 +224,7 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-right-foot">foot</label><br>
                                     <div class="row mt-2">
                                         <div class="col-md-6">
-                                            <h6>Foot:</h6>
+                                        <button type="button" id="lower-right-foot-btn" class="btn btn-primary">Foot</button>
                                         </div>
                                     </div>
                                     <div class="row mt-1">
@@ -240,7 +248,7 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-md-7">
                                     <label>cuneiform</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1 nopadding">
+                                        <div class="col-md-1">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -427,7 +435,7 @@ include_once __DIR__ . '/../_header.php';
                 </div> <!-- col-md-6 -->
                 <div class="col-md-6 border-left">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <h4><strong>Left</strong></h4><br>
                             <input type="checkbox" id="lower-left-longitudinal" name="lower-left-longitudinal" value="lower-left-longitudinal">
                             <label for="lower-left-longitudinal">longitudinal</label><br>
@@ -439,14 +447,13 @@ include_once __DIR__ . '/../_header.php';
                             <label for="lower-left-congenital">congenital</label><br>
                             <input type="checkbox" id="lower-left-acquired" name="lower-left-acquired" value="lower-left-acquired">
                             <label for="lower-left-acquired">acquired</label><br>
-                            <input type="checkbox" id="lower-left-tumor" name="lower-left-tumor" value="lower-left-tumor">
-                            <label for="lower-left-tumor">tumor</label>
-                            <input id="lower-left-tumor-date" type="text" placeholder="mm/dd/yyyy"><br>
-                            <input type="checkbox" id="lower-left-trauma" name="lower-left-trauma" value="lower-left-trauma">
-                            <label for="lower-left-trauma">trauma</label>
-                            <input id="lower-left-trauma-date" type="text" placeholder="mm/dd/yyyy"><br>
+                            
                             <div class="row">
                                 <div class="col-md-6">
+                                    <input type="checkbox" id="lower-left-tumor" name="lower-left-tumor" value="lower-left-tumor">
+                                    <label for="lower-left-tumor">tumor</label><br>
+                                    <input type="checkbox" id="lower-left-trauma" name="lower-left-trauma" value="lower-left-trauma">
+                                    <label for="lower-left-trauma">trauma</label><br>
                                     <input type="checkbox" id="lower-left-burn" name="lower-left-burn" value="lower-left-burn">
                                     <label for="lower-left-burn">burn</label><br>
                                     <input type="checkbox" id="lower-left-infection" name="lower-left-infection" value="lower-left-infection">
@@ -455,6 +462,8 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-left-lawnmower">lawnmower</label><br>
                                 </div>
                                 <div class="col-md-6">
+                                <input id="lower-left-tumor-date" name="lower-left-tumor-date" type="text" placeholder="mm/dd/yyyy" disabled><br>
+                                <input id="lower-left-trauma-date" name="lower-left-trauma-date" type="text" placeholder="mm/dd/yyyy" disabled><br>
                                     <input type="checkbox" id="lower-left-mvc" name="lower-left-mvc" value="lower-left-mvc">
                                     <label for="lower-left-mvc">MVC</label><br>
                                     <input type="checkbox" id="lower-left-recreational" name="lower-left-recreational" value="lower-left-recreational">
@@ -465,18 +474,27 @@ include_once __DIR__ . '/../_header.php';
                             </div>
                             <input id="lower-left-other" type="text" placeholder="Other"><br><br>
 
-                            <select id="lower-left-classification" name="lower-left-classification" style="width: 125px;">
-                                <option value="" disabled selected hidden>Classification</option>
-                                <option value="NULL">-</option>
-                            </select>
-                            <button id = "lower-left-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
-
+                            <div class="row">
+                                <div class="col-md-7">
+                                <select class="selectpicker" id="lower-left-classification" name="lower-left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                </div>
+                                <div class="col-md-5">
+                                    <button id = "lower-left-classification-add" type="button" class="btn btn-sm btn-primary no-top-margin"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                                </div>
+                            </div>
 
                             <textarea id="lower-left-notes" name="lower-left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
-                            <button id="lower-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <select class="selectpicker" id="lower-left-surgeries" name="lower-left-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                </div>
+                                <div class="col-md-5">
+                                    <button id="lower-left-surgical-pro" class="btn btn-primary btn-sm no-top-margin" type="button">+Add</button><br>
+                                </div>
+                            </div>
                             <ul id="lower-left-surgery-list" name="lower-left-surgery-list" style="display:none;"></ul>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                             <h5>Deformities/Missing Bones</h5><br>
                             <div class="row">
                                 <div class="col-md-6">
@@ -484,18 +502,18 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-left-pelvis">pelvis</label><br>
                                     <label>femur</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1 nopadding">
+                                        <div class="col-md-1">
                                             <label>&#8627;</label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-left-femur-dist">dist.</label><br>
                                             <input type="checkbox" id="lower-left-femur-dist" name="lower-left-femur-dist" value="lower-left-femur-dist">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-left-femur-mid">mid.</label><br>
                                             <input type="checkbox" id="lower-left-femur-mid" name="lower-left-femur-mid" value="lower-left-femur-mid">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-left-femur-prox">prox.</label><br>
                                             <input type="checkbox" id="lower-left-femur-prox" name="lower-left-femur-prox" value="lower-left-femur-prox">
                                         </div>
@@ -520,36 +538,36 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-md-5">
                                     <label>tibia</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1 nopadding">
+                                        <div class="col-md-1">
                                             <label>&#8627;</label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-left-tibia-dist">dist.</label><br>
                                             <input type="checkbox" id="lower-left-tibia-dist" name="lower-left-tibia-dist" value="lower-left-tibia-dist">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-left-tibia-mid">mid.</label><br>
                                             <input type="checkbox" id="lower-left-tibia-mid" name="lower-left-tibia-mid" value="lower-left-tibia-mid">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-left-tibia-prox">prox.</label><br>
                                             <input type="checkbox" id="lower-left-tibia-prox" name="lower-left-tibia-prox" value="lower-left-tibia-prox">
                                         </div>
                                     </div>
                                     <label>fibula</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1 nopadding">
+                                        <div class="col-md-1">
                                             <label>&#8627;</label>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-left-fibula-dist">dist.</label><br>
                                             <input type="checkbox" id="lower-left-fibula-dist" name="lower-left-fibula-dist" value="lower-left-fibula-dist">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-left-fibula-mid">mid.</label><br>
                                             <input type="checkbox" id="lower-left-fibula-mid" name="lower-left-fibula-mid" value="lower-left-fibula-mid">
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-3">
                                             <label for="lower-left-fibula-prox">prox.</label><br>
                                             <input type="checkbox" id="lower-left-fibula-prox" name="lower-left-fibula-prox" value="lower-left-fibula-prox">
                                         </div>
@@ -558,7 +576,7 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-left-foot">foot</label><br>
                                     <div class="row mt-2">
                                         <div class="col-md-6">
-                                            <h6>Foot:</h6>
+                                        <button type="button" id="lower-left-foot-btn" class="btn btn-primary">Foot</button>
                                         </div>
                                     </div>
                                     <div class="row mt-1">
@@ -582,7 +600,7 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-md-7">
                                     <label>cuneiform</label><br>
                                     <div class="row">
-                                        <div class="col-md-1 offset-md-1 nopadding">
+                                        <div class="col-md-1">
                                             <label>&#8627;</label>
                                         </div>
                                         <div class="col-md-2">
@@ -815,8 +833,8 @@ include_once __DIR__ . '/../_header.php';
                             <label for="right-trauma">trauma</label><br>
                         </div>
                         <div class="col-7">
-                            <input id="right-tumor-date" type="text" size=12 placeholder="mm/dd/yyyy"><br>
-                            <input id="right-trauma-date" type="text" size=12 placeholder="mm/dd/yyyy"><br>
+                            <input id="right-tumor-date" name="right-tumor-date" type="text" size=12 placeholder="mm/dd/yyyy" disabled><br>
+                            <input id="right-trauma-date" name="right-trauma-date" type="text" size=12 placeholder="mm/dd/yyyy" disabled><br>
                         </div>
                     </div>
                     <div class="row">
@@ -840,14 +858,25 @@ include_once __DIR__ . '/../_header.php';
 
                     <input type="text" name="right-other" placeholder="Other"><br><br><br>
 
-                    <select id="right-classification" name="right-classification" style="width: 125px;">
-                        <option value="NULL">-</option>
-                        <option value="" disabled selected hidden>Classification</option>
-                    </select>
-                    <button id = "right-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                    <div class="row">
+                        <div class="col-md-7">
+                        <select class="selectpicker" id="right-classification" name="right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                        </div>
+                        <div class="col-md-5">
+                            <button id = "right-classification-add" type="button" class="btn btn-sm btn-primary no-top-margin"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                        </div>
+                    </div>
 
                     <textarea id="right-notes" name="right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
-                    <button id="upper-right-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <select class="selectpicker" id="upper-right-surgeries" name="upper-right-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                        </div>
+                        <div class="col-md-5">
+                            <button id="upper-right-surgical-pro" class="btn btn-primary btn-sm no-top-margin" type="button">+Add</button><br>
+                        </div>
+                    </div>
                     <ul id="upper-right-surgery-list" name="upper-right-surgery-list" style="display:none;"></ul>
                 </div>
                 <div class="col-md-3">
@@ -856,7 +885,7 @@ include_once __DIR__ . '/../_header.php';
                         <div class="col-6">
                             <input type="checkbox" class="right-checkboxes" id="right-scapula" name="right-scapula" value="right-scapula"/>
                             <label for="right-scapula">scapula</label><br>
-                                humerus<br>
+                                <label>humerus</label><br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -881,7 +910,7 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
-                                radius<br>
+                                <label>radius</label><br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -906,7 +935,7 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
-                                ulna<br>
+                                <label>ulna<label><br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -955,7 +984,7 @@ include_once __DIR__ . '/../_header.php';
                     <u>Hand</u><br>
                     <div class="row">
                         <div class="col-10 border-left">
-                            phalanges<br>
+                            <label>phalanges</label><br>
                             <div class="row">
                                 <div class="col-2">
                                     &#8627
@@ -991,7 +1020,7 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                 </div>
                             </div>
-                            metacarpals<br>
+                            <label>metacarpals</label><br>
                             <div class="row">
                                 <div class="col-2">
                                     &#8627
@@ -1050,8 +1079,8 @@ include_once __DIR__ . '/../_header.php';
                             <label for="left-trauma">trauma</label><br>
                         </div>
                         <div class="col-7">
-                            <input id="right-tumor-date" type="text" size=12 placeholder="mm/dd/yyyy"><br>
-                            <input id="right-trauma-date" type="text" size=12 placeholder="mm/dd/yyyy"><br>
+                            <input id="left-tumor-date" name="left-tumor-date" type="text" size=12 placeholder="mm/dd/yyyy" disabled><br>
+                            <input id="left-trauma-date" name="left-trauma-date" type="text" size=12 placeholder="mm/dd/yyyy" disabled><br>
                         </div>
                     </div>
                     <div class="row">
@@ -1074,15 +1103,24 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <input type="text" name="left-other" placeholder="Other"><br><br><br>
-
-                    <select id="left-classification" name="left-classification" style="width: 125px;">
-                        <option value="" disabled selected hidden>Classification</option>
-                        <option value="NULL">-</option>
-                    </select>
-                    <button id = "left-classification-add" type="button" class="btn btn-sm btn-primary ml-2"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                    <div class="row">
+                        <div class="col-md-7">
+                        <select class="selectpicker" id="left-classification" name="left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                        </div>
+                        <div class="col-md-5">
+                            <button id="left-classification-add" type="button" class="btn btn-sm btn-primary no-top-margin"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                        </div>
+                    </div>
 
                     <textarea id="left-notes" name="left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
-                    <button id="upper-left-surgical-pro" class="btn btn-primary" type="button" onclick="showSurgicalModal()">+ Surgery</button><br>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <select class="selectpicker" id="upper-left-surgeries" name="upper-left-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                        </div>
+                        <div class="col-md-5">
+                            <button id="upper-left-surgical-pro" class="btn btn-primary btn-sm no-top-margin" type="button">+Add</button><br>
+                        </div>    
+                    </div>  
                     <ul id="upper-left-surgery-list" name="upper-left-surgery-list" style="display:none;"></ul>
                 </div>
                 <div class="col-md-3">
@@ -1091,7 +1129,7 @@ include_once __DIR__ . '/../_header.php';
                         <div class="col-6">
                             <input type="checkbox" class="left-checkboxes" id="left-scapula" name="left-scapula" value="left-scapula"/>
                             <label for="left-scapula">scapula</label><br>
-                                humerus<br>
+                                <label>humerus</label><br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -1116,7 +1154,7 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
-                                radius<br>
+                                <label>radius<label><br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -1141,7 +1179,7 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
-                                ulna<br>
+                                <label>ulna</label><br>
                                 <div class="row">
                                     <div class="col-1">
                                         &#8627
@@ -1191,7 +1229,7 @@ include_once __DIR__ . '/../_header.php';
                     <u>Hand</u><br>
                     <div class="row">
                         <div class="col-10 border-left">
-                            phalanges<br>
+                            <label>phalanges</label><br>
                             <div class="row">
                                 <div class="col-2">
                                     &#8627
@@ -1227,7 +1265,7 @@ include_once __DIR__ . '/../_header.php';
                                     </div>
                                 </div>
                             </div>
-                            metacarpals<br>
+                            <label>metacarpals</label><br>
                             <div class="row">
                                 <div class="col-2">
                                     &#8627
@@ -1281,23 +1319,32 @@ include_once __DIR__ . '/../_header.php';
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-4 left-modal-stuff">
-                            <label for="surgery-name">Surgery Name: </label>
-                            <input type="text" id="surgery-name" name="surgery-name"/><br>
-                            
-                            <label for="surgery-date">Surgery Date: </label>
-                            <input type="text" id="surgery-date" name="surgery-date" placeholder="mm/dd/yyyy"/><br>
-
-                            <label for="surgeon">Attending Surgeon: </label>
-                            <input type="text" id="surgeon" name="surgeon"/><br>
-
-                            <label for="age">Age: </label>
-                            <input type="text" id="age" name="age"/><br>
+                    <div class="row surgery-top">
+                        <div class="col-md-3 form-floating">                    
+                            <input class="form-control" style="pointer-events: auto;" type="text" id="surgery-date" name="surgery-date" placeholder="Surgery Date"/>
+                            <label for="surgery-date">Surgery Date </label>
                         </div>
-                        <div class="col-md-8 right-modal-stuff">
-                            <label for="surgery-notes">Notes: </label>
-                            <textarea id="surgery-notes" name="surgery-notes"></textarea>
+                        <div class="col-md-3 form-floating">
+                            <input class="form-control" style="pointer-events: auto;" type="text" id="surgeon" name="surgeon" placeholder="Attending Surgeon"/>
+                            <label for="surgeon">Attending Surgeon </label>
+                        </div>
+                        <div class="col-md-3 form-floating">
+                            <input class="form-control" style="pointer-events: auto;" type="text" id="age" name="age" placeholder="Age"/>
+                            <label for="age">Age </label>
+                        </div>
+                        <div class="col-md-3 form-floating">
+                            <input class="form-control" style="pointer-events: auto;" type="text" id="CBT-code" name="CBT-code" placeholder="CBT Code"/>
+                            <label for="CBT-code">CBT Code </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 left-modal-stuff input-group">
+                            <span class="input-group-text">Surgery Name</span>
+                            <textarea id="surgery-name" name="surgery-name" class="form-control" aria-label="Surgery Name"></textarea>
+                        </div>
+                        <div class="col-md-6 right-modal-stuff input-group">
+                            <span class="input-group-text">Notes</span>
+                            <textarea id="surgery-notes" name="surgery-notes" class="form-control" aria-label="Notes"></textarea>
                         </div>
                     </div>
                 </div>
@@ -1342,7 +1389,6 @@ include_once __DIR__ . '/../_header.php';
     </div>
 
     <script type="text/javascript">
-        var surgery_counter = 0;
         var surgery_side = null;
         
         function showSurgicalModal() {
@@ -1374,101 +1420,108 @@ include_once __DIR__ . '/../_header.php';
 
         function addSurgery(el){
             let sub_button = $(el);
-            if (sub_button.attr('data-update-id') == ''){
-                if ($('#'+surgery_side+'-surgery-list').css('display') == 'none'){
-                    $('#'+surgery_side+'-surgery-list').css('display', '');
-                }
-                let surg_name = $('#surgicalModal #surgery-name').val();
-                if (surg_name == "") {
-                    showError("Surgery name cannot be blank.");
-                    return false;
-                }
-                let surg_date = $('#surgicalModal #surgery-date').val();
-                if (surg_date == "") {
-                    showError("Date cannot be blank.");
-                    return false;
-                }
-                surg_date = Date.parse(surg_date);
-                if (isNaN(surg_date)){
-                    showError("Cannot parse date.");
-                    return false;
-                }
-                let surgeon = $('#surgicalModal #surgeon').val();
-                if (surgeon == "") {
-                    showError("Attending surgeon cannot be blank.");
-                    return false;
-                }
-                let age = $('#surgicalModal #age').val();
-                if (age == ""){
-                    showError("Age cannot be blank.");
-                    return false;
-                }
-                if(isNaN(age)){
-                    showError("Age must be a number.");
-                    return false;
-                }
-                let notes = $('#surgicalModal #surgery-notes').val();
-
-                let surgery_info = {
-                    "surg-name": surg_name,
-                    "surg-date": surg_date,
-                    "surgeon": surgeon,
-                    "age": age,
-                    "notes": notes
-                }
-                //base64 encode json obj
-                let encoded_surg = btoa(JSON.stringify(surgery_info));
-                $('#'+surgery_side+'-surgery-list').append("<li id='"+surgery_side+"-surgery-"+surgery_counter+"' data-value="+ encoded_surg +">"+ surg_name +"</li>");
-                surgery_counter += 1;
-                $('#surgicalModal').modal('hide');
-                showSuccess("Added Surgery");
-            } else {
-                let target_li = sub_button.attr('data-update-id');
-                let surg_name = $('#surgicalModal #surgery-name').val();
-                if (surg_name == "") {
-                    showError("Surgery name cannot be blank.");
-                    return false;
-                }
-                let surg_date = $('#surgicalModal #surgery-date').val();
-                if (surg_date == "") {
-                    showError("Date cannot be blank.");
-                    return false;
-                }
-                surg_date = Date.parse(surg_date);
-                if (isNaN(surg_date)){
-                    showError("Cannot parse date.");
-                    return false;
-                }
-                let surgeon = $('#surgicalModal #surgeon').val();
-                if (surgeon == "") {
-                    showError("Attending surgeon cannot be blank.");
-                    return false;
-                }
-                let age = $('#surgicalModal #age').val();
-                if (age == ""){
-                    showError("Age cannot be blank.");
-                    return false;
-                }
-                if(isNaN(age)){
-                    showError("Age must be a number.");
-                    return false;
-                }
-                let notes = $('#surgicalModal #surgery-notes').val();
-
-                let surgery_info = {
-                    "surg-name": surg_name,
-                    "surg-date": surg_date,
-                    "surgeon": surgeon,
-                    "age": age,
-                    "notes": notes
-                }
-                //base64 encode json obj
-                let encoded_surg = btoa(JSON.stringify(surgery_info));
-                $('#'+target_li).attr('data-value', encoded_surg);
-                $('#'+target_li).html(surg_name);
-                $('#surgicalModal').modal('hide');
-                showSuccess("Updated Surgery");
+            // if (sub_button.attr('data-update-id') == ''){
+                // if ($('#'+surgery_side+'-surgery-list').css('display') == 'none'){
+                //     $('#'+surgery_side+'-surgery-list').css('display', '');
+                // }
+            let surg_date = $('#surgicalModal #surgery-date').val();
+            if (surg_date == "") {
+                showError("Date cannot be blank.");
+                return false;
             }
+            surg_date = Date.parse(surg_date);
+            if (isNaN(surg_date)){
+                showError("Cannot parse date.");
+                return false;
+            }
+            let surgeon = $('#surgicalModal #surgeon').val();
+            if (surgeon == "") {
+                showError("Attending surgeon cannot be blank.");
+                return false;
+            }
+            let age = $('#surgicalModal #age').val();
+            if (age == ""){
+                showError("Age cannot be blank.");
+                return false;
+            }
+            if(isNaN(age)){
+                showError("Age must be a number.");
+                return false;
+            }
+            let cbt_code = $('#surgicalModal #CBT-code').val();
+            if (cbt_code == ""){
+                showError("CBT code cannot be blank.");
+                return false;
+            }
+            let surg_name = $('#surgicalModal #surgery-name').val();
+            if (surg_name == "") {
+                showError("Surgery name cannot be blank.");
+                return false;
+            }
+            let notes = $('#surgicalModal #surgery-notes').val();
+
+            let surgery_info = {
+                "surg-name": surg_name,
+                "surg-date": surg_date,
+                "surgeon": surgeon,
+                "age": age,
+                "notes": notes,
+                "cbt": cbt_code
+            }
+            //base64 encode json obj
+            let encoded_surg = btoa(JSON.stringify(surgery_info));
+            // $('#'+surgery_side+'-surgery-list').append("<li id='"+surgery_side+"-surgery-"+surgery_counter+"' data-value="+ encoded_surg +">"+ surg_name +"</li>");
+            $('#'+surgery_side+'-surgeries').append("<option id='"+surgery_side+"-surgery-"+surg_name+"' value="+ encoded_surg +">"+ surg_name +"</option>");
+            $('#'+surgery_side+'-surgeries').selectpicker('refresh');
+            $('#surgicalModal').modal('hide');
+            showSuccess("Added Surgery to List");
+            // } else {
+            //     let target_li = sub_button.attr('data-update-id');
+            //     let surg_name = $('#surgicalModal #surgery-name').val();
+            //     if (surg_name == "") {
+            //         showError("Surgery name cannot be blank.");
+            //         return false;
+            //     }
+            //     let surg_date = $('#surgicalModal #surgery-date').val();
+            //     if (surg_date == "") {
+            //         showError("Date cannot be blank.");
+            //         return false;
+            //     }
+            //     surg_date = Date.parse(surg_date);
+            //     if (isNaN(surg_date)){
+            //         showError("Cannot parse date.");
+            //         return false;
+            //     }
+            //     let surgeon = $('#surgicalModal #surgeon').val();
+            //     if (surgeon == "") {
+            //         showError("Attending surgeon cannot be blank.");
+            //         return false;
+            //     }
+            //     let age = $('#surgicalModal #age').val();
+            //     if (age == ""){
+            //         showError("Age cannot be blank.");
+            //         return false;
+            //     }
+            //     if(isNaN(age)){
+            //         showError("Age must be a number.");
+            //         return false;
+            //     }
+            //     let notes = $('#surgicalModal #surgery-notes').val();
+
+            //     let surgery_info = {
+            //         "surg-name": surg_name,
+            //         "surg-date": surg_date,
+            //         "surgeon": surgeon,
+            //         "age": age,
+            //         "notes": notes
+            //     }
+            //     //base64 encode json obj
+            //     let encoded_surg = btoa(JSON.stringify(surgery_info));
+            //     $('#'+target_li).attr('data-value', encoded_surg);
+            //     $('#'+target_li).html(surg_name);
+            //     $('#surgicalModal').modal('hide');
+            //     showSuccess("Updated Surgery");
+            // }
         }
 
         var checkedBoxes = 0
@@ -1536,11 +1589,11 @@ include_once __DIR__ . '/../_header.php';
             dropdown = classificationId.slice(0, -4);
             select = document.getElementById(dropdown);
             select.add(new Option(name));
+            $(select).selectpicker('refresh');
             $('#classificationModal').modal('hide');
         }
 
         // jQuery Below
-
         $('#lower-right-classification-add, #lower-left-classification-add, #right-classification-add, #left-classification-add').click(function() {
             classificationId = $(this).attr('id');
         });
@@ -1624,18 +1677,6 @@ include_once __DIR__ . '/../_header.php';
             $('#surgicalModal').modal('show');
         });
 
-        // submit whatever is on the screen either upper or lower
-        //$('#submit-entry').click(function(){
-        //    if(confirm("Are you sure you want to submit entry?")) {
-        //        if ($('#upper-extremity-btn').hasClass('active')) {
-        //            $('#upper-extremity-form').trigger('submit');
-        //        } else {
-        //            $('#lower-extremity-form').trigger('submit');
-        //        }
-        //    }
-        //});
-
-
         // this makes the buttons show diff things
         $('#lower-extremity-btn').click(function(){
             if ($('#upper-extremity-btn').hasClass('active')) {
@@ -1662,25 +1703,16 @@ include_once __DIR__ . '/../_header.php';
         //     $("#acquired-date").datepicker();
         //     //$("#tumor-date").datepicker();
         // });
-//         $('#submit-entry').click(function(){
-//
-//             if(confirm("Are you sure you want to submit entry?")) {
-//                 $.ajax({
-//
-//                     url : '/new-entry/add-entry',
-//                     type : 'POST',
-//                     data :$('#extremity-form :input').serialize(),
-//
-//                     success : function(data) {
-//                         console.log('Data: '+JSON.stringify(data));
-//                     },
-//                     error : function(request,error)
-//                     {
-//                         console.log("Request: "+JSON.stringify(request));
-//                     }
-//                 });
-//             }
-//         });
+
+        $('#lower-right-tumor, #lower-right-trauma, #lower-left-tumor, #lower-left-trauma, #right-tumor, #right-trauma, #left-tumor, #left-trauma').on('change', function() {
+            var elem = $(this).attr('id');
+            if($(this).is(':checked')) {
+                $('#'+elem+'-date').prop('disabled', false);
+            } else {
+                $('#'+elem+'-date').prop('disabled', true);
+                $('#'+elem+'-date').val('');
+            }
+        });
 
         $('#extremity-form').submit(function(){
 
@@ -1693,11 +1725,15 @@ include_once __DIR__ . '/../_header.php';
                     }
                 });
 
-                $.ajax({
+                let the_entry = $('#extremity-form :input').serializeArray();
+                let filtered_entry = the_entry.filter(function(v) {
+                    return v['value'] !== "";
+                });
 
+                $.ajax({
                     url : '/new-entry/add-entry',
                     type : 'POST',
-                    data :$('#extremity-form :input').serializeArray(),
+                    data : filtered_entry,
 
                     success : function(data) {
                         console.log('Data: '+JSON.stringify(data));

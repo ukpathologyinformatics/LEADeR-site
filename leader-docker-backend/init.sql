@@ -84,5 +84,23 @@ CREATE TABLE patient_surgery (
 );
 END
 
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='classifications' and xtype='U')
+BEGIN
+CREATE TABLE classifications (
+	code_id		VARCHAR(64) PRIMARY KEY,
+	class_name	VARCHAR(64) NOT NULL,
+	location	CHAR(2) NOT NULL /* LL, LR, UL, UR */
+);
+END
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='patient_class' and xtype='U')
+BEGIN
+CREATE TABLE patient_class (
+	patient_id			BIGINT REFERENCES patient(patient_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	code_id				VARCHAR(64) REFERENCES classifications(code_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT PK_patient_class PRIMARY KEY (patient_id, code_id)
+);
+END
+
 
 /* RETURN ID CREATED BY AUTOINCREMENT BY USING `SELECT SCOPE_IDENTITY()` AFTER THE INSERT*/

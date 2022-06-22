@@ -12,6 +12,7 @@
 <script src="/js/buttons.colVis.min.js"></script>
 <script src="/js/toastify.min.js"></script>
 <script src="/js/modals.js"></script>
+<script type="text/javascript" src="/js/bootstrap-select.min.js"></script>
 <script type="text/javascript">
     $(function() {
 <?php if (isset($_SESSION['FLASH_ERROR'])): ?>

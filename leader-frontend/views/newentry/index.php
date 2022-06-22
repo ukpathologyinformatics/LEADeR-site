@@ -146,7 +146,7 @@ include_once __DIR__ . '/../_header.php';
                             <h5>Deformities/Missing Bones</h5><br>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="checkbox" id="lower-right-pelvis" name="lower-right-pelvis" value="lower-right-pelvis">
+                                    <input type="checkbox" class="lower-right-checkboxes" id="lower-right-pelvis" name="lower-right-pelvis" value="lower-right-pelvis">
                                     <label for="lower-right-pelvis">pelvis</label><br>
                                     <label>femur</label><br>
                                     <div class="row">
@@ -155,30 +155,30 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-right-femur-dist">dist.</label><br>
-                                            <input type="checkbox" id="lower-right-femur-dist" name="lower-right-femur-dist" value="lower-right-femur-dist">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-femur-dist" name="lower-right-femur-dist" value="lower-right-femur-dist">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-right-femur-mid">mid.</label><br>
-                                            <input type="checkbox" id="lower-right-femur-mid" name="lower-right-femur-mid" value="lower-right-femur-mid">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-femur-mid" name="lower-right-femur-mid" value="lower-right-femur-mid">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-right-femur-prox">prox.</label><br>
-                                            <input type="checkbox" id="lower-right-femur-prox" name="lower-right-femur-prox" value="lower-right-femur-prox">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-femur-prox" name="lower-right-femur-prox" value="lower-right-femur-prox">
                                         </div>
                                     </div>
-                                    <input type="checkbox" id="lower-right-patella" name="lower-right-patella" value="lower-right-patella">
+                                    <input type="checkbox" class="lower-right-checkboxes" id="lower-right-patella" name="lower-right-patella" value="lower-right-patella">
                                     <label for="lower-right-patella">patella</label><br>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="checkbox" id="lower-right-tarsals" name="lower-right-tarsals" value="lower-right-tarsals">
+                                    <input type="checkbox" class="lower-right-checkboxes" id="lower-right-tarsals" name="lower-right-tarsals" value="lower-right-tarsals">
                                     <label for="lower-right-tarsals">tarsals</label><br>
-                                    <input type="checkbox" id="lower-right-calcaneus" name="lower-right-calcaneus" value="lower-right-calcaneus">
+                                    <input type="checkbox" class="lower-right-checkboxes" id="lower-right-calcaneus" name="lower-right-calcaneus" value="lower-right-calcaneus">
                                     <label for="lower-right-calcaneus">calcaneus</label><br>
-                                    <input type="checkbox" id="lower-right-talus" name="lower-right-talus" value="lower-right-talus">
+                                    <input type="checkbox" class="lower-right-checkboxes" id="lower-right-talus" name="lower-right-talus" value="lower-right-talus">
                                     <label for="lower-right-talus">talus</label><br>
-                                    <input type="checkbox" id="lower-right-navicular" name="lower-right-navicular" value="lower-right-navicular">
+                                    <input type="checkbox" class="lower-right-checkboxes" id="lower-right-navicular" name="lower-right-navicular" value="lower-right-navicular">
                                     <label for="lower-right-navicular">navicular</label><br>
-                                    <input type="checkbox" id="lower-right-cuboid" name="lower-right-cuboid" value="lower-right-cuboid">
+                                    <input type="checkbox" class="lower-right-checkboxes" id="lower-right-cuboid" name="lower-right-cuboid" value="lower-right-cuboid">
                                     <label for="lower-right-cuboid">cuboid</label><br>
                                 </div>
                             </div>
@@ -191,15 +191,15 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-right-tibia-dist">dist.</label><br>
-                                            <input type="checkbox" id="lower-right-tibia-dist" name="lower-right-tibia-dist" value="lower-right-tibia-dist">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-tibia-dist" name="lower-right-tibia-dist" value="lower-right-tibia-dist">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-right-tibia-mid">mid.</label><br>
-                                            <input type="checkbox" id="lower-right-tibia-mid" name="lower-right-tibia-mid" value="lower-right-tibia-mid">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-tibia-mid" name="lower-right-tibia-mid" value="lower-right-tibia-mid">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-right-tibia-prox">prox.</label><br>
-                                            <input type="checkbox" id="lower-right-tibia-prox" name="lower-right-tibia-prox" value="lower-right-tibia-prox">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-tibia-prox" name="lower-right-tibia-prox" value="lower-right-tibia-prox">
                                         </div>
                                     </div>
                                     <label>fibula</label><br>
@@ -209,18 +209,18 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-right-fibula-dist">dist.</label><br>
-                                            <input type="checkbox" id="lower-right-fibula-dist" name="lower-right-fibula-dist" value="lower-right-fibula-dist">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-fibula-dist" name="lower-right-fibula-dist" value="lower-right-fibula-dist">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-right-fibula-mid">mid.</label><br>
-                                            <input type="checkbox" id="lower-right-fibula-mid" name="lower-right-fibula-mid" value="lower-right-fibula-mid">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-fibula-mid" name="lower-right-fibula-mid" value="lower-right-fibula-mid">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-right-fibula-prox">prox.</label><br>
-                                            <input type="checkbox" id="lower-right-fibula-prox" name="lower-right-fibula-prox" value="lower-right-fibula-prox">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-fibula-prox" name="lower-right-fibula-prox" value="lower-right-fibula-prox">
                                         </div>
                                     </div>
-                                    <input type="checkbox" id="lower-right-foot" name="lower-right-foot" value="lower-right-foot">
+                                    <input type="checkbox" onclick="fillLowerRightCheckboxes()" id="lower-right-foot" name="lower-right-foot" value="lower-right-foot">
                                     <label for="lower-right-foot">foot</label><br>
                                     <div class="row mt-2">
                                         <div class="col-md-6">
@@ -253,15 +253,15 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-2">
                                             <label for="lower-right-cuneiform-med">med.</label><br>
-                                            <input type="checkbox" id="lower-right-cuneiform-med" name="lower-right-cuneiform-med" value="lower-right-cuneiform-med">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-cuneiform-med" name="lower-right-cuneiform-med" value="lower-right-cuneiform-med">
                                         </div>
                                         <div class="col-md-4">
                                             <label for="lower-right-cuneiform-intermed">intermed.</label><br>
-                                            <input type="checkbox" id="lower-right-cuneiform-intermed" name="lower-right-cuneiform-intermed" value="lower-right-cuneiform-intermed">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-cuneiform-intermed" name="lower-right-cuneiform-intermed" value="lower-right-cuneiform-intermed">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="lower-right-cuneiform-lat">lat.</label><br>
-                                            <input type="checkbox" id="lower-right-cuneiform-lat" name="lower-right-cuneiform-lat" value="lower-right-cuneiform-lat">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-cuneiform-lat" name="lower-right-cuneiform-lat" value="lower-right-cuneiform-lat">
                                         </div>
                                     </div>
                                     <label>forefoot</label><br>
@@ -276,23 +276,23 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-5">5</label><br>
-                                            <input type="checkbox" id="lower-right-phalanges-5" name="lower-right-phalanges-5" value="lower-right-phalanges-5">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-phalanges-5" name="lower-right-phalanges-5" value="lower-right-phalanges-5">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-4">4</label><br>
-                                            <input type="checkbox" id="lower-right-phalanges-4" name="lower-right-phalanges-4" value="lower-right-phalanges-4">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-phalanges-4" name="lower-right-phalanges-4" value="lower-right-phalanges-4">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-3">3</label><br>
-                                            <input type="checkbox" id="lower-right-phalanges-3" name="lower-right-phalanges-3" value="lower-right-phalanges-3">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-phalanges-3" name="lower-right-phalanges-3" value="lower-right-phalanges-3">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-2">2</label><br>
-                                            <input type="checkbox" id="lower-right-phalanges-2" name="lower-right-phalanges-2" value="lower-right-phalanges-2">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-phalanges-2" name="lower-right-phalanges-2" value="lower-right-phalanges-2">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-phalanges-1">1</label><br>
-                                            <input type="checkbox" id="lower-right-phalanges-1" name="lower-right-phalanges-1" value="lower-right-phalanges-1">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-phalanges-1" name="lower-right-phalanges-1" value="lower-right-phalanges-1">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -306,23 +306,23 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-5">5</label><br>
-                                            <input type="checkbox" id="lower-right-metatarsals-5" name="lower-right-metatarsals-5" value="lower-right-metatarsals-5">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-metatarsals-5" name="lower-right-metatarsals-5" value="lower-right-metatarsals-5">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-4">4</label><br>
-                                            <input type="checkbox" id="lower-right-metatarsals-4" name="lower-right-metatarsals-4" value="lower-right-metatarsals-4">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-metatarsals-4" name="lower-right-metatarsals-4" value="lower-right-metatarsals-4">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-3">3</label><br>
-                                            <input type="checkbox" id="lower-right-metatarsals-3" name="lower-right-metatarsals-3" value="lower-right-metatarsals-3">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-metatarsals-3" name="lower-right-metatarsals-3" value="lower-right-metatarsals-3">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-2">2</label><br>
-                                            <input type="checkbox" id="lower-right-metatarsals-2" name="lower-right-metatarsals-2" value="lower-right-metatarsals-2">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-metatarsals-2" name="lower-right-metatarsals-2" value="lower-right-metatarsals-2">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-right-metatarsals-1">1</label><br>
-                                            <input type="checkbox" id="lower-right-metatarsals-1" name="lower-right-metatarsals-1" value="lower-right-metatarsals-1">
+                                            <input type="checkbox" class="lower-right-checkboxes" id="lower-right-metatarsals-1" name="lower-right-metatarsals-1" value="lower-right-metatarsals-1">
                                         </div>
                                     </div>
                                 
@@ -498,7 +498,7 @@ include_once __DIR__ . '/../_header.php';
                             <h5>Deformities/Missing Bones</h5><br>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="checkbox" id="lower-left-pelvis" name="lower-left-pelvis" value="lower-left-pelvis">
+                                    <input type="checkbox" class="lower-left-checkboxes" id="lower-left-pelvis" name="lower-left-pelvis" value="lower-left-pelvis">
                                     <label for="lower-left-pelvis">pelvis</label><br>
                                     <label>femur</label><br>
                                     <div class="row">
@@ -507,30 +507,30 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-left-femur-dist">dist.</label><br>
-                                            <input type="checkbox" id="lower-left-femur-dist" name="lower-left-femur-dist" value="lower-left-femur-dist">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-femur-dist" name="lower-left-femur-dist" value="lower-left-femur-dist">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-left-femur-mid">mid.</label><br>
-                                            <input type="checkbox" id="lower-left-femur-mid" name="lower-left-femur-mid" value="lower-left-femur-mid">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-femur-mid" name="lower-left-femur-mid" value="lower-left-femur-mid">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-left-femur-prox">prox.</label><br>
-                                            <input type="checkbox" id="lower-left-femur-prox" name="lower-left-femur-prox" value="lower-left-femur-prox">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-femur-prox" name="lower-left-femur-prox" value="lower-left-femur-prox">
                                         </div>
                                     </div>
-                                    <input type="checkbox" id="lower-left-patella" name="lower-left-patella" value="lower-left-patella">
+                                    <input type="checkbox" class="lower-left-checkboxes" id="lower-left-patella" name="lower-left-patella" value="lower-left-patella">
                                     <label for="lower-left-patella">patella</label><br>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="checkbox" id="lower-left-tarsals" name="lower-left-tarsals" value="lower-left-tarsals">
+                                    <input type="checkbox" class="lower-left-checkboxes" id="lower-left-tarsals" name="lower-left-tarsals" value="lower-left-tarsals">
                                     <label for="lower-left-tarsals">tarsals</label><br>
-                                    <input type="checkbox" id="lower-left-calcaneus" name="lower-left-calcaneus" value="lower-left-calcaneus">
+                                    <input type="checkbox" class="lower-left-checkboxes" id="lower-left-calcaneus" name="lower-left-calcaneus" value="lower-left-calcaneus">
                                     <label for="lower-left-calcaneus">calcaneus</label><br>
-                                    <input type="checkbox" id="lower-left-talus" name="lower-left-talus" value="lower-left-talus">
+                                    <input type="checkbox" class="lower-left-checkboxes" id="lower-left-talus" name="lower-left-talus" value="lower-left-talus">
                                     <label for="lower-left-talus">talus</label><br>
-                                    <input type="checkbox" id="lower-left-navicular" name="lower-left-navicular" value="lower-left-navicular">
+                                    <input type="checkbox" class="lower-left-checkboxes" id="lower-left-navicular" name="lower-left-navicular" value="lower-left-navicular">
                                     <label for="lower-left-navicular">navicular</label><br>
-                                    <input type="checkbox" id="lower-left-cuboid" name="lower-left-cuboid" value="lower-left-cuboid">
+                                    <input type="checkbox" class="lower-left-checkboxes" id="lower-left-cuboid" name="lower-left-cuboid" value="lower-left-cuboid">
                                     <label for="lower-left-cuboid">cuboid</label><br>
                                 </div>
                             </div>
@@ -543,15 +543,15 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-left-tibia-dist">dist.</label><br>
-                                            <input type="checkbox" id="lower-left-tibia-dist" name="lower-left-tibia-dist" value="lower-left-tibia-dist">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-tibia-dist" name="lower-left-tibia-dist" value="lower-left-tibia-dist">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-left-tibia-mid">mid.</label><br>
-                                            <input type="checkbox" id="lower-left-tibia-mid" name="lower-left-tibia-mid" value="lower-left-tibia-mid">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-tibia-mid" name="lower-left-tibia-mid" value="lower-left-tibia-mid">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-left-tibia-prox">prox.</label><br>
-                                            <input type="checkbox" id="lower-left-tibia-prox" name="lower-left-tibia-prox" value="lower-left-tibia-prox">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-tibia-prox" name="lower-left-tibia-prox" value="lower-left-tibia-prox">
                                         </div>
                                     </div>
                                     <label>fibula</label><br>
@@ -561,18 +561,18 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-left-fibula-dist">dist.</label><br>
-                                            <input type="checkbox" id="lower-left-fibula-dist" name="lower-left-fibula-dist" value="lower-left-fibula-dist">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-fibula-dist" name="lower-left-fibula-dist" value="lower-left-fibula-dist">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-left-fibula-mid">mid.</label><br>
-                                            <input type="checkbox" id="lower-left-fibula-mid" name="lower-left-fibula-mid" value="lower-left-fibula-mid">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-fibula-mid" name="lower-left-fibula-mid" value="lower-left-fibula-mid">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="lower-left-fibula-prox">prox.</label><br>
-                                            <input type="checkbox" id="lower-left-fibula-prox" name="lower-left-fibula-prox" value="lower-left-fibula-prox">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-fibula-prox" name="lower-left-fibula-prox" value="lower-left-fibula-prox">
                                         </div>
                                     </div>
-                                    <input type="checkbox" id="lower-left-foot" name="lower-left-foot" value="lower-left-foot">
+                                    <input type="checkbox" onclick="fillLowerLeftCheckboxes()" id="lower-left-foot" name="lower-left-foot" value="lower-left-foot">
                                     <label for="lower-left-foot">foot</label><br>
                                     <div class="row mt-2">
                                         <div class="col-md-6">
@@ -605,15 +605,15 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-2">
                                             <label for="lower-left-cuneiform-med">med.</label><br>
-                                            <input type="checkbox" id="lower-left-cuneiform-med" name="lower-left-cuneiform-med" value="lower-left-cuneiform-med">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-cuneiform-med" name="lower-left-cuneiform-med" value="lower-left-cuneiform-med">
                                         </div>
                                         <div class="col-md-4">
                                             <label for="lower-left-cuneiform-intermed">intermed.</label><br>
-                                            <input type="checkbox" id="lower-left-cuneiform-intermed" name="lower-left-cuneiform-intermed" value="lower-left-cuneiform-intermed">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-cuneiform-intermed" name="lower-left-cuneiform-intermed" value="lower-left-cuneiform-intermed">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="lower-left-cuneiform-lat">lat.</label><br>
-                                            <input type="checkbox" id="lower-left-cuneiform-lat" name="lower-left-cuneiform-lat" value="lower-left-cuneiform-lat">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-cuneiform-lat" name="lower-left-cuneiform-lat" value="lower-left-cuneiform-lat">
                                         </div>
                                     </div>
 
@@ -629,23 +629,23 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-5">5</label><br>
-                                            <input type="checkbox" id="lower-left-phalanges-5" name="lower-left-phalanges-5" value="lower-left-phalanges-5">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-phalanges-5" name="lower-left-phalanges-5" value="lower-left-phalanges-5">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-4">4</label><br>
-                                            <input type="checkbox" id="lower-left-phalanges-4" name="lower-left-phalanges-4" value="lower-left-phalanges-4">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-phalanges-4" name="lower-left-phalanges-4" value="lower-left-phalanges-4">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-3">3</label><br>
-                                            <input type="checkbox" id="lower-left-phalanges-3" name="lower-left-phalanges-3" value="lower-left-phalanges-3">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-phalanges-3" name="lower-left-phalanges-3" value="lower-left-phalanges-3">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-2">2</label><br>
-                                            <input type="checkbox" id="lower-left-phalanges-2" name="lower-left-phalanges-2" value="lower-left-phalanges-2">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-phalanges-2" name="lower-left-phalanges-2" value="lower-left-phalanges-2">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-phalanges-1">1</label><br>
-                                            <input type="checkbox" id="lower-left-phalanges-1" name="lower-left-phalanges-1" value="lower-left-phalanges-1">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-phalanges-1" name="lower-left-phalanges-1" value="lower-left-phalanges-1">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -659,23 +659,23 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-5">5</label><br>
-                                            <input type="checkbox" id="lower-left-metatarsals-5" name="lower-left-metatarsals-5" value="lower-left-metatarsals-5">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-metatarsals-5" name="lower-left-metatarsals-5" value="lower-left-metatarsals-5">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-4">4</label><br>
-                                            <input type="checkbox" id="lower-left-metatarsals-4" name="lower-left-metatarsals-4" value="lower-left-metatarsals-4">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-metatarsals-4" name="lower-left-metatarsals-4" value="lower-left-metatarsals-4">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-3">3</label><br>
-                                            <input type="checkbox" id="lower-left-metatarsals-3" name="lower-left-metatarsals-3" value="lower-left-metatarsals-3">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-metatarsals-3" name="lower-left-metatarsals-3" value="lower-left-metatarsals-3">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-2">2</label><br>
-                                            <input type="checkbox" id="lower-left-metatarsals-2" name="lower-left-metatarsals-2" value="lower-left-metatarsals-2">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-metatarsals-2" name="lower-left-metatarsals-2" value="lower-left-metatarsals-2">
                                         </div>
                                         <div class="col-md-1 nopadding">
                                             <label for="lower-left-metatarsals-1">1</label><br>
-                                            <input type="checkbox" id="lower-left-metatarsals-1" name="lower-left-metatarsals-1" value="lower-left-metatarsals-1">
+                                            <input type="checkbox" class="lower-left-checkboxes" id="lower-left-metatarsals-1" name="lower-left-metatarsals-1" value="lower-left-metatarsals-1">
                                         </div>
                                     </div>
                                 
@@ -960,6 +960,8 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
+                                <br><input type="checkbox" onclick="fillRightCheckboxes()" id="right-hand" name="right-hand" value="right-hand"/>
+                                <label for="right-hand">hand/wrist</label><br>
                         </div>
                         <div class="col-md-6">
                             <input type="checkbox" class="right-checkboxes" id="right-hamate" name="right-hamate" value="right-hamate"/>
@@ -978,7 +980,7 @@ include_once __DIR__ . '/../_header.php';
                             <label for="right-scaphoid">scaphoid</label><br>
                             <input type="checkbox" class="right-checkboxes" id="right-capitellum" name="right-capitellum" value="right-capitellum"/>
                             <label for="right-capitellum">capitellum</label><br>
-                            <button type="button" id="right-hand" onclick="fillRightCheckboxes()">Hand/Wrist</button>
+                            <button type="button" id="right-hand-drawing">Hand</button>
                         </div>
                     </div>
                     <u>Hand</u><br>
@@ -1204,6 +1206,9 @@ include_once __DIR__ . '/../_header.php';
                                         </div>
                                     </div>
                                 </div>
+                                <br><input type="checkbox" onclick="fillLeftCheckboxes()" id="left-hand" name="left-hand" value="left-hand"/>
+                                <label for="left-hand">hand/wrist</label><br>
+
                         </div>
                         <div class="col-md-6">
                             <input type="checkbox" class="left-checkboxes" id="left-hamate" name="left-hamate" value="left-hamate"/>
@@ -1222,7 +1227,7 @@ include_once __DIR__ . '/../_header.php';
                             <label for="left-scaphoid">scaphoid</label><br>
                             <input type="checkbox" class="left-checkboxes" id="left-capitellum" name="left-capitellum" value="left-capitellum"/>
                             <label for="left-capitellum">capitellum</label><br>
-                            <button type="button" class="left-checkboxes" id="left-hand" onclick="fillLeftCheckboxes()">Hand/Wrist</button>
+                            <button type="button" class="left-checkboxes" id="left-hand-drawing">Hand</button>
 
                         </div>
                     </div>
@@ -1524,50 +1529,75 @@ include_once __DIR__ . '/../_header.php';
             // }
         }
 
-        var checkedBoxes = 0
-        function check_box() {
-
-        }
+        var checkedRightToggle = 0;
 
         function fillRightCheckboxes() {
             var clist=document.getElementsByClassName("right-checkboxes");
-            var numChecked = 0
-            for (var i = 0; i < clist.length; ++i) {
-                if(clist[i].checked == true) {
-                    numChecked += 1
-                }
-            }
-            console.log(numChecked)
-            if(numChecked == clist.length) {
-                for (var i = 0; i < clist.length; ++i) {
-                    clist[i].checked = false;
-                }
-            }
-            else {
+            if (checkedRightToggle == 0) {
                 for (var i = 0; i < clist.length; ++i) {
                     clist[i].checked = true;
                 }
+                checkedRightToggle = 1;
+            }
+            else {
+                for (var i = 0; i < clist.length; ++i) {
+                    clist[i].checked = false;
+                }
+                checkedRightToggle = 0;
             }
         }
 
+        var checkedLeftToggle = 0;
+
         function fillLeftCheckboxes() {
             var clist=document.getElementsByClassName("left-checkboxes");
-            var numChecked = 0
-            for (var i = 0; i < clist.length; ++i) {
-                if(clist[i].checked == true) {
-                    numChecked += 1
-                }
-            }
-            console.log(numChecked)
-            if(numChecked == clist.length) {
-                for (var i = 0; i < clist.length; ++i) {
-                    clist[i].checked = false;
-                }
-            }
-            else {
+            if (checkedLeftToggle == 0) {
                 for (var i = 0; i < clist.length; ++i) {
                     clist[i].checked = true;
                 }
+                checkedLeftToggle = 1;
+            }
+            else {
+                for (var i = 0; i < clist.length; ++i) {
+                    clist[i].checked = false;
+                }
+                checkedLeftToggle = 0;
+            }
+        }
+
+        var checkedLowerRightToggle = 0;
+
+        function fillLowerRightCheckboxes() {
+            var clist=document.getElementsByClassName("lower-right-checkboxes");
+            if (checkedLowerRightToggle == 0) {
+                for (var i = 0; i < clist.length; ++i) {
+                    clist[i].checked = true;
+                }
+                checkedLowerRightToggle = 1;
+            }
+            else {
+                for (var i = 0; i < clist.length; ++i) {
+                    clist[i].checked = false;
+                }
+                checkedLowerRightToggle = 0;
+            }
+        }
+
+        var checkedLowerLeftToggle = 0;
+
+        function fillLowerLeftCheckboxes() {
+            var clist=document.getElementsByClassName("lower-left-checkboxes");
+            if (checkedLowerLeftToggle == 0) {
+                for (var i = 0; i < clist.length; ++i) {
+                    clist[i].checked = true;
+                }
+                checkedLowerLeftToggle = 1;
+            }
+            else {
+                for (var i = 0; i < clist.length; ++i) {
+                    clist[i].checked = false;
+                }
+                checkedLowerLeftToggle = 0;
             }
         }
 

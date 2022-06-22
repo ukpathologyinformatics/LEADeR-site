@@ -57,8 +57,7 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='patient_icd' and xtype='U')
 BEGIN
 CREATE TABLE patient_icd (
 	patient_id	BIGINT REFERENCES patient(patient_id) ON UPDATE CASCADE ON DELETE CASCADE,
-	icd_code	VARCHAR(7) REFERENCES icd(icd_code) ON UPDATE CASCADE ON DELETE CASCADE,
-	CONSTRAINT PK_patient_icd PRIMARY KEY (patient_id, icd_code)
+	icd_code	VARCHAR(7) REFERENCES icd(icd_code) ON UPDATE CASCADE ON DELETE CASCADE
 );
 END
 

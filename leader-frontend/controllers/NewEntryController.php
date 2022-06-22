@@ -28,9 +28,14 @@ class NewEntryController {
         $json_info = json_encode($info);
 
         DB::run("INSERT INTO patient (file_status, subj_id, first_recorded, last_updated_date, gender, race, ethnicity, dob, entry) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [$entry["file"], $entry["subject-id"], $entry["start-date"], $entry["end-date"], $entry["gender"], $entry["race"], $entry["ethnicity"], $entry["dob"], $json_info]);
-        $id = DB::run("SELECT SCOPE_IDENTITY() AS id");
-        var_dump($id);
-        DB::run("INSERT INTO patient_icd (patient_id, icd_code) VALUES (?, ?)", [$id, $entry["icd-codes"]]);
+        $stmt = DB::run("SELECT @@IDENTITY AS id");
+        #var_dump($stmt);
+        #$stmt = DB::run("SELECT SCOPE_IDENTITY() AS id");
+        if ($id = $stmt->fetch(PDO::FETCH_LAZY))
+            #var_dump($id["id"]);
+        $int_id = (int)$id["id"];
+        #var_dump($int_id);
+        DB::run("INSERT INTO patient_icd (patient_id, icd_code) VALUES (?, ?)", [$int_id, $entry["icd-codes"]]);
         $ret = array('success' => $success, 'error_message' => $error_message, 'data' => $entry);
         echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
     }

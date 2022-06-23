@@ -26,6 +26,7 @@ button {
     z-index:999;
 }
 
+
 /* Tooltip container */
 #tooltip {
     visibility: hidden;

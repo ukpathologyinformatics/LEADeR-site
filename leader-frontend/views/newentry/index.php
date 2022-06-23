@@ -102,6 +102,14 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-right-tumor">tumor</label><br>
                                     <input type="checkbox" id="lower-right-trauma" name="lower-right-trauma" value="lower-right-trauma">
                                     <label for="lower-right-trauma">trauma</label><br>
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="lower-right-tumor-date" name="lower-right-tumor-date" size=12 type="text" placeholder="mm/dd/yyyy" disabled><br>
+                                    <input id="lower-right-trauma-date" name="lower-right-trauma-date" size=12 type="text" placeholder="mm/dd/yyyy" disabled><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
                                     <input type="checkbox" id="lower-right-burn" name="lower-right-burn" value="lower-right-burn">
                                     <label for="lower-right-burn">burn</label><br>
                                     <input type="checkbox" id="lower-right-infection" name="lower-right-infection" value="lower-right-infection">
@@ -110,8 +118,6 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-right-lawnmower">lawnmower</label><br>
                                 </div>
                                 <div class="col-md-6">
-                                    <input id="lower-right-tumor-date" name="lower-right-tumor-date" type="text" placeholder="mm/dd/yyyy" disabled><br>
-                                    <input id="lower-right-trauma-date" name="lower-right-trauma-date" type="text" placeholder="mm/dd/yyyy" disabled><br>
                                     <input type="checkbox" id="lower-right-mvc" name="lower-right-mvc" value="lower-right-mvc">
                                     <label for="lower-right-mvc">MVC</label><br>
                                     <input type="checkbox" id="lower-right-recreational" name="lower-right-recreational" value="lower-right-recreational">
@@ -120,24 +126,24 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-right-vascular">vascular</label><br>
                                 </div>
                             </div>
-                            <input id="lower-right-other" type="text" placeholder="Other"><br><br>
+                            <input id="lower-right-other" class="other-box" type="text" placeholder="Other"><br><br>
 
                             <div class="row">
                                 <div class="col-md-7">
-                                    <select class="selectpicker" id="lower-right-classification" name="lower-right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                    <select class="selectpicker" data-width="fit" id="lower-right-classification" name="lower-right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                                 </div>
                                 <div class="col-md-5">
-                                    <button id = "lower-right-classification-add" type="button" class="btn btn-sm btn-primary no-top-margin"  data-toggle="modal" data-target="#classificationModal">+Add</button>
+                                    <button id = "lower-right-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button>
                                 </div>
                             </div>
 
                             <textarea id="lower-right-notes" name="lower-right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                             <div class="row">
                                 <div class="col-md-7">
-                                    <select class="selectpicker" id="lower-right-surgeries" name="lower-right-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                    <select class="selectpicker" data-width="fit" id="lower-right-surgeries" name="lower-right-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                                 </div>
                                 <div class="col-md-5">
-                                    <button id="lower-right-surgical-pro" class="btn btn-primary btn-sm no-top-margin" type="button">+Add</button>
+                                    <button id="lower-right-surgical-pro" class="btn btn-primary" type="button">+Add</button>
                                 </div>
                             </div>
                             <ul id="lower-right-surgery-list" name="lower-right-surgery-list" style="display:none;"></ul>
@@ -454,6 +460,14 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-left-tumor">tumor</label><br>
                                     <input type="checkbox" id="lower-left-trauma" name="lower-left-trauma" value="lower-left-trauma">
                                     <label for="lower-left-trauma">trauma</label><br>
+                                </div>
+                                <div class="col-md-6">
+                                    <input id="lower-left-tumor-date" name="lower-left-tumor-date" size=12 type="text" placeholder="mm/dd/yyyy" disabled><br>
+                                    <input id="lower-left-trauma-date" name="lower-left-trauma-date" size=12 type="text" placeholder="mm/dd/yyyy" disabled><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
                                     <input type="checkbox" id="lower-left-burn" name="lower-left-burn" value="lower-left-burn">
                                     <label for="lower-left-burn">burn</label><br>
                                     <input type="checkbox" id="lower-left-infection" name="lower-left-infection" value="lower-left-infection">
@@ -462,8 +476,6 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-left-lawnmower">lawnmower</label><br>
                                 </div>
                                 <div class="col-md-6">
-                                <input id="lower-left-tumor-date" name="lower-left-tumor-date" type="text" placeholder="mm/dd/yyyy" disabled><br>
-                                <input id="lower-left-trauma-date" name="lower-left-trauma-date" type="text" placeholder="mm/dd/yyyy" disabled><br>
                                     <input type="checkbox" id="lower-left-mvc" name="lower-left-mvc" value="lower-left-mvc">
                                     <label for="lower-left-mvc">MVC</label><br>
                                     <input type="checkbox" id="lower-left-recreational" name="lower-left-recreational" value="lower-left-recreational">
@@ -472,24 +484,24 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-left-vascular">vascular</label><br>
                                 </div>
                             </div>
-                            <input id="lower-left-other" type="text" placeholder="Other"><br><br>
+                            <input id="lower-left-other" class="other-box" type="text" placeholder="Other"><br><br>
 
                             <div class="row">
                                 <div class="col-md-7">
-                                <select class="selectpicker" id="lower-left-classification" name="lower-left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                <select class="selectpicker" data-width="fit" id="lower-left-classification" name="lower-left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                                 </div>
                                 <div class="col-md-5">
-                                    <button id = "lower-left-classification-add" type="button" class="btn btn-sm btn-primary no-top-margin"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                                    <button id = "lower-left-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
                                 </div>
                             </div>
 
                             <textarea id="lower-left-notes" name="lower-left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                             <div class="row">
                                 <div class="col-md-7">
-                                    <select class="selectpicker" id="lower-left-surgeries" name="lower-left-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                    <select class="selectpicker" data-width="fit" id="lower-left-surgeries" name="lower-left-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                                 </div>
                                 <div class="col-md-5">
-                                    <button id="lower-left-surgical-pro" class="btn btn-primary btn-sm no-top-margin" type="button">+Add</button><br>
+                                    <button id="lower-left-surgical-pro" class="btn btn-primary" type="button">+Add</button><br>
                                 </div>
                             </div>
                             <ul id="lower-left-surgery-list" name="lower-left-surgery-list" style="display:none;"></ul>
@@ -826,44 +838,44 @@ include_once __DIR__ . '/../_header.php';
                     <input type="checkbox" id="right-acquired" name="right-acquired" value="right-acquired"/>
                     <label for="right-acquired">acquired</label><br>
                     <div class="row">
-                        <div class="col-5">
+                        <div class="col-6">
                             <input type="checkbox" id="right-tumor" name="right-tumor" value="right-tumor"/>
                             <label for="right-tumor">tumor</label><br>
                             <input type="checkbox" id="right-trauma" name="right-trauma" value="right-trauma"/>
                             <label for="right-trauma">trauma</label><br>
                         </div>
-                        <div class="col-7">
+                        <div class="col-6">
                             <input id="right-tumor-date" name="right-tumor-date" type="text" size=12 placeholder="mm/dd/yyyy" disabled><br>
                             <input id="right-trauma-date" name="right-trauma-date" type="text" size=12 placeholder="mm/dd/yyyy" disabled><br>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-5">
+                        <div class="col-6">
                             <input type="checkbox" id="right-burn" name="right-burn" value="right-burn"/>
                             <label for="right-burn">burn</label><br>
-                            <input type="checkbox" id="right-mvc" name="right-mvc" value="right-mvc"/>
-                            <label for="right-mvc">MVC</label><br>
-                            <input type="checkbox" id="right-vascular" name="right-vascular" value="right-vascular"/>
-                            <label for="right-vascular">vascular</label><br>
-                        </div>
-                        <div class="col-7">
-                            <input type="checkbox" id="right-recreational" name="right-recreational" value="right-recreational"/>
-                            <label for="right-recreational">recreational</label><br>
                             <input type="checkbox" id="right-infection" name="right-infection" value="right-infection"/>
                             <label for="right-infection">infection</label><br>
                             <input type="checkbox" id="right-lawnmower" name="right-lawnmower" value="right-lawnmower"/>
                             <label for="right-lawnmower">lawnmower</label><br>
                         </div>
+                        <div class="col-6">
+                            <input type="checkbox" id="right-mvc" name="right-mvc" value="right-mvc"/>
+                            <label for="right-mvc">MVC</label><br>
+                            <input type="checkbox" id="right-recreational" name="right-recreational" value="right-recreational"/>
+                            <label for="right-recreational">recreational</label><br>
+                            <input type="checkbox" id="right-vascular" name="right-vascular" value="right-vascular"/>
+                            <label for="right-vascular">vascular</label><br>
+                        </div>
                     </div>
 
-                    <input type="text" name="right-other" placeholder="Other"><br><br><br>
+                    <input type="text" class="other-box" name="right-other" placeholder="Other"><br><br>
 
                     <div class="row">
                         <div class="col-md-7">
-                        <select class="selectpicker" id="right-classification" name="right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                        <select class="selectpicker" data-width="fit" id="right-classification" name="right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                         </div>
                         <div class="col-md-5">
-                            <button id = "right-classification-add" type="button" class="btn btn-sm btn-primary no-top-margin"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                            <button id = "right-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
                         </div>
                     </div>
 
@@ -871,10 +883,10 @@ include_once __DIR__ . '/../_header.php';
 
                     <div class="row">
                         <div class="col-md-7">
-                            <select class="selectpicker" id="upper-right-surgeries" name="upper-right-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                            <select class="selectpicker" data-width="fit" id="upper-right-surgeries" name="upper-right-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                         </div>
                         <div class="col-md-5">
-                            <button id="upper-right-surgical-pro" class="btn btn-primary btn-sm no-top-margin" type="button">+Add</button><br>
+                            <button id="upper-right-surgical-pro" class="btn btn-primary" type="button">+Add</button><br>
                         </div>
                     </div>
                     <ul id="upper-right-surgery-list" name="upper-right-surgery-list" style="display:none;"></ul>
@@ -980,7 +992,7 @@ include_once __DIR__ . '/../_header.php';
                             <label for="right-scaphoid">scaphoid</label><br>
                             <input type="checkbox" class="right-checkboxes" id="right-capitellum" name="right-capitellum" value="right-capitellum"/>
                             <label for="right-capitellum">capitellum</label><br>
-                            <button type="button" id="right-hand-drawing">Hand</button>
+                            <button type="button" class="btn btn-primary" id="right-hand-drawing">Hand</button>
                         </div>
                     </div>
                     <u>Hand</u><br>
@@ -1074,53 +1086,53 @@ include_once __DIR__ . '/../_header.php';
                     <input type="checkbox" id="left-acquired" name="left-acquired" value="left-acquired"/>
                     <label for="left-acquired">acquired</label><br>
                     <div class="row">
-                        <div class="col-5">
+                        <div class="col-6">
                             <input type="checkbox" id="left-tumor" name="left-tumor" value="left-tumor"/>
                             <label for="left-tumor">tumor</label><br>
                             <input type="checkbox" id="left-trauma" name="left-trauma" value="left-trauma"/>
                             <label for="left-trauma">trauma</label><br>
                         </div>
-                        <div class="col-7">
+                        <div class="col-6">
                             <input id="left-tumor-date" name="left-tumor-date" type="text" size=12 placeholder="mm/dd/yyyy" disabled><br>
                             <input id="left-trauma-date" name="left-trauma-date" type="text" size=12 placeholder="mm/dd/yyyy" disabled><br>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-5">
+                        <div class="col-6">
                             <input type="checkbox" id="left-burn" name="left-burn" value="left-burn"/>
                             <label for="left-burn">burn</label><br>
-                            <input type="checkbox" id="left-mvc" name="left-mvc" value="left-mvc"/>
-                            <label for="left-mvc">MVC</label><br>
-                            <input type="checkbox" id="left-vascular" name="left-vascular" value="left-vascular"/>
-                            <label for="left-vascular">vascular</label><br>
-                        </div>
-                        <div class="col-7">
-                            <input type="checkbox" id="left-recreational" name="left-recreational" value="left-recreational"/>
-                            <label for="left-recreational">recreational</label><br>
                             <input type="checkbox" id="left-infection" name="left-infection" value="left-infection"/>
                             <label for="left-infection">infection</label><br>
                             <input type="checkbox" id="left-lawnmower" name="left-lawnmower" value="left-lawnmower"/>
                             <label for="left-lawnmower">lawnmower</label><br>
                         </div>
+                        <div class="col-6">
+                            <input type="checkbox" id="left-mvc" name="left-mvc" value="left-mvc"/>
+                            <label for="left-mvc">MVC</label><br>
+                            <input type="checkbox" id="left-recreational" name="left-recreational" value="left-recreational"/>
+                            <label for="left-recreational">recreational</label><br>
+                            <input type="checkbox" id="left-vascular" name="left-vascular" value="left-vascular"/>
+                            <label for="left-vascular">vascular</label><br>
+                        </div>
                     </div>
 
-                    <input type="text" name="left-other" placeholder="Other"><br><br><br>
+                    <input type="text" class="other-box" name="left-other" placeholder="Other"><br><br>
                     <div class="row">
                         <div class="col-md-7">
-                        <select class="selectpicker" id="left-classification" name="left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                        <select class="selectpicker" data-width="fit" id="left-classification" name="left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                         </div>
                         <div class="col-md-5">
-                            <button id="left-classification-add" type="button" class="btn btn-sm btn-primary no-top-margin"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                            <button id="left-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
                         </div>
                     </div>
 
                     <textarea id="left-notes" name="left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
                     <div class="row">
                         <div class="col-md-7">
-                            <select class="selectpicker" id="upper-left-surgeries" name="upper-left-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                            <select class="selectpicker" data-width="fit" id="upper-left-surgeries" name="upper-left-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                         </div>
                         <div class="col-md-5">
-                            <button id="upper-left-surgical-pro" class="btn btn-primary btn-sm no-top-margin" type="button">+Add</button><br>
+                            <button id="upper-left-surgical-pro" class="btn btn-primary" type="button">+Add</button><br>
                         </div>    
                     </div>  
                     <ul id="upper-left-surgery-list" name="upper-left-surgery-list" style="display:none;"></ul>
@@ -1227,7 +1239,7 @@ include_once __DIR__ . '/../_header.php';
                             <label for="left-scaphoid">scaphoid</label><br>
                             <input type="checkbox" class="left-checkboxes" id="left-capitellum" name="left-capitellum" value="left-capitellum"/>
                             <label for="left-capitellum">capitellum</label><br>
-                            <button type="button" class="left-checkboxes" id="left-hand-drawing">Hand</button>
+                            <button type="button" class="btn btn-primary" id="left-hand-drawing">Hand</button>
 
                         </div>
                     </div>

@@ -465,10 +465,15 @@ a.collapsed:visited, a.d-block:visited {
     display: block;
 }
 
+.other-box {
+    width: 100px;
+}
+
 #icd-top-bar select,
 #icd-top-bar input[type="text"] {
     width: 100%;
 }
+
 
 .icd-filters {
     margin: 15px 0;

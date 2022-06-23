@@ -224,7 +224,7 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-right-foot">foot</label><br>
                                     <div class="row mt-2">
                                         <div class="col-md-6">
-                                        <button type="button" id="lower-right-foot-btn" class="btn btn-primary">Foot</button>
+                                        <button type="button" id="lower-right-foot-btn" class="btn btn-primary" data-toggle="modal" data-target="#lower-right-foot-modal">Foot</button>
                                         </div>
                                     </div>
                                     <div class="row mt-1">
@@ -576,7 +576,7 @@ include_once __DIR__ . '/../_header.php';
                                     <label for="lower-left-foot">foot</label><br>
                                     <div class="row mt-2">
                                         <div class="col-md-6">
-                                        <button type="button" id="lower-left-foot-btn" class="btn btn-primary">Foot</button>
+                                        <button type="button" id="lower-left-foot-btn" class="btn btn-primary" data-toggle="modal" data-target="#lower-left-foot-modal">Foot</button>
                                         </div>
                                     </div>
                                     <div class="row mt-1">
@@ -1387,6 +1387,42 @@ include_once __DIR__ . '/../_header.php';
             </div>
         </div>
     </div>
+
+    <!--Lower Right Foot Image Modal-->
+    <div class="modal fade" id="lower-right-foot-modal" tabindex="-1" role="dialog" aria-labelledby="lower-right-foot-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lower-right-foot-label">Interactive Foot Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="footImage" src="/img/footImage.jpg"/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    <!--Lower Left Foot Image Modal-->
+    <div class="modal fade" id="lower-left-foot-modal" tabindex="-1" role="dialog" aria-labelledby="lower-left-foot-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="lower-left-foot-label">Interactive Foot Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="footImage" src="/img/footImage.jpg"/>
+                    
+                </div>
+            </div>
+        </div>
+    </div>  
 
     <script type="text/javascript">
         var surgery_side = null;

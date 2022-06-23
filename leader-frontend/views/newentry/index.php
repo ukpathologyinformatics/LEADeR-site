@@ -1400,7 +1400,6 @@ include_once __DIR__ . '/../_header.php';
                 </div>
                 <div class="modal-body">
                     <img id="footImage" src="/img/footImage.jpg"/>
-                    
                 </div>
             </div>
         </div>
@@ -1417,8 +1416,10 @@ include_once __DIR__ . '/../_header.php';
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img id="footImage" src="/img/footImage.jpg"/>
-                    
+                    <div class ="container">
+                        <img id="footImage" src="/img/footImage.jpg"/>
+                        <input type="checkbox" id="modal-lower-left-phalanges-1" value="lower-left-phalanges-1" >
+                    </div>
                 </div>
             </div>
         </div>

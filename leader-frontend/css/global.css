@@ -579,6 +579,16 @@ a.collapsed:visited, a.d-block:visited {
     margin-top: 0 !important;
 }
 
+.container {
+    position: relative;
+}
+
+#modal-lower-left-phalanges-1 {
+    position: absolute;
+    left: 130px;
+    top: 60px;
+    z-index: 1000;
+}
 /******************************
     Mobile Responsive Stuff
 ******************************/

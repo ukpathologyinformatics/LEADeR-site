@@ -35,4 +35,17 @@ class NewEntryController {
         echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
     }
 
+    public static function addClassification(UserSession $userSession) {
+        header('Content-Type: application/json');
+        $success = false;
+        $error_message = null;
+        $name = $_POST['name'];
+        $code = $_POST['code'];
+        $location = $_POST['location'];
+        DB::run("INSERT INTO classifications (code_id, class_name, location) VALUES (?, ?, ?)", [$code, $name, $location]);
+
+        $ret = array('success' => $success, 'error_message' => $error_message, 'data' => $entry);
+        echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
+    }
+
 }

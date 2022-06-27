@@ -145,7 +145,7 @@ include_once __DIR__ . '/../_header.php';
                                     </select>
                                 </div>
                                 <div class="col-md-5">
-                                    <button id = "lower-right-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button>
+                                    <button id = "lower-right-classification-add" onClick="get_location(this.id)" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button>
                                 </div>
                             </div>
 
@@ -514,7 +514,7 @@ include_once __DIR__ . '/../_header.php';
                                 </select>
                                 </div>
                                 <div class="col-md-5">
-                                    <button id = "lower-left-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                                    <button id = "lower-left-classification-add" onClick="get_location(this.id)" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
                                 </div>
                             </div>
 
@@ -909,7 +909,7 @@ include_once __DIR__ . '/../_header.php';
                         </select>
                         </div>
                         <div class="col-md-5">
-                            <button id = "right-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                            <button id = "right-classification-add" onClick="get_location(this.id)" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
                         </div>
                     </div>
 
@@ -1167,7 +1167,7 @@ include_once __DIR__ . '/../_header.php';
                         </select>
                         </div>
                         <div class="col-md-5">
-                            <button id="left-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
+                            <button id="left-classification-add" onClick="get_location(this.id)" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
                         </div>
                     </div>
 
@@ -1658,6 +1658,22 @@ include_once __DIR__ . '/../_header.php';
             }
         }
 
+        var current_location;
+        function get_location(clicked_id) {
+            if(clicked_id=="lower-right-classification-add") {
+                current_location = "LR";
+            }
+            else if(clicked_id=="lower-left-classification-add") {
+                current_location = "LL";
+            }
+            else if(clicked_id=="right-classification-add") {
+                current_location = "UR";
+            }
+            else if(clicked_id=="left-classification-add") {
+                current_location = "UL";
+            }
+        }
+
         // jQuery Below
         var classificationId;
 
@@ -1678,6 +1694,20 @@ include_once __DIR__ . '/../_header.php';
             select.add(new Option(name));
             $(select).selectpicker('refresh');
             $('#classificationModal').modal('hide');
+            let location = current_location;
+            $.ajax({
+                url : '/new-entry/add-classification',
+                type : 'POST',
+                data : 'name='+name+'&code='+code+'&location='+location,
+
+                success : function(data) {
+                    console.log('Data: '+JSON.stringify(data));
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request));
+                }
+            });
         }
 
 

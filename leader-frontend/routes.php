@@ -65,6 +65,9 @@
         $router->map('POST', '/new-entry/add-entry', function() {
             NewEntryController::addEntry(get_session());
         }, 'newentry-addentry');
+        $router->map('POST', '/new-entry/add-classification', function() {
+            NewEntryController::addClassification(get_session());
+        }, 'newentry-addclassification');
     } catch (Exception $e) {
         die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }

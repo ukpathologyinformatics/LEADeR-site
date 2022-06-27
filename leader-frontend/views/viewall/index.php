@@ -18,13 +18,14 @@ include_once __DIR__ . '/../_header.php';
                     <th>Patient ID</td>
                     <th>File Status</td>
                     <th>Date of Birth</td>
+                    <th>ICD Code</td>
                     <th>Entry</td>
                 </tr>
             </thead>
             <tbody>
                 <?php
 
-                    $SELECT = DB::run("SELECT * FROM patient");
+                    $SELECT = DB::run("SELECT * FROM patient JOIN patient_icd ON patient.patient_id=patient_icd.patient_id");
                     if($SELECT != false) {
                         while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
                             echo "
@@ -32,6 +33,7 @@ include_once __DIR__ . '/../_header.php';
                                 <td>".$rows["patient_id"]."</td>
                                 <td>".$rows["file_status"]."</td>
                                 <td>".$rows["dob"]."</td>
+                                <td>".$rows["icd_code"]."</td>
                                 <td>".$rows["entry"]."</td>
                             </tr>";
                         }
@@ -49,7 +51,10 @@ include_once __DIR__ . '/../_header.php';
 
     <script type="text/javascript">
         $(document).ready( function () {
-            $('#view-all-table').DataTable();
+            $('#view-all-table').DataTable({
+                //serverSide: true,
+            });
+             //JOIN patient_surgery ON patient.patient_id=patient_surgery.patient_id JOIN patient_class ON patient.patient_id=patient_class.patient_id
         } );
     </script>
 <?php

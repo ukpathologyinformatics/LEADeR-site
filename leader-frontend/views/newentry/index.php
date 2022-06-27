@@ -131,7 +131,18 @@ include_once __DIR__ . '/../_header.php';
 
                             <div class="row">
                                 <div class="col-md-7">
-                                    <select class="selectpicker" data-width="fit" id="lower-right-classification" name="lower-right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                    <select class="selectpicker" data-width="fit" id="lower-right-classification" name="lower-right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search">
+                                        <?php
+                                            $SELECT = DB::run("SELECT * FROM classifications");
+                                            if($SELECT != false) {
+                                                while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
+                                                    if($rows['location']=="LR") {
+                                                        echo "<option value=".$rows['code_id'].">".$rows['class_name']."</option>";
+                                                    }
+                                                }
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="col-md-5">
                                     <button id = "lower-right-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button>
@@ -489,7 +500,18 @@ include_once __DIR__ . '/../_header.php';
 
                             <div class="row">
                                 <div class="col-md-7">
-                                <select class="selectpicker" data-width="fit" id="lower-left-classification" name="lower-left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                                <select class="selectpicker" data-width="fit" id="lower-left-classification" name="lower-left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search">
+                                    <?php
+                                        $SELECT = DB::run("SELECT * FROM classifications");
+                                        if($SELECT != false) {
+                                            while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
+                                                if($rows['location']=="LL") {
+                                                    echo "<option value=".$rows['code_id'].">".$rows['class_name']."</option>";
+                                                }
+                                            }
+                                        }
+                                    ?>
+                                </select>
                                 </div>
                                 <div class="col-md-5">
                                     <button id = "lower-left-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
@@ -873,7 +895,18 @@ include_once __DIR__ . '/../_header.php';
 
                     <div class="row">
                         <div class="col-md-7">
-                        <select class="selectpicker" data-width="fit" id="right-classification" name="right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                        <select class="selectpicker" data-width="fit" id="right-classification" name="right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search">
+                            <?php
+                                $SELECT = DB::run("SELECT * FROM classifications");
+                                if($SELECT != false) {
+                                    while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
+                                        if($rows['location']=="UR") {
+                                            echo "<option value=".$rows['code_id'].">".$rows['class_name']."</option>";
+                                        }
+                                    }
+                                }
+                            ?>
+                        </select>
                         </div>
                         <div class="col-md-5">
                             <button id = "right-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
@@ -1120,7 +1153,18 @@ include_once __DIR__ . '/../_header.php';
                     <input type="text" class="other-box" name="left-other" placeholder="Other"><br><br>
                     <div class="row">
                         <div class="col-md-7">
-                        <select class="selectpicker" data-width="fit" id="left-classification" name="left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                        <select class="selectpicker" data-width="fit" id="left-classification" name="left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search">
+                            <?php
+                                $SELECT = DB::run("SELECT * FROM classifications");
+                                if($SELECT != false) {
+                                    while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
+                                        if($rows['location']=="UL") {
+                                            echo "<option value=".$rows['code_id'].">".$rows['class_name']."</option>";
+                                        }
+                                    }
+                                }
+                            ?>
+                        </select>
                         </div>
                         <div class="col-md-5">
                             <button id="left-classification-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
@@ -1614,7 +1658,7 @@ include_once __DIR__ . '/../_header.php';
             }
         }
 
-
+        // jQuery Below
         var classificationId;
 
         function add_classification() {
@@ -1636,7 +1680,7 @@ include_once __DIR__ . '/../_header.php';
             $('#classificationModal').modal('hide');
         }
 
-        // jQuery Below
+
         $('#lower-right-classification-add, #lower-left-classification-add, #right-classification-add, #left-classification-add').click(function() {
             classificationId = $(this).attr('id');
         });

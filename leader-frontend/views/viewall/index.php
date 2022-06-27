@@ -19,13 +19,13 @@ include_once __DIR__ . '/../_header.php';
                     <th>File Status</td>
                     <th>Date of Birth</td>
                     <th>ICD Code</td>
-                    <th>Entry</td>
+                    <th>Classification</td>
                 </tr>
             </thead>
             <tbody>
                 <?php
 
-                    $SELECT = DB::run("SELECT * FROM patient JOIN patient_icd ON patient.patient_id=patient_icd.patient_id");
+                    $SELECT = DB::run("SELECT * FROM patient LEFT JOIN patient_icd ON patient.patient_id=patient_icd.patient_id LEFT JOIN patient_class ON patient.patient_id=patient_class.patient_id");
                     if($SELECT != false) {
                         while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
                             echo "

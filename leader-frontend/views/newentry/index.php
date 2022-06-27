@@ -131,18 +131,7 @@ include_once __DIR__ . '/../_header.php';
 
                             <div class="row">
                                 <div class="col-md-7">
-                                    <select class="selectpicker" data-width="fit" id="lower-right-classification" name="lower-right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search">
-                                        <?php
-                                            $SELECT = DB::run("SELECT * FROM classifications");
-                                            if($SELECT != false) {
-                                                while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
-                                                    if($rows['location']=="LR") {
-                                                        echo "<option value=".$rows['code_id'].">".$rows['class_name']."</option>";
-                                                    }
-                                                }
-                                            }
-                                        ?>
-                                    </select>
+                                    <select class="selectpicker" data-width="fit" id="lower-right-classification" name="lower-right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                                 </div>
                                 <div class="col-md-5">
                                     <button id = "lower-right-classification-add" onClick="get_location(this.id)" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button>
@@ -500,18 +489,7 @@ include_once __DIR__ . '/../_header.php';
 
                             <div class="row">
                                 <div class="col-md-7">
-                                <select class="selectpicker" data-width="fit" id="lower-left-classification" name="lower-left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search">
-                                    <?php
-                                        $SELECT = DB::run("SELECT * FROM classifications");
-                                        if($SELECT != false) {
-                                            while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
-                                                if($rows['location']=="LL") {
-                                                    echo "<option value=".$rows['code_id'].">".$rows['class_name']."</option>";
-                                                }
-                                            }
-                                        }
-                                    ?>
-                                </select>
+                                <select class="selectpicker" data-width="fit" id="lower-left-classification" name="lower-left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                                 </div>
                                 <div class="col-md-5">
                                     <button id = "lower-left-classification-add" onClick="get_location(this.id)" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
@@ -895,18 +873,7 @@ include_once __DIR__ . '/../_header.php';
 
                     <div class="row">
                         <div class="col-md-7">
-                        <select class="selectpicker" data-width="fit" id="right-classification" name="right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search">
-                            <?php
-                                $SELECT = DB::run("SELECT * FROM classifications");
-                                if($SELECT != false) {
-                                    while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
-                                        if($rows['location']=="UR") {
-                                            echo "<option value=".$rows['code_id'].">".$rows['class_name']."</option>";
-                                        }
-                                    }
-                                }
-                            ?>
-                        </select>
+                        <select class="selectpicker" data-width="fit" id="right-classification" name="right-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                         </div>
                         <div class="col-md-5">
                             <button id = "right-classification-add" onClick="get_location(this.id)" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
@@ -1153,18 +1120,7 @@ include_once __DIR__ . '/../_header.php';
                     <input type="text" class="other-box" name="left-other" placeholder="Other"><br><br>
                     <div class="row">
                         <div class="col-md-7">
-                        <select class="selectpicker" data-width="fit" id="left-classification" name="left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search">
-                            <?php
-                                $SELECT = DB::run("SELECT * FROM classifications");
-                                if($SELECT != false) {
-                                    while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
-                                        if($rows['location']=="UL") {
-                                            echo "<option value=".$rows['code_id'].">".$rows['class_name']."</option>";
-                                        }
-                                    }
-                                }
-                            ?>
-                        </select>
+                        <select class="selectpicker" data-width="fit" id="left-classification" name="left-classification" data-none-selected-text="Classifications" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
                         </div>
                         <div class="col-md-5">
                             <button id="left-classification-add" onClick="get_location(this.id)" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#classificationModal">+Add</button><br>
@@ -1586,6 +1542,40 @@ include_once __DIR__ . '/../_header.php';
             // }
         }
 
+        $(document).ready(function() {
+            $.ajax({
+                url : '/new-entry/fill-dropdown',
+                type : 'GET',
+
+                success : function(data) {
+                    data['data'].forEach(function(currentValue, index, arr){
+
+                        if (currentValue['location'] == "LL") {
+                            $('#lower-left-classification').append("<option value='"+currentValue['code_id']+"'>"+ currentValue['class_name'] +"</option>");
+                            $('#lower-left-classification').selectpicker('refresh');
+                        }
+                        else if (currentValue['location'] == "LR") {
+                            $('#lower-right-classification').append("<option value='"+currentValue['code_id']+"'>"+ currentValue['class_name'] +"</option>");
+                            $('#lower-right-classification').selectpicker('refresh');
+                        }
+                        else if (currentValue['location'] == "UL") {
+                            $('#left-classification').append("<option value='"+currentValue['code_id']+"'>"+ currentValue['class_name'] +"</option>");
+                            $('#left-classification').selectpicker('refresh');
+                        }
+                        else if (currentValue['location'] == "UR") {
+                            $('#right-classification').append("<option value='"+currentValue['code_id']+"'>"+ currentValue['class_name'] +"</option>");
+                            $('#right-classification').selectpicker('refresh');
+                        }
+
+                    });
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request));
+                }
+            });
+        });
+
         var checkedRightToggle = 0;
 
         function fillRightCheckboxes() {
@@ -1843,9 +1833,41 @@ include_once __DIR__ . '/../_header.php';
                 });
 
                 let the_entry = $('#extremity-form :input').serializeArray();
-                let filtered_entry = the_entry.filter(function(v) {
+                let temp_entry = the_entry.filter(function(v) {
                     return v['value'] !== "";
                 });
+
+                let filtered_entry = temp_entry.filter(function(v) {
+                    return v['name'] !== "lower-left-classification" && v['name'] !== "lower-right-classification" && v['name'] !== "left-classification" && v['name'] !== "right-classification";
+                });
+                let left_class = $('#left-classification').val();
+                let right_class = $('#right-classification').val();
+                let lower_left_class = $('#lower-left-classification').val();
+                let lower_right_class = $('#lower-right-classification').val();
+
+                filtered_entry.push({
+                    name:   "left-classification",
+                    value: left_class
+                });
+                filtered_entry.push({
+                    name:   "right-classification",
+                    value: right_class
+                });
+                filtered_entry.push({
+                    name:   "lower-left-classification",
+                    value: lower_left_class
+                });
+                filtered_entry.push({
+                    name:   "lower-right-classification",
+                    value: lower_right_class
+                });
+
+//                 filtered_entry['left-classification'] = left_class;
+//                 filtered_entry['right-classification'] = right_class;
+//                 filtered_entry['lower-left-classification'] = lower_left_class;
+//                 filtered_entry['lower-right-classification'] = lower_right_class;
+
+                console.log(filtered_entry);
 
                 $.ajax({
                     url : '/new-entry/add-entry',

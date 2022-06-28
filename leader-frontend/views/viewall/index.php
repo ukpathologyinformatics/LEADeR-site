@@ -3,7 +3,7 @@
 $page = 'view-all';
 include_once __DIR__ . '/../_header.php';
 ?>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>-->
@@ -12,7 +12,7 @@ include_once __DIR__ . '/../_header.php';
     </div>
 
     <section id="view-all-page">
-        <table id="view-all-table">
+        <table id="view-all-table" class="display" style="width:100%">
             <thead>
                 <tr>
                     <th>Patient ID</td>
@@ -23,36 +23,31 @@ include_once __DIR__ . '/../_header.php';
                 </tr>
             </thead>
             <tbody>
-                <?php
-
-                    $SELECT = DB::run("SELECT * FROM patient LEFT JOIN patient_icd ON patient.patient_id=patient_icd.patient_id LEFT JOIN patient_class ON patient.patient_id=patient_class.patient_id");
-                    if($SELECT != false) {
-                        while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
-                            echo "
-                            <tr>
-                                <td>".$rows["patient_id"]."</td>
-                                <td>".$rows["file_status"]."</td>
-                                <td>".$rows["dob"]."</td>
-                                <td>".$rows["icd_code"]."</td>
-                                <td>".$rows["entry"]."</td>
-                            </tr>";
-                        }
-                    }
-                    else {
-                        echo "
-                            <tr>
-                            <td colspan='3'>Something went wrong with the query</td>
-                            </tr>";
-                    }
-                ?>
             </tbody>
         </table>
     </section>
 
     <script type="text/javascript">
         $(document).ready( function () {
-            $('#view-all-table').DataTable({
-                //serverSide: true,
+
+            $.ajax({
+                url : '/view-all/fill-table',
+                type : 'GET',
+
+                success : function(data) {
+                    //console.log(data['data']);
+                    data['data'].forEach(function(currentValue, index, arr){
+                        $('#view-all-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["dob"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td></tr>");
+                    });
+                    $('#view-all-table').DataTable({
+                        //serverSide: true,
+                        //ajax: '/view-all'
+                    });
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request));
+                }
             });
              //JOIN patient_surgery ON patient.patient_id=patient_surgery.patient_id JOIN patient_class ON patient.patient_id=patient_class.patient_id
         } );

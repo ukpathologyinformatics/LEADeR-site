@@ -89,6 +89,9 @@
         $router->map('GET', '/view-all', function() {
             ViewAllController::index(get_session());
         }, 'viewall-index');
+        $router->map('GET', '/view-all/fill-table', function() {
+            ViewAllController::fillTable(get_session());
+        }, 'viewall-filltable');
     } catch (Exception $e) {
         die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }

@@ -34,7 +34,7 @@ class NewEntryController {
         $json_info = json_encode($info);
 
         $submit = DB::run("INSERT INTO patient (file_status, subj_id, first_recorded, last_updated_date, gender, race, ethnicity, dob, entry) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", [$entry["file"], $entry["subject-id"], $entry["start-date"], $entry["end-date"], $entry["gender"], $entry["race"], $entry["ethnicity"], $entry["dob"], $json_info]);
-        if ($submit > 0) {
+        if ($submit != false) {
             $success = true;
         }
         $stmt = DB::run("SELECT @@IDENTITY AS id");
@@ -80,7 +80,7 @@ class NewEntryController {
         $code = $_POST['code'];
         $location = $_POST['location'];
         $submit = DB::run("INSERT INTO classifications (code_id, class_name, location) VALUES (?, ?, ?)", [$code, $name, $location]);
-        if ($submit > 0) {
+        if ($submit != false) {
             $success = true;
         }
 

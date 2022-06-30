@@ -1447,11 +1447,11 @@ include_once __DIR__ . '/../_header.php';
                 showError("Date cannot be blank.");
                 return false;
             }
-            surg_date = Date.parse(surg_date);
-            if (isNaN(surg_date)){
-                showError("Cannot parse date.");
-                return false;
-            }
+//             surg_date = Date.parse(surg_date);
+             if (isNaN(Date.parse(surg_date))){
+                 showError("Cannot parse date.");
+                 return false;
+             }
             let surgeon = $('#surgicalModal #surgeon').val();
             if (surgeon == "") {
                 showError("Attending surgeon cannot be blank.");
@@ -1486,13 +1486,27 @@ include_once __DIR__ . '/../_header.php';
                 "notes": notes,
                 "cbt": cbt_code
             }
+            let encoded_surg = JSON.stringify(surgery_info);
             //base64 encode json obj
-            let encoded_surg = btoa(JSON.stringify(surgery_info));
+            //let encoded_surg = btoa(JSON.stringify(surgery_info));
             // $('#'+surgery_side+'-surgery-list').append("<li id='"+surgery_side+"-surgery-"+surgery_counter+"' data-value="+ encoded_surg +">"+ surg_name +"</li>");
             $('#'+surgery_side+'-surgeries').append("<option id='"+surgery_side+"-surgery-"+surg_name+"' value="+ encoded_surg +">"+ surg_name +"</option>");
             $('#'+surgery_side+'-surgeries').selectpicker('refresh');
             $('#surgicalModal').modal('hide');
             showSuccess("Added Surgery to List");
+//             $.ajax({
+//                 url : '/new-entry/add-surgery',
+//                 type : 'POST',
+//                 data : 'surg-name='+surg_name+'&surg-date='+surg_date+'&surgeon='+surgeon+'&age='+age+'&notes='+notes+'&cbt='+cbt_code,
+//
+//                 success : function(data) {
+//                     console.log('Data: '+JSON.stringify(data));
+//                 },
+//                 error : function(request,error)
+//                 {
+//                     console.log("Request: "+JSON.stringify(request));
+//                 }
+//             });
             // } else {
             //     let target_li = sub_button.attr('data-update-id');
             //     let surg_name = $('#surgicalModal #surgery-name').val();
@@ -1684,6 +1698,7 @@ include_once __DIR__ . '/../_header.php';
             select.add(new Option(name));
             $(select).selectpicker('refresh');
             $('#classificationModal').modal('hide');
+            showSuccess("Added Classification to List");
             let location = current_location;
             $.ajax({
                 url : '/new-entry/add-classification',
@@ -1838,12 +1853,15 @@ include_once __DIR__ . '/../_header.php';
                 });
 
                 let filtered_entry = temp_entry.filter(function(v) {
-                    return v['name'] !== "lower-left-classification" && v['name'] !== "lower-right-classification" && v['name'] !== "left-classification" && v['name'] !== "right-classification";
+                    return v['name'] !== "lower-left-classification" && v['name'] !== "lower-right-classification" && v['name'] !== "left-classification" && v['name'] !== "right-classification" && v['name'] !== "lower-right-surgeries" && v['name'] !== "lower-left-surgeries";
                 });
                 let left_class = $('#left-classification').val();
                 let right_class = $('#right-classification').val();
                 let lower_left_class = $('#lower-left-classification').val();
                 let lower_right_class = $('#lower-right-classification').val();
+
+                let lower_right_surgeries = $('#lower-right-surgeries').val();
+                let lower_left_surgeries = $('#lower-left-surgeries').val();
 
                 filtered_entry.push({
                     name:   "left-classification",
@@ -1860,6 +1878,14 @@ include_once __DIR__ . '/../_header.php';
                 filtered_entry.push({
                     name:   "lower-right-classification",
                     value: lower_right_class
+                });
+                filtered_entry.push({
+                    name:   "lower-right-surgeries",
+                    value: lower_right_surgeries
+                });
+                filtered_entry.push({
+                    name:   "lower-left-surgeries",
+                    value: lower_left_surgeries
                 });
 
 //                 filtered_entry['left-classification'] = left_class;

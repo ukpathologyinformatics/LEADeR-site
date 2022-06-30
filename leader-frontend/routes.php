@@ -68,6 +68,9 @@
         $router->map('POST', '/new-entry/add-classification', function() {
             NewEntryController::addClassification(get_session());
         }, 'newentry-addclassification');
+        $router->map('POST', '/new-entry/add-surgery', function() {
+            NewEntryController::addSurgery(get_session());
+        }, 'newentry-addsurgery');
         $router->map('GET', '/new-entry/fill-dropdown', function() {
             NewEntryController::fillClassDropdown(get_session());
         }, 'newentry-fillclassdropdown');

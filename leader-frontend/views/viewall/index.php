@@ -17,9 +17,9 @@ include_once __DIR__ . '/../_header.php';
                 <tr>
                     <th>Patient ID</td>
                     <th>File Status</td>
-                    <th>Date of Birth</td>
                     <th>ICD Code</td>
                     <th>Classification</td>
+                    <th>Surgeries</td>
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +37,7 @@ include_once __DIR__ . '/../_header.php';
                 success : function(data) {
                     //console.log(data['data']);
                     data['data'].forEach(function(currentValue, index, arr){
-                        $('#view-all-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["dob"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td></tr>");
+                        $('#view-all-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td></tr>");
                     });
                     $('#view-all-table').DataTable({
                         //serverSide: true,

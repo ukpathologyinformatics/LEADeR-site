@@ -1421,6 +1421,7 @@ include_once __DIR__ . '/../_header.php';
             $('#surgicalModal #surgeon').val('');
             $('#surgicalModal #age').val('');
             $('#surgicalModal #surgery-notes').val('');
+            $('#surgicalModal #CBT-code').val('');
         }
 
         function fill_surgical_form(selected_json) {

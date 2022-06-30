@@ -87,6 +87,26 @@ class NewEntryController {
             //}
         }
 
+        if (array_key_exists('lower-left-surgeries', $entry)) {
+            $surgeries = explode("},", $entry["lower-left-surgeries"]);
+
+            $bracket = "}";
+            for($i = 0;$i < count($surgeries)-1;$i++) {
+                $surgeries[$i] = $surgeries[$i] . $bracket;
+            }
+            //var_dump($surgeries);
+            foreach ($surgeries as $operation) {
+                $surgery = json_decode($operation, true);
+                //var_dump($surgery);
+                //var_dump($surgery["cbt"]);
+                DB::run("INSERT INTO patient_surgery (patient_id, surgery_id, surgery_date, surgery_notes, attending_surgeon, age) VALUES (?, ?, ?, ?, ?, ?)", [$int_id, $surgery["cbt"], $surgery["surg-date"], $surgery["notes"], $surgery["surgeon"], $surgery["age"]]);
+
+            }
+            //foreach ($codes as $class_name) {
+            //    DB::run("INSERT INTO patient_class (patient_id, code_id) VALUES (?, ?)", [$int_id, $class_name]);
+            //}
+        }
+
         $ret = array('success' => $success, 'error_message' => $error_message, 'data' => $entry);
         echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
     }

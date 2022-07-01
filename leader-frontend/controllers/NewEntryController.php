@@ -78,8 +78,8 @@ class NewEntryController {
             foreach ($surgeries as $operation) {
                 $surgery = json_decode($operation, true);
                 //var_dump($surgery);
-                //var_dump($surgery["cbt"]);
-                DB::run("INSERT INTO patient_surgery (patient_id, surgery_id, surgery_date, surgery_notes, attending_surgeon, age) VALUES (?, ?, ?, ?, ?, ?)", [$int_id, $surgery["cbt"], $surgery["surg-date"], $surgery["notes"], $surgery["surgeon"], $surgery["age"]]);
+                //var_dump($surgery["cpt"]);
+                DB::run("INSERT INTO patient_surgery (patient_id, surgery_id, surgery_date, surgery_notes, attending_surgeon, age) VALUES (?, ?, ?, ?, ?, ?)", [$int_id, $surgery["cpt"], $surgery["surg-date"], $surgery["notes"], $surgery["surgeon"], $surgery["age"]]);
 
             }
             //foreach ($codes as $class_name) {
@@ -98,8 +98,8 @@ class NewEntryController {
             foreach ($surgeries as $operation) {
                 $surgery = json_decode($operation, true);
                 //var_dump($surgery);
-                //var_dump($surgery["cbt"]);
-                DB::run("INSERT INTO patient_surgery (patient_id, surgery_id, surgery_date, surgery_notes, attending_surgeon, age) VALUES (?, ?, ?, ?, ?, ?)", [$int_id, $surgery["cbt"], $surgery["surg-date"], $surgery["notes"], $surgery["surgeon"], $surgery["age"]]);
+                //var_dump($surgery["cpt"]);
+                DB::run("INSERT INTO patient_surgery (patient_id, surgery_id, surgery_date, surgery_notes, attending_surgeon, age) VALUES (?, ?, ?, ?, ?, ?)", [$int_id, $surgery["cpt"], $surgery["surg-date"], $surgery["notes"], $surgery["surgeon"], $surgery["age"]]);
 
             }
             //foreach ($codes as $class_name) {
@@ -120,7 +120,7 @@ class NewEntryController {
         $surgeon = $_POST['surgeon'];
         $age = $_POST['age'];
         $notes = $_POST['notes'];
-        $cbt = $_POST['cbt'];
+        $cpt = $_POST['cpt'];
         //$submit = DB::run("INSERT INTO classifications (code_id, class_name, location) VALUES (?, ?, ?)", [$code, $name, $location]);
         //if ($submit != false) {
         //    $success = true;

@@ -1335,16 +1335,17 @@ include_once __DIR__ . '/../_header.php';
                             <label for="age">Age </label>
                         </div>
                         <div class="col-md-3 form-floating">
-                            <input class="form-control" style="pointer-events: auto;" type="text" id="CBT-code" name="CBT-code" placeholder="CBT Code"/>
-                            <label for="CBT-code">CBT Code </label>
+                            <input class="form-control" style="pointer-events: auto;" type="text" id="cpt-code" name="cpt-code" placeholder="cpt Code"/>
+                            <label for="cpt-code">CPT Code </label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 left-modal-stuff input-group">
-                            <span class="input-group-text">Surgery Name</span>
-                            <textarea id="surgery-name" name="surgery-name" class="form-control" aria-label="Surgery Name"></textarea>
+                        <div class="col-md-3 left-modal-stuff input-group">
+                            <select class="selectpicker" id="surgery-name" name="surgery-name" data-none-selected-text="Surgery Name" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+<!--                             <span class="input-group-text">Surgery Name</span> -->
+<!--                             <textarea id="surgery-name" name="surgery-name" class="form-control" aria-label="Surgery Name"></textarea> -->
                         </div>
-                        <div class="col-md-6 right-modal-stuff input-group">
+                        <div class="col-md-9 right-modal-stuff input-group">
                             <span class="input-group-text">Notes</span>
                             <textarea id="surgery-notes" name="surgery-notes" class="form-control" aria-label="Notes"></textarea>
                         </div>
@@ -1405,7 +1406,7 @@ include_once __DIR__ . '/../_header.php';
             $('#surgicalModal #surgeon').val('');
             $('#surgicalModal #age').val('');
             $('#surgicalModal #surgery-notes').val('');
-            $('#surgicalModal #CBT-code').val('');
+            $('#surgicalModal #cpt-code').val('');
         }
 
         function fill_surgical_form(selected_json) {
@@ -1451,9 +1452,9 @@ include_once __DIR__ . '/../_header.php';
                 showError("Age must be a number.");
                 return false;
             }
-            let cbt_code = $('#surgicalModal #CBT-code').val();
-            if (cbt_code == ""){
-                showError("CBT code cannot be blank.");
+            let cpt_code = $('#surgicalModal #cpt-code').val();
+            if (cpt_code == ""){
+                showError("cpt code cannot be blank.");
                 return false;
             }
             let surg_name = $('#surgicalModal #surgery-name').val();
@@ -1469,7 +1470,7 @@ include_once __DIR__ . '/../_header.php';
                 "surgeon": surgeon,
                 "age": age,
                 "notes": notes,
-                "cbt": cbt_code
+                "cpt": cpt_code
             }
             let encoded_surg = JSON.stringify(surgery_info);
             //base64 encode json obj
@@ -1482,7 +1483,7 @@ include_once __DIR__ . '/../_header.php';
 //             $.ajax({
 //                 url : '/new-entry/add-surgery',
 //                 type : 'POST',
-//                 data : 'surg-name='+surg_name+'&surg-date='+surg_date+'&surgeon='+surgeon+'&age='+age+'&notes='+notes+'&cbt='+cbt_code,
+//                 data : 'surg-name='+surg_name+'&surg-date='+surg_date+'&surgeon='+surgeon+'&age='+age+'&notes='+notes+'&cpt='+cpt_code,
 //
 //                 success : function(data) {
 //                     console.log('Data: '+JSON.stringify(data));

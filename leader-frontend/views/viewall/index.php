@@ -37,6 +37,12 @@ include_once __DIR__ . '/../_header.php';
                 success : function(data) {
                     //console.log(data['data']);
                     data['data'].forEach(function(currentValue, index, arr){
+//                         console.log(currentValue);
+//                         currentValue.forEach(function(currentField, index, arr){
+//                             if (currentField == null) {
+//                                 currentField = "N/A";
+//                             }
+//                         });
                         $('#view-all-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td><td>"+currentValue["surgery_id"]+"</td></tr>");
                     });
                     $('#view-all-table').DataTable({

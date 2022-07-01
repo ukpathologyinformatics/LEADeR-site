@@ -65,6 +65,15 @@
         $router->map('POST', '/new-entry/add-entry', function() {
             NewEntryController::addEntry(get_session());
         }, 'newentry-addentry');
+        $router->map('POST', '/new-entry/add-classification', function() {
+            NewEntryController::addClassification(get_session());
+        }, 'newentry-addclassification');
+        $router->map('POST', '/new-entry/add-surgery', function() {
+            NewEntryController::addSurgery(get_session());
+        }, 'newentry-addsurgery');
+        $router->map('GET', '/new-entry/fill-dropdown', function() {
+            NewEntryController::fillClassDropdown(get_session());
+        }, 'newentry-fillclassdropdown');
     } catch (Exception $e) {
         die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }
@@ -83,6 +92,9 @@
         $router->map('GET', '/view-all', function() {
             ViewAllController::index(get_session());
         }, 'viewall-index');
+        $router->map('GET', '/view-all/fill-table', function() {
+            ViewAllController::fillTable(get_session());
+        }, 'viewall-filltable');
     } catch (Exception $e) {
         die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }

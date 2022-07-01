@@ -27,10 +27,10 @@ class ViewAllController {
                         $surgery_set = $surgery_temp['surgeries'];
 
                         if (is_null($class_set)) {
-                            $class_set = "N/A";
+                            $class_set = "None";
                         }
                         if (is_null($surgery_set)) {
-                            $surgery_set = "N/A";
+                            $surgery_set = "None";
                         }
 
                         array_push($all_data, array('patient_id' => $rows['patient_id'], 'file_status' => $rows['file_status'], 'icd_code' => $rows['icd_code'], 'code_id' => $class_set, 'surgery_id' => $surgery_set));

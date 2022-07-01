@@ -1690,24 +1690,6 @@ include_once __DIR__ . '/../_header.php';
             $('#classificationModal').modal('hide');
         }
 
-
-        function selectByValue() {
-            val = event.srcElement.value;
-            var allInputs = document.querySelectorAll("input[type=checkbox]");
-            for(var x=0; x<allInputs.length; x++){
-                if(allInputs[x].value == val){
-                    if(allInputs[x].id != event.srcElement.id){
-                        if(event.srcElement.checked){
-                            allInputs[x].checked = true;
-                        }
-                        else{
-                            allInputs[x].checked = false;
-                        }
-                    }
-                }   
-            }
-        }
-
         function isChecked(element){
             if(element.checked = true)
                 return true;

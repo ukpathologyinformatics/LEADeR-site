@@ -579,6 +579,248 @@ a.collapsed:visited, a.d-block:visited {
     margin-top: 0 !important;
 }
 
+.container {
+    position: relative;
+}
+
+#modal-lower-left-phalanges-1 {
+    position: absolute;
+    left: 130px;
+    top: 60px;
+    z-index: 1000;
+}
+
+#modal-lower-left-phalanges-2 {
+    position: absolute;
+    left: 178px;
+    top: 70px;
+    z-index: 1000;
+}
+
+#modal-lower-left-phalanges-3 {
+    position: absolute;
+    left: 207px;
+    top: 80px;
+    z-index: 1000;
+}
+
+#modal-lower-left-phalanges-4 {
+    position: absolute;
+    left: 230px;
+    top: 95px;
+    z-index: 1000;
+}
+
+#modal-lower-left-phalanges-5 {
+    position: absolute;
+    left: 255px;
+    top: 130px;
+    z-index: 1000;
+}
+
+#modal-lower-left-metatarsals-1 {
+    position: absolute;
+    left: 125px;
+    top: 135px;
+    z-index: 1000;
+}
+
+#modal-lower-left-metatarsals-2 {
+    position: absolute;
+    left: 165px;
+    top: 190px;
+    z-index: 1000;
+}
+
+#modal-lower-left-metatarsals-3 {
+    position: absolute;
+    left: 190px;
+    top: 180px;
+    z-index: 1000;
+}
+
+#modal-lower-left-metatarsals-4 {
+    position: absolute;
+    left: 210px;
+    top: 220px;
+    z-index: 1000;
+}
+
+#modal-lower-left-metatarsals-5 {
+    position: absolute;
+    left: 235px;
+    top: 205px;
+    z-index: 1000;
+}
+
+#modal-lower-left-cuneiform-med {
+    position: absolute;
+    left: 125px;
+    top: 235px;
+    z-index: 1000;
+}
+
+#modal-lower-left-cuneiform-intermed {
+    position: absolute;
+    left: 145px;
+    top: 250px;
+    z-index: 1000;
+}
+
+#modal-lower-left-cuneiform-lat {
+    position: absolute;
+    left: 175px;
+    top: 260px;
+    z-index: 1000;
+}
+
+#modal-lower-left-calcaneus {
+    position: absolute;
+    left: 180px;
+    top: 423px;
+    z-index: 1000;
+}
+
+#modal-lower-left-talus {
+    position: absolute;
+    left: 140px;
+    top: 361px;
+    z-index: 1000;
+}
+
+#modal-lower-left-navicular {
+    position: absolute;
+    left: 118px;
+    top: 280px;
+    z-index: 1000;
+}
+
+#modal-lower-left-cuboid {
+    position: absolute;
+    left: 190px;
+    top: 300px;
+    z-index: 1000;
+}
+
+#modal-lower-right-phalanges-1 {
+    position: absolute;
+    left: 130px;
+    top: 60px;
+    z-index: 1000;
+}
+
+#modal-lower-right-phalanges-2 {
+    position: absolute;
+    left: 178px;
+    top: 70px;
+    z-index: 1000;
+}
+
+#modal-lower-right-phalanges-3 {
+    position: absolute;
+    left: 207px;
+    top: 80px;
+    z-index: 1000;
+}
+
+#modal-lower-right-phalanges-4 {
+    position: absolute;
+    left: 230px;
+    top: 95px;
+    z-index: 1000;
+}
+
+#modal-lower-right-phalanges-5 {
+    position: absolute;
+    left: 255px;
+    top: 130px;
+    z-index: 1000;
+}
+
+#modal-lower-right-metatarsals-1 {
+    position: absolute;
+    left: 125px;
+    top: 135px;
+    z-index: 1000;
+}
+
+#modal-lower-right-metatarsals-2 {
+    position: absolute;
+    left: 165px;
+    top: 190px;
+    z-index: 1000;
+}
+
+#modal-lower-right-metatarsals-3 {
+    position: absolute;
+    left: 190px;
+    top: 180px;
+    z-index: 1000;
+}
+
+#modal-lower-right-metatarsals-4 {
+    position: absolute;
+    left: 210px;
+    top: 220px;
+    z-index: 1000;
+}
+
+#modal-lower-right-metatarsals-5 {
+    position: absolute;
+    left: 235px;
+    top: 205px;
+    z-index: 1000;
+}
+
+#modal-lower-right-cuneiform-med {
+    position: absolute;
+    left: 125px;
+    top: 235px;
+    z-index: 1000;
+}
+
+#modal-lower-right-cuneiform-intermed {
+    position: absolute;
+    left: 145px;
+    top: 250px;
+    z-index: 1000;
+}
+
+#modal-lower-right-cuneiform-lat {
+    position: absolute;
+    left: 175px;
+    top: 260px;
+    z-index: 1000;
+}
+
+#modal-lower-right-calcaneus {
+    position: absolute;
+    left: 180px;
+    top: 423px;
+    z-index: 1000;
+}
+
+#modal-lower-right-talus {
+    position: absolute;
+    left: 140px;
+    top: 361px;
+    z-index: 1000;
+}
+
+#modal-lower-right-navicular {
+    position: absolute;
+    left: 118px;
+    top: 280px;
+    z-index: 1000;
+}
+
+#modal-lower-right-cuboid {
+    position: absolute;
+    left: 190px;
+    top: 300px;
+    z-index: 1000;
+}
+
 /******************************
     Mobile Responsive Stuff
 ******************************/

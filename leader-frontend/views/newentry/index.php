@@ -882,15 +882,7 @@ include_once __DIR__ . '/../_header.php';
 
                     <textarea id="right-notes" name="right-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
 
-                    <div class="row">
-                        <div class="col-md-7">
-                            <select class="selectpicker" data-width="fit" id="upper-right-surgeries" name="upper-right-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
-                        </div>
-                        <div class="col-md-5">
-                            <button id="upper-right-surgical-pro" class="btn btn-primary" type="button">+Add</button><br>
-                        </div>
-                    </div>
-                    <ul id="upper-right-surgery-list" name="upper-right-surgery-list" style="display:none;"></ul>
+
                 </div>
                 <div class="col-md-3">
                     <h5>Deformities/Missing Bones</h5><br>
@@ -1128,15 +1120,7 @@ include_once __DIR__ . '/../_header.php';
                     </div>
 
                     <textarea id="left-notes" name="left-notes" placeholder="Notes" rows="2" cols="25"></textarea><br>
-                    <div class="row">
-                        <div class="col-md-7">
-                            <select class="selectpicker" data-width="fit" id="upper-left-surgeries" name="upper-left-surgeries" data-none-selected-text="Surgeries" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
-                        </div>
-                        <div class="col-md-5">
-                            <button id="upper-left-surgical-pro" class="btn btn-primary" type="button">+Add</button><br>
-                        </div>    
-                    </div>  
-                    <ul id="upper-left-surgery-list" name="upper-left-surgery-list" style="display:none;"></ul>
+
                 </div>
                 <div class="col-md-3">
                     <h5>Deformities/Missing Bones</h5><br>
@@ -1736,8 +1720,8 @@ include_once __DIR__ . '/../_header.php';
         $('#clear-selections').click(function(){
             if(confirm("Are you sure you want to clear the form?")) {
                 $('#extremity-form').trigger('reset');
-                $('#lower-right-surgery-list, #lower-left-surgery-list, #upper-right-surgery-list, #upper-left-surgery-list').empty();
-                $('#lower-right-surgery-list, #lower-left-surgery-list, #upper-right-surgery-list, #upper-left-surgery-list').css("display","none");
+                $('#lower-right-surgery-list, #lower-left-surgery-list').empty();
+                $('#lower-right-surgery-list, #lower-left-surgery-list').css("display","none");
             }
         });
 
@@ -1776,29 +1760,29 @@ include_once __DIR__ . '/../_header.php';
             $('#surgicalModal').modal('show');
         });
 
-        $('#upper-right-surgery-list').on('click', 'li', function(){
-            const tempArr = this.parentNode.id.split('-');
-            surgery_side = tempArr.slice(0, 2).join('-');
-
-            surgery_info = JSON.parse(atob(this.dataset.value));
-            $('#add-surgery-submit').attr('data-update-id', this.id);
-            $('#add-surgery-submit').html('Update');
-            $('#delete-surgery').css('display', '');
-            fill_surgical_form(surgery_info);
-            $('#surgicalModal').modal('show');
-        });
-
-        $('#upper-left-surgery-list').on('click', 'li', function(){
-            const tempArr = this.parentNode.id.split('-');
-            surgery_side = tempArr.slice(0, 2).join('-');
-
-            surgery_info = JSON.parse(atob(this.dataset.value));
-            $('#add-surgery-submit').attr('data-update-id', this.id);
-            $('#add-surgery-submit').html('Update');
-            $('#delete-surgery').css('display', '');
-            fill_surgical_form(surgery_info);
-            $('#surgicalModal').modal('show');
-        });
+//         $('#upper-right-surgery-list').on('click', 'li', function(){
+//             const tempArr = this.parentNode.id.split('-');
+//             surgery_side = tempArr.slice(0, 2).join('-');
+//
+//             surgery_info = JSON.parse(atob(this.dataset.value));
+//             $('#add-surgery-submit').attr('data-update-id', this.id);
+//             $('#add-surgery-submit').html('Update');
+//             $('#delete-surgery').css('display', '');
+//             fill_surgical_form(surgery_info);
+//             $('#surgicalModal').modal('show');
+//         });
+//
+//         $('#upper-left-surgery-list').on('click', 'li', function(){
+//             const tempArr = this.parentNode.id.split('-');
+//             surgery_side = tempArr.slice(0, 2).join('-');
+//
+//             surgery_info = JSON.parse(atob(this.dataset.value));
+//             $('#add-surgery-submit').attr('data-update-id', this.id);
+//             $('#add-surgery-submit').html('Update');
+//             $('#delete-surgery').css('display', '');
+//             fill_surgical_form(surgery_info);
+//             $('#surgicalModal').modal('show');
+//         });
 
         // this makes the buttons show diff things
         $('#lower-extremity-btn').click(function(){

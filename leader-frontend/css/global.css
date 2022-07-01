@@ -547,9 +547,7 @@ a.collapsed:visited, a.d-block:visited {
 } 
 
 #lower-right-surgery-list,
-#lower-left-surgery-list,
-#upper-right-surgery-list,
-#upper-left-surgery-list {
+#lower-left-surgery-list {
     width: 100%;
     list-style: none;
     padding: 0;
@@ -558,17 +556,13 @@ a.collapsed:visited, a.d-block:visited {
 }
 
 #lower-right-surgery-list li,
-#lower-left-surgery-list li,
-#upper-right-surgery-list li,
-#upper-left-surgery-list li {
+#lower-left-surgery-list li {
     padding: 1px 0 1px 20px;
     border-bottom: 1px solid #828282;
 }
 
 #lower-right-surgery-list li::before,
-#lower-left-surgery-list li::before,
-#upper-right-surgery-list li::before,
-#upper-left-surgery-list li::before {
+#lower-left-surgery-list li::before {
     content: "\f044";
     font-family: "Font Awesome 5 Free";
     display:inline-block;

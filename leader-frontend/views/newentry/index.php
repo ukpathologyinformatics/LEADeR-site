@@ -1423,26 +1423,26 @@ include_once __DIR__ . '/../_header.php';
                 <div class="modal-body">
                     <div class ="container">
                         <img id="footImage" src="/img/footImage.jpg"/>
-                        <input type="checkbox" id="modal-lower-right-phalanges-1" value=1 onClick="selectByID()" data-id="lower-right-phalanges-1">
-                        <input type="checkbox" id="modal-lower-right-phalanges-2" value=1 onClick="selectByID()" data-id="lower-right-phalanges-2">
-                        <input type="checkbox" id="modal-lower-right-phalanges-3" value=1 onClick="selectByID()" data-id="lower-right-phalanges-3">
-                        <input type="checkbox" id="modal-lower-right-phalanges-4" value=1 onClick="selectByID()" data-id="lower-right-phalanges-4">
-                        <input type="checkbox" id="modal-lower-right-phalanges-5" value=1 onClick="selectByID()" data-id="lower-right-phalanges-5">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-1" value=1 onClick="selectByID()" data-id="lower-right-phalanges-1">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-2" value=1 onClick="selectByID()" data-id="lower-right-phalanges-2">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-3" value=1 onClick="selectByID()" data-id="lower-right-phalanges-3">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-4" value=1 onClick="selectByID()" data-id="lower-right-phalanges-4">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-5" value=1 onClick="selectByID()" data-id="lower-right-phalanges-5">
 
-                        <input type="checkbox" id="modal-lower-right-metatarsals-1" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-1">
-                        <input type="checkbox" id="modal-lower-right-metatarsals-2" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-2">
-                        <input type="checkbox" id="modal-lower-right-metatarsals-3" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-3">
-                        <input type="checkbox" id="modal-lower-right-metatarsals-4" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-4">
-                        <input type="checkbox" id="modal-lower-right-metatarsals-5" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-5">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-1" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-1">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-2" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-2">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-3" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-3">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-4" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-4">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-5" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-5">
 
-                        <input type="checkbox" id="modal-lower-right-cuneiform-med" value=1 onClick="selectByID()" data-id="lower-right-cuneiform-med">
-                        <input type="checkbox" id="modal-lower-right-cuneiform-intermed" value=1 onClick="selectByID()" data-id= "lower-right-cuneiform-intermed">
-                        <input type="checkbox" id="modal-lower-right-cuneiform-lat" value=1 onClick="selectByID()" data-id= "lower-right-cuneiform-lat">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-cuneiform-med" value=1 onClick="selectByID()" data-id="lower-right-cuneiform-med">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-cuneiform-intermed" value=1 onClick="selectByID()" data-id= "lower-right-cuneiform-intermed">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-cuneiform-lat" value=1 onClick="selectByID()" data-id= "lower-right-cuneiform-lat">
 
-                        <input type="checkbox" id="modal-lower-right-calcaneus" value=1 onClick="selectByID()" data-id="lower-right-calcaneus">         
-                        <input type="checkbox" id="modal-lower-right-talus" value=1 onClick="selectByID()" data-id="lower-right-talus">      
-                        <input type="checkbox" id="modal-lower-right-navicular" value=1 onClick="selectByID()" data-id="lower-right-navicular">       
-                        <input type="checkbox" id="modal-lower-right-cuboid" value=1 onClick="selectByID()" data-id="lower-right-cuboid">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-calcaneus" value=1 onClick="selectByID()" data-id="lower-right-calcaneus">         
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-talus" value=1 onClick="selectByID()" data-id="lower-right-talus">      
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-navicular" value=1 onClick="selectByID()" data-id="lower-right-navicular">       
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-cuboid" value=1 onClick="selectByID()" data-id="lower-right-cuboid">
                     </div>
                 </div>
             </div>
@@ -1463,26 +1463,26 @@ include_once __DIR__ . '/../_header.php';
                 <div class="modal-body">
                     <div class ="container">
                         <img id="footImage" src="/img/footImage.jpg"/>
-                        <input type="checkbox" id="modal-lower-left-phalanges-1" value=1 onClick="selectByID()" data-id="lower-left-phalanges-1">
-                        <input type="checkbox" id="modal-lower-left-phalanges-2" value=1 onClick="selectByID()" data-id="lower-left-phalanges-2">
-                        <input type="checkbox" id="modal-lower-left-phalanges-3" value=1 onClick="selectByID()" data-id="lower-left-phalanges-3">
-                        <input type="checkbox" id="modal-lower-left-phalanges-4" value=1 onClick="selectByID()" data-id="lower-left-phalanges-4">
-                        <input type="checkbox" id="modal-lower-left-phalanges-5" value=1 onClick="selectByID()" data-id="lower-left-phalanges-5">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-1" value=1 onClick="selectByID()" data-id="lower-left-phalanges-1">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-2" value=1 onClick="selectByID()" data-id="lower-left-phalanges-2">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-3" value=1 onClick="selectByID()" data-id="lower-left-phalanges-3">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-4" value=1 onClick="selectByID()" data-id="lower-left-phalanges-4">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-5" value=1 onClick="selectByID()" data-id="lower-left-phalanges-5">
 
-                        <input type="checkbox" id="modal-lower-left-metatarsals-1" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-1">
-                        <input type="checkbox" id="modal-lower-left-metatarsals-2" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-2">
-                        <input type="checkbox" id="modal-lower-left-metatarsals-3" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-3">
-                        <input type="checkbox" id="modal-lower-left-metatarsals-4" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-4">
-                        <input type="checkbox" id="modal-lower-left-metatarsals-5" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-5">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-1" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-1">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-2" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-2">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-3" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-3">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-4" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-4">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-5" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-5">
 
-                        <input type="checkbox" id="modal-lower-left-cuneiform-med" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-med">
-                        <input type="checkbox" id="modal-lower-left-cuneiform-intermed" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-intermed">
-                        <input type="checkbox" id="modal-lower-left-cuneiform-lat" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-lat">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-cuneiform-med" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-med">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-cuneiform-intermed" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-intermed">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-cuneiform-lat" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-lat">
 
-                        <input type="checkbox" id="modal-lower-left-calcaneus" value=1 onClick="selectByID()" data-id="lower-left-calcaneus">         
-                        <input type="checkbox" id="modal-lower-left-talus" value=1 onClick="selectByID()" data-id="lower-left-talus">      
-                        <input type="checkbox" id="modal-lower-left-navicular" value=1 onClick="selectByID()" data-id="lower-left-navicular">       
-                        <input type="checkbox" id="modal-lower-left-cuboid" value=1 data-id="lower-left-cuboid" onClick="selectByID()">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-calcaneus" value=1 onClick="selectByID()" data-id="lower-left-calcaneus">         
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-talus" value=1 onClick="selectByID()" data-id="lower-left-talus">      
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-navicular" value=1 onClick="selectByID()" data-id="lower-left-navicular">       
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-cuboid" value=1 data-id="lower-left-cuboid" onClick="selectByID()">
                     </div>
                 </div>
             </div>

@@ -993,8 +993,8 @@ include_once __DIR__ . '/../_header.php';
                             <label for="right-trapezium">trapezium</label><br>
                             <input type="checkbox" class="right-checkboxes" id="right-scaphoid" name="right-scaphoid" value="1"/>
                             <label for="right-scaphoid">scaphoid</label><br>
-                            <input type="checkbox" class="right-checkboxes" id="right-capitellum" name="right-capitellum" value="1"/>
-                            <label for="right-capitellum">capitellum</label><br>
+                            <input type="checkbox" class="right-checkboxes" id="right-capitate" name="right-capitate" value="1"/>
+                            <label for="right-capitate">capitate</label><br>
                             <button type="button" class="btn btn-primary" id="right-hand-drawing">Hand</button>
                         </div>
                     </div>
@@ -1232,8 +1232,8 @@ include_once __DIR__ . '/../_header.php';
                             <label for="left-trapezium">trapezium</label><br>
                             <input type="checkbox" class="left-checkboxes" id="left-scaphoid" name="left-scaphoid" value="1"/>
                             <label for="left-scaphoid">scaphoid</label><br>
-                            <input type="checkbox" class="left-checkboxes" id="left-capitellum" name="left-capitellum" value="1"/>
-                            <label for="left-capitellum">capitellum</label><br>
+                            <input type="checkbox" class="left-checkboxes" id="left-capitate" name="left-capitate" value="1"/>
+                            <label for="left-capitate">capitate</label><br>
                             <button type="button" class="btn btn-primary" id="left-hand-drawing">Hand</button>
 
                         </div>
@@ -2013,6 +2013,7 @@ include_once __DIR__ . '/../_header.php';
 
                     success : function(data) {
                         console.log('Data: '+JSON.stringify(data));
+                        showSuccess("Added Entry");
                     },
                     error : function(request,error)
                     {

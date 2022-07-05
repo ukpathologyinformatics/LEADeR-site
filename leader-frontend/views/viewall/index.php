@@ -48,6 +48,7 @@ include_once __DIR__ . '/../_header.php';
                     $('#view-all-table').DataTable({
                         //serverSide: true,
                         //ajax: '/view-all'
+                        searching: false
                     });
                 },
                 error : function(request,error)

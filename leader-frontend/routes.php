@@ -83,6 +83,9 @@
         $router->map('GET', '/new-query', function() {
             NewQueryController::index(get_session());
         }, 'newquery-index');
+        $router->map('GET', '/new-query/search-table', function() {
+            NewQueryController::searchTable(get_session());
+        }, 'newquery-searchtable');
     } catch (Exception $e) {
         die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }

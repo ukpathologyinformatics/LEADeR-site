@@ -14,7 +14,7 @@ class ViewAllController {
         $all_data = array();
         $patient_ids = array();
         try {
-            $SELECT = DB::run("SELECT * FROM patient LEFT JOIN patient_icd ON patient.patient_id=patient_icd.patient_id LEFT JOIN patient_class ON patient.patient_id=patient_class.patient_id");
+            $SELECT = DB::run("SELECT * FROM patient LEFT JOIN patient_icd ON patient.patient_id=patient_icd.patient_id");
             if($SELECT != false) {
                 while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
                     if (!in_array($rows['patient_id'], $patient_ids)) {

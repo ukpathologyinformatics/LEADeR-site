@@ -35,7 +35,6 @@ include_once __DIR__ . '/../_header.php';
                 type : 'GET',
 
                 success : function(data) {
-                    //console.log(data['data']);
                     data['data'].forEach(function(currentValue, index, arr){
 //                         console.log(currentValue);
 //                         currentValue.forEach(function(currentField, index, arr){

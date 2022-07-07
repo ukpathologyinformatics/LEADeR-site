@@ -169,4 +169,26 @@ class NewEntryController {
         echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
     }
 
+    public static function fillSurgeryDropdown(UserSession $userSession) {
+        header('Content-Type: application/json');
+        $success = false;
+        $error_message = null;
+        $all_data = array();
+        try {
+            $SELECT = DB::run("SELECT * FROM surgery");
+            if($SELECT != false) {
+                while ($rows = $SELECT->fetch(PDO::FETCH_LAZY)) {
+                    array_push($all_data, array('name' => $rows['surgery_name'], 'code' => $rows['CPT_code']));
+                }
+                $success = true;
+            }
+        } catch (Exception $e) {
+            $message=$e;
+        }
+
+
+        $ret = array('success' => $success, 'error_message' => $error_message, 'data' => $all_data);
+        echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
+    }
+
 }

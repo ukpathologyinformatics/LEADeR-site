@@ -74,6 +74,9 @@
         $router->map('GET', '/new-entry/fill-dropdown', function() {
             NewEntryController::fillClassDropdown(get_session());
         }, 'newentry-fillclassdropdown');
+        $router->map('GET', '/new-entry/fill-surgery-dropdown', function() {
+            NewEntryController::fillSurgeryDropdown(get_session());
+        }, 'newentry-fillsurgerydropdown');
     } catch (Exception $e) {
         die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }

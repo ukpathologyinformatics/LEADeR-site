@@ -1361,7 +1361,7 @@ include_once __DIR__ . '/../_header.php';
                     </div>
                     <div class="row">
                         <div class="col-md-3 left-modal-stuff input-group">
-                            <select class="selectpicker" id="surgery-name" name="surgery-name" data-none-selected-text="Surgery Name" multiple data-live-search="true" data-live-search-placeholder="Search"></select>
+                            <select class="selectpicker" id="surgery-name" name="surgery-name" title="Surgery Name" data-live-search="true" data-live-search-placeholder="Search"></select>
 <!--                             <span class="input-group-text">Surgery Name</span> -->
 <!--                             <textarea id="surgery-name" name="surgery-name" class="form-control" aria-label="Surgery Name"></textarea> -->
                         </div>
@@ -1497,6 +1497,7 @@ include_once __DIR__ . '/../_header.php';
             $('#add-surgery-submit').html('Add');
             $('#delete-surgery').css('display', 'none');
             $('#surgicalModal').modal('show');
+
         }
 
         function clear_surgical_form() {
@@ -1672,6 +1673,26 @@ include_once __DIR__ . '/../_header.php';
                 {
                     console.log("Request: "+JSON.stringify(request));
                 }
+            });
+            $.ajax({
+                url : '/new-entry/fill-surgery-dropdown',
+                type : 'GET',
+
+                success : function(data) {
+                    data['data'].forEach(function(currentValue, index, arr){
+                        $('#surgery-name').append("<option value='"+currentValue['code']+"'>"+ currentValue['name'] +"</option>");
+                        $('#surgery-name').selectpicker('refresh');
+
+                    });
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request));
+                }
+            });
+            $("#surgery-name").change(function(){
+                var selectedSurgery = $(this).children("option:selected").val();
+                $('#cpt-code').val(selectedSurgery);
             });
         });
 

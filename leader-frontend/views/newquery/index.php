@@ -14,18 +14,6 @@ include_once __DIR__ . '/../_header.php';
         <h5>Choose Search Criteria</h5>
         <div class="row">
             <div class="col-md-4">
-<!--                 <div class="all-searches"> -->
-<!--                     <div class="first-search"> -->
-<!--                         <select class="selectpicker" id="search-criteria" data-none-selected-text="Criteria"  data-live-search-placeholder="Search"> -->
-<!--                             <option>Criteria</option> -->
-<!--                             <optgroup label="German Cars"> -->
-<!--                                 <option value="mercedes">Mercedes</option> -->
-<!--                                 <option value="audi">Audi</option> -->
-<!--                             </optgroup> -->
-<!--                         </select> -->
-<!--                     </div> -->
-
-<!--                 </div> -->
                 <select class="selectpicker" id="search-criteria" data-width="100%" data-none-selected-text="Criteria" multiple data-live-search="true" data-live-search-placeholder="Search">
                     <optgroup label="Lower Right Extremity">
                         <option id="lower-right-longitudinal-search" value="lower-right-longitudinal">Lower Right Longitudinal</option>
@@ -115,51 +103,15 @@ include_once __DIR__ . '/../_header.php';
 
     <script type="text/javascript">
         $(document).ready( function () {
-            //var id = $('#search-criteria').val();
             $('#search-table').DataTable({
-//                             language : {
-//                                 "zeroRecords": " "
-//                             },
+                searching: false
                             //serverSide: true,
                             //ajax: '/view-all'
             });
-//             $.ajax({
-//                 url : '/new-query/search-table',
-//                 type : 'GET',
-//                 data: 'parameters='+id,
-//
-//                 success : function(data) {
-//                     //console.log(data['data']);
-//                     data['data'].forEach(function(currentValue, index, arr){
-// //                         console.log(currentValue);
-// //                         currentValue.forEach(function(currentField, index, arr){
-// //                             if (currentField == null) {
-// //                                 currentField = "N/A";
-// //                             }
-// //                         });
-//                         $('#search-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td><td>"+currentValue["surgery_id"]+"</td></tr>");
-//                     });
-//                     $('#search-table').DataTable({
-// //                             language : {
-// //                                 "zeroRecords": " "
-// //                             },
-//                             //serverSide: true,
-//                             //ajax: '/view-all'
-//                     });
-//
-//
-//                 },
-//                 error : function(request,error)
-//                 {
-//                     console.log("Request: "+JSON.stringify(request));
-//                 }
-//             });
-             //JOIN patient_surgery ON patient.patient_id=patient_surgery.patient_id JOIN patient_class ON patient.patient_id=patient_class.patient_id
-        } );
+        });
 
         $('#search').click(function (){
             var id = $('#search-criteria').val();
-//             $('#search-table').DataTable().rows().remove();
             $('#search-table').DataTable().rows().remove();
             $('#search-table').DataTable().destroy();
 
@@ -170,42 +122,14 @@ include_once __DIR__ . '/../_header.php';
                 data: 'parameters='+id,
 
                 success : function(data) {
-
-                    //var result = Object.keys(data['data']).map((key) => [Number(key), data['data'][key]]);
-                    console.log(data['data']);
                     data['data'].forEach(function(currentValue, index, arr){
-//                         console.log(currentValue);
-//                         currentValue.forEach(function(currentField, index, arr){
-//                             if (currentField == null) {
-//                                 currentField = "N/A";
-//                             }
-//                         });
                         $('#search-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td><td>"+currentValue["surgery_id"]+"</td></tr>");
                     });
                     $('#search-table').DataTable({
-//                             language : {
-//                                 "zeroRecords": " "
-//                             },
+                        searching: false
                             //serverSide: true,
                             //ajax: '/view-all'
                     });
-
-//                     $('#search-table').DataTable({
-// //                         //serverSide: true,
-// //                         //ajax: '/view-all'
-//                      });
-//                     $('#search-table').DataTable().destroy();
-//                     $('#search-table').DataTable({
-//                         //serverSide: true,
-//                         //ajax: '/view-all'
-//                     });
-//                     if ($.fn.dataTable.isDataTable('#search-table')) {
-//                         console.log("is table");
-//                         table = $('#search-table').DataTable();
-//                     }
-//                     else {
-//                         table = $('#search-table').DataTable({});
-//                     }
                 },
                 error : function(request,error)
                 {

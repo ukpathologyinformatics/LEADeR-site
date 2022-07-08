@@ -1576,7 +1576,7 @@ include_once __DIR__ . '/../_header.php';
             //base64 encode json obj
             //let encoded_surg = btoa(JSON.stringify(surgery_info));
             // $('#'+surgery_side+'-surgery-list').append("<li id='"+surgery_side+"-surgery-"+surgery_counter+"' data-value="+ encoded_surg +">"+ surg_name +"</li>");
-            $('#'+surgery_side+'-surgeries').append("<option id='"+surgery_side+"-surgery-"+surg_name+"' value="+ encoded_surg +">"+ surg_name +"</option>");
+            $('#'+surgery_side+'-surgeries').append("<option id='"+surgery_side+"-surgery-"+surg_name+"' value="+ encoded_surg +" selected>"+ surg_name +"</option>");
             $('#'+surgery_side+'-surgeries').selectpicker('refresh');
             $('#surgicalModal').modal('hide');
             showSuccess("Added Surgery to List");
@@ -1680,7 +1680,7 @@ include_once __DIR__ . '/../_header.php';
 
                 success : function(data) {
                     data['data'].forEach(function(currentValue, index, arr){
-                        $('#surgery-name').append("<option value='"+currentValue['code']+"'>"+ currentValue['name'] +"</option>");
+                        $('#surgery-name').append("<option id='"+ currentValue['code'] +"' value='"+currentValue['name']+"'>"+ currentValue['name'] +"</option>");
                         $('#surgery-name').selectpicker('refresh');
 
                     });
@@ -1691,7 +1691,7 @@ include_once __DIR__ . '/../_header.php';
                 }
             });
             $("#surgery-name").change(function(){
-                var selectedSurgery = $(this).children("option:selected").val();
+                var selectedSurgery = $(this).children("option:selected").attr("id");
                 $('#cpt-code').val(selectedSurgery);
             });
         });

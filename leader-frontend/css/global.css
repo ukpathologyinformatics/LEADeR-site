@@ -821,6 +821,291 @@ a.collapsed:visited, a.d-block:visited {
     z-index: 1000;
 }
 
+#handImage {
+    width: 450px;
+    height: auto;
+}
+
+#modal-left-phalanges-5 {
+    position: absolute;
+    left: 205px;
+    top: 170px;
+    z-index: 1000;
+}
+
+#modal-left-phalanges-4 {
+    position: absolute;
+    left: 242px;
+    top: 145px;
+    z-index: 1000;
+}
+
+#modal-left-phalanges-3 {
+    position: absolute;
+    left: 288px;
+    top: 130px;
+    z-index: 1000;
+}
+
+#modal-left-phalanges-2 {
+    position: absolute;
+    left: 336px;
+    top: 145px;
+    z-index: 1000;
+}
+
+#modal-left-phalanges-1 {
+    position: absolute;
+    left: 400px;
+    top: 220px;
+    z-index: 1000;
+}
+
+#modal-left-metacarpals-5 {
+    position: absolute;
+    left: 230px;
+    top: 260px;
+    z-index: 1000;
+}
+
+#modal-left-metacarpals-4 {
+    position: absolute;
+    left: 258px;
+    top: 240px;
+    z-index: 1000;
+}
+
+#modal-left-metacarpals-3 {
+    position: absolute;
+    left: 290px;
+    top: 230px;
+    z-index: 1000;
+}
+
+#modal-left-metacarpals-2 {
+    position: absolute;
+    left: 325px;
+    top: 240px;
+    z-index: 1000;
+}
+
+#modal-left-metacarpals-1 {
+    position: absolute;
+    left: 370px;
+    top: 280px;
+    z-index: 1000;
+}
+
+#modal-left-hamate {
+    position: absolute;
+    left: 262px;
+    top: 335px;
+    z-index: 1000;
+}
+
+#modal-left-pistiform {
+    position: absolute;
+    left: 240px;
+    top: 355px;
+    z-index: 1000;
+}
+
+#modal-left-triquetral {
+    position: absolute;
+    left: 255px;
+    top: 365px;
+    z-index: 1000;
+}
+
+#modal-left-lunate {
+    position: absolute;
+    left: 277px;
+    top: 372px;
+    z-index: 1000;
+}
+
+#modal-left-trapezoid {
+    position: absolute;
+    left: 310px;
+    top: 325px;
+    z-index: 1000;
+}
+
+#modal-left-trapezium {
+    position: absolute;
+    left: 339px;
+    top: 325px;
+    z-index: 1000;
+}
+
+#modal-left-scaphoid {
+    position: absolute;
+    left: 317px;
+    top: 355px;
+    z-index: 1000;
+}
+
+#modal-left-capitellum {
+    position: absolute;
+    left: 290px;
+    top: 336px;
+    z-index: 1000;
+}
+
+#modal-left-ulna-dist{
+    position: absolute;
+    left: 242px;
+    top: 415px;
+    z-index: 1000;
+}
+
+#modal-left-radius-dist {
+    position: absolute;
+    left: 305px;
+    top: 430px;
+    z-index: 1000;
+}
+
+#modal-right-phalanges-5 {
+    position: absolute;
+    left: 205px;
+    top: 170px;
+    z-index: 1000;
+}
+
+#modal-right-phalanges-4 {
+    position: absolute;
+    left: 242px;
+    top: 145px;
+    z-index: 1000;
+}
+
+#modal-right-phalanges-3 {
+    position: absolute;
+    left: 288px;
+    top: 130px;
+    z-index: 1000;
+}
+
+#modal-right-phalanges-2 {
+    position: absolute;
+    left: 336px;
+    top: 145px;
+    z-index: 1000;
+}
+
+#modal-right-phalanges-1 {
+    position: absolute;
+    left: 400px;
+    top: 220px;
+    z-index: 1000;
+}
+
+#modal-right-metacarpals-5 {
+    position: absolute;
+    left: 230px;
+    top: 260px;
+    z-index: 1000;
+}
+
+#modal-right-metacarpals-4 {
+    position: absolute;
+    left: 258px;
+    top: 240px;
+    z-index: 1000;
+}
+
+#modal-right-metacarpals-3 {
+    position: absolute;
+    left: 290px;
+    top: 230px;
+    z-index: 1000;
+}
+
+#modal-right-metacarpals-2 {
+    position: absolute;
+    left: 325px;
+    top: 240px;
+    z-index: 1000;
+}
+
+#modal-right-metacarpals-1 {
+    position: absolute;
+    left: 370px;
+    top: 280px;
+    z-index: 1000;
+}
+
+#modal-right-hamate {
+    position: absolute;
+    left: 262px;
+    top: 335px;
+    z-index: 1000;
+}
+
+#modal-right-pistiform {
+    position: absolute;
+    left: 240px;
+    top: 355px;
+    z-index: 1000;
+}
+
+#modal-right-triquetral {
+    position: absolute;
+    left: 255px;
+    top: 365px;
+    z-index: 1000;
+}
+
+#modal-right-lunate {
+    position: absolute;
+    left: 277px;
+    top: 372px;
+    z-index: 1000;
+}
+
+#modal-right-trapezoid {
+    position: absolute;
+    left: 310px;
+    top: 325px;
+    z-index: 1000;
+}
+
+#modal-right-trapezium {
+    position: absolute;
+    left: 339px;
+    top: 325px;
+    z-index: 1000;
+}
+
+#modal-right-scaphoid {
+    position: absolute;
+    left: 317px;
+    top: 355px;
+    z-index: 1000;
+}
+
+#modal-right-capitellum {
+    position: absolute;
+    left: 290px;
+    top: 336px;
+    z-index: 1000;
+}
+
+#modal-right-ulna-dist{
+    position: absolute;
+    left: 242px;
+    top: 415px;
+    z-index: 1000;
+}
+
+#modal-right-radius-dist {
+    position: absolute;
+    left: 305px;
+    top: 430px;
+    z-index: 1000;
+}
+
 /******************************
     Mobile Responsive Stuff
 ******************************/

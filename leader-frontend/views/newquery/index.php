@@ -122,6 +122,7 @@ include_once __DIR__ . '/../_header.php';
                 data: 'parameters='+id,
 
                 success : function(data) {
+                    //console.log(data['data']);
                     data['data'].forEach(function(currentValue, index, arr){
                         $('#search-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td><td>"+currentValue["surgery_id"]+"</td></tr>");
                     });

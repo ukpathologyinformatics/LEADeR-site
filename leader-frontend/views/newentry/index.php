@@ -933,7 +933,7 @@ include_once __DIR__ . '/../_header.php';
                                     <div class="col-3">
                                         <label for="right-radius-dist">dist.</label><br>
                                         <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-radius-dist" name="right-radius-dist" value="1" type="checkbox"/>
+                                            <input class="right-checkboxes" id="right-radius-dist" name="right-radius-dist" value="1" type="checkbox" onClick="selectByID()" data-id="right-radius-dist"/>
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -958,7 +958,7 @@ include_once __DIR__ . '/../_header.php';
                                     <div class="col-3">
                                         <label for="right-ulna-dist">dist.</label><br>
                                         <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-ulna-dist" name="right-ulna-dist" value="1" type="checkbox"/>
+                                            <input class="right-checkboxes" id="right-ulna-dist" name="right-ulna-dist" value="1" type="checkbox" onClick="selectByID()" data-id="right-ulna-dist"/>
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -979,23 +979,23 @@ include_once __DIR__ . '/../_header.php';
                                 <label for="right-hand">hand/wrist</label><br>
                         </div>
                         <div class="col-md-6">
-                            <input type="checkbox" class="right-checkboxes" id="right-hamate" name="right-hamate" value="1"/>
+                            <input type="checkbox" class="right-checkboxes" id="right-hamate" name="right-hamate" value="1" onClick="selectByID()" data-id="right-hamate"/>
                             <label for="right-hamate">hamate</label><br>
-                            <input type="checkbox" class="right-checkboxes" id="right-pistiform" name="right-pistiform" value="1"/>
+                            <input type="checkbox" class="right-checkboxes" id="right-pistiform" name="right-pistiform" value="1" onClick="selectByID()" data-id="right-pistiform"/>
                             <label for="right-pistiform">pistiform</label><br>
-                            <input type="checkbox" class="right-checkboxes" id="right-triquetral" name="right-triquetral" value="1"/>
+                            <input type="checkbox" class="right-checkboxes" id="right-triquetral" name="right-triquetral" value="1" onClick="selectByID()" data-id="right-triquetral"/>
                             <label for="right-triquetral">triquetral</label><br>
-                            <input type="checkbox" class="right-checkboxes" id="right-lunate" name="right-lunate" value="1"/>
+                            <input type="checkbox" class="right-checkboxes" id="right-lunate" name="right-lunate" value="1" onClick="selectByID()" data-id="right-lunate"/>
                             <label for="right-lunate">lunate</label><br>
-                            <input type="checkbox" class="right-checkboxes" id="right-trapezoid" name="right-trapezoid" value="1"/>
+                            <input type="checkbox" class="right-checkboxes" id="right-trapezoid" name="right-trapezoid" value="1" onClick="selectByID()" data-id="right-trapezoid"/>
                             <label for="right-trapezoid">trapezoid</label><br>
-                            <input type="checkbox" class="right-checkboxes" id="right-trapezium" name="right-trapezium" value="1"/>
+                            <input type="checkbox" class="right-checkboxes" id="right-trapezium" name="right-trapezium" value="1" onClick="selectByID()" data-id="right-trapezium"/>
                             <label for="right-trapezium">trapezium</label><br>
-                            <input type="checkbox" class="right-checkboxes" id="right-scaphoid" name="right-scaphoid" value="1"/>
+                            <input type="checkbox" class="right-checkboxes" id="right-scaphoid" name="right-scaphoid" value="1" onClick="selectByID()" data-id="right-scaphoid"/>
                             <label for="right-scaphoid">scaphoid</label><br>
-                            <input type="checkbox" class="right-checkboxes" id="right-capitate" name="right-capitate" value="1"/>
-                            <label for="right-capitate">capitate</label><br>
-                            <button type="button" class="btn btn-primary" id="right-hand-drawing">Hand</button>
+                            <input type="checkbox" class="right-checkboxes" id="right-capitellum" name="right-capitellum" value="1" onClick="selectByID()" data-id="right-capitellum"/>
+                            <label for="right-capitellum">capitellum</label><br>
+                            <button type="button" class="btn btn-primary" id="right-hand-drawing" data-toggle="modal" data-target="#right-hand-modal">Hand</button>
                         </div>
                     </div>
                     <u>Hand</u><br>
@@ -1009,31 +1009,31 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-2">
                                     <label for="right-phalanges-5">5</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-phalanges-5" name="right-phalanges-5" value="1" type="checkbox"/>
+                                            <input class="right-checkboxes" id="right-phalanges-5" name="right-phalanges-5" value="1" type="checkbox" onClick="selectByID()" data-id="right-phalanges-5"/>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <label for="right-phalanges-4">4</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-phalanges-4" type="checkbox" name="right-phalanges-4" value="1"/>
+                                            <input class="right-checkboxes" id="right-phalanges-4" type="checkbox" name="right-phalanges-4" value="1" onClick="selectByID()" data-id="right-phalanges-4"/>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <label for="right-phalanges-3">3</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-phalanges-3" type="checkbox" name="right-phalanges-3" value="1"/>
+                                            <input class="right-checkboxes" id="right-phalanges-3" type="checkbox" name="right-phalanges-3" value="1" onClick="selectByID()" data-id="right-phalanges-3"/>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <label for="right-phalanges-2">2</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-phalanges-2" type="checkbox" name="right-phalanges-2" value="1"/>
+                                            <input class="right-checkboxes" id="right-phalanges-2" type="checkbox" name="right-phalanges-2" value="1" onClick="selectByID()" data-id="right-phalanges-2"/>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <label for="right-phalanges-1">1</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-phalanges-1" type="checkbox" name="right-phalanges-1" value="1"/>
+                                            <input class="right-checkboxes" id="right-phalanges-1" type="checkbox" name="right-phalanges-1" value="1" onClick="selectByID()" data-id="right-phalanges-1"/>
                                     </div>
                                 </div>
                             </div>
@@ -1045,31 +1045,31 @@ include_once __DIR__ . '/../_header.php';
                                 <div class="col-2">
                                     <label for="right-metacarpals-5">5</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-metacarpals-5" type="checkbox" name="right-metacarpals-5" value="1"/>
+                                            <input class="right-checkboxes" id="right-metacarpals-5" type="checkbox" name="right-metacarpals-5" value="1" onClick="selectByID()" data-id="right-metacarpals-5"/>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <label for="right-metacarpals-4">4</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-metacarpals-4" type="checkbox" name="right-metacarpals-4" value="1"/>
+                                            <input class="right-checkboxes" id="right-metacarpals-4" type="checkbox" name="right-metacarpals-4" value="1" onClick="selectByID()" data-id="right-metacarpals-4"/>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <label for="right-metacarpals-3">3</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-metacarpals-3" type="checkbox" name="right-metacarpals-3" value="1"/>
+                                            <input class="right-checkboxes" id="right-metacarpals-3" type="checkbox" name="right-metacarpals-3" value="1" onClick="selectByID()" data-id="right-metacarpals-3"/>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <label for="right-metacarpals-2">2</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-metacarpals-2" type="checkbox" name="right-metacarpals-2" value="1"/>
+                                            <input class="right-checkboxes" id="right-metacarpals-2" type="checkbox" name="right-metacarpals-2" value="1" onClick="selectByID()" data-id="right-metacarpals-2"/>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <label for="right-metacarpals-1">1</label><br>
                                     <div class="form-check form-check-inline">
-                                            <input class="right-checkboxes" id="right-metacarpals-1" type="checkbox" name="right-metacarpals-1" value="1"/>
+                                            <input class="right-checkboxes" id="right-metacarpals-1" type="checkbox" name="right-metacarpals-1" value="1" onClick="selectByID()" data-id="right-metacarpals-1"/>
                                     </div>
                                 </div>
                             </div>
@@ -1171,7 +1171,7 @@ include_once __DIR__ . '/../_header.php';
                                     <div class="col-3">
                                         <label for="left-radius-dist">dist.</label><br>
                                         <div class="form-check form-check-inline">
-                                            <input class="left-checkboxes" id="left-radius-dist" name="left-radius-dist" value="1" type="checkbox"/>
+                                            <input class="left-checkboxes" id="left-radius-dist" name="left-radius-dist" value="1" type="checkbox" onClick="selectByID()" data-id="left-radius-dist"/>
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -1196,7 +1196,7 @@ include_once __DIR__ . '/../_header.php';
                                     <div class="col-3">
                                         <label for="left-ulna-dist">dist.</label><br>
                                         <div class="form-check form-check-inline">
-                                            <input class="left-checkboxes" id="left-ulna-dist" name="left-ulna-dist" value="1" type="checkbox"/>
+                                            <input class="left-checkboxes" id="left-ulna-dist" name="left-ulna-dist" value="1" type="checkbox" onClick="selectByID()" data-id="left-ulna-dist"/>
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -1218,23 +1218,23 @@ include_once __DIR__ . '/../_header.php';
 
                         </div>
                         <div class="col-md-6">
-                            <input type="checkbox" class="left-checkboxes" id="left-hamate" name="left-hamate" value="1"/>
+                            <input type="checkbox" class="left-checkboxes" id="left-hamate" name="left-hamate" value="1" onClick="selectByID()" data-id="left-hamate"/>
                             <label for="left-hamate">hamate</label><br>
-                            <input type="checkbox" class="left-checkboxes" id="left-pistiform" name="left-pistiform" value="1"/>
+                            <input type="checkbox" class="left-checkboxes" id="left-pistiform" name="left-pistiform" value="1" onClick="selectByID()" data-id="left-pistiform"/>
                             <label for="left-pistiform">pistiform</label><br>
-                            <input type="checkbox" class="left-checkboxes" id="left-triquetral" name="left-triquetral" value="1"/>
+                            <input type="checkbox" class="left-checkboxes" id="left-triquetral" name="left-triquetral" value="1" onClick="selectByID()" data-id="left-triquetral"/>
                             <label for="left-triquetral">triquetral</label><br>
-                            <input type="checkbox" class="left-checkboxes" id="left-lunate" name="left-lunate" value="1"/>
+                            <input type="checkbox" class="left-checkboxes" id="left-lunate" name="left-lunate" value="1" onClick="selectByID()" data-id="left-lunate"/>
                             <label for="left-lunate">lunate</label><br>
-                            <input type="checkbox" class="left-checkboxes" id="left-trapezoid" name="left-trapezoid" value="1"/>
+                            <input type="checkbox" class="left-checkboxes" id="left-trapezoid" name="left-trapezoid" value="1" onClick="selectByID()" data-id="left-trapezoid"/>
                             <label for="left-trapezoid">trapezoid</label><br>
-                            <input type="checkbox" class="left-checkboxes" id="left-trapezium" name="left-trapezium" value="1"/>
+                            <input type="checkbox" class="left-checkboxes" id="left-trapezium" name="left-trapezium" value="1" onClick="selectByID()" data-id="left-trapezium"/>
                             <label for="left-trapezium">trapezium</label><br>
-                            <input type="checkbox" class="left-checkboxes" id="left-scaphoid" name="left-scaphoid" value="1"/>
+                            <input type="checkbox" class="left-checkboxes" id="left-scaphoid" name="left-scaphoid" value="1" onClick="selectByID()" data-id="left-scaphoid"/>
                             <label for="left-scaphoid">scaphoid</label><br>
-                            <input type="checkbox" class="left-checkboxes" id="left-capitate" name="left-capitate" value="1"/>
-                            <label for="left-capitate">capitate</label><br>
-                            <button type="button" class="btn btn-primary" id="left-hand-drawing">Hand</button>
+                            <input type="checkbox" class="left-checkboxes" id="left-capitellum" name="left-capitellum" value="1" onClick="selectByID()" data-id="left-capitellum"/>
+                            <label for="left-capitellum">capitellum</label><br>
+                            <button type="button" class="btn btn-primary" id="left-hand-drawing" data-toggle="modal" data-target="#left-hand-modal">Hand</button>
 
                         </div>
                     </div>
@@ -1424,26 +1424,26 @@ include_once __DIR__ . '/../_header.php';
                 <div class="modal-body">
                     <div class ="container">
                         <img id="footImage" src="/img/footImage.jpg"/>
-                        <input type="checkbox" id="modal-lower-right-phalanges-1" value=1 onClick="selectByID()" data-id="lower-right-phalanges-1">
-                        <input type="checkbox" id="modal-lower-right-phalanges-2" value=1 onClick="selectByID()" data-id="lower-right-phalanges-2">
-                        <input type="checkbox" id="modal-lower-right-phalanges-3" value=1 onClick="selectByID()" data-id="lower-right-phalanges-3">
-                        <input type="checkbox" id="modal-lower-right-phalanges-4" value=1 onClick="selectByID()" data-id="lower-right-phalanges-4">
-                        <input type="checkbox" id="modal-lower-right-phalanges-5" value=1 onClick="selectByID()" data-id="lower-right-phalanges-5">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-1" value=1 onClick="selectByID()" data-id="lower-right-phalanges-1">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-2" value=1 onClick="selectByID()" data-id="lower-right-phalanges-2">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-3" value=1 onClick="selectByID()" data-id="lower-right-phalanges-3">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-4" value=1 onClick="selectByID()" data-id="lower-right-phalanges-4">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-phalanges-5" value=1 onClick="selectByID()" data-id="lower-right-phalanges-5">
 
-                        <input type="checkbox" id="modal-lower-right-metatarsals-1" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-1">
-                        <input type="checkbox" id="modal-lower-right-metatarsals-2" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-2">
-                        <input type="checkbox" id="modal-lower-right-metatarsals-3" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-3">
-                        <input type="checkbox" id="modal-lower-right-metatarsals-4" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-4">
-                        <input type="checkbox" id="modal-lower-right-metatarsals-5" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-5">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-1" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-1">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-2" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-2">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-3" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-3">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-4" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-4">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-metatarsals-5" value=1 onClick="selectByID()" data-id="lower-right-metatarsals-5">
 
-                        <input type="checkbox" id="modal-lower-right-cuneiform-med" value=1 onClick="selectByID()" data-id="lower-right-cuneiform-med">
-                        <input type="checkbox" id="modal-lower-right-cuneiform-intermed" value=1 onClick="selectByID()" data-id= "lower-right-cuneiform-intermed">
-                        <input type="checkbox" id="modal-lower-right-cuneiform-lat" value=1 onClick="selectByID()" data-id= "lower-right-cuneiform-lat">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-cuneiform-med" value=1 onClick="selectByID()" data-id="lower-right-cuneiform-med">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-cuneiform-intermed" value=1 onClick="selectByID()" data-id= "lower-right-cuneiform-intermed">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-cuneiform-lat" value=1 onClick="selectByID()" data-id= "lower-right-cuneiform-lat">
 
-                        <input type="checkbox" id="modal-lower-right-calcaneus" value=1 onClick="selectByID()" data-id="lower-right-calcaneus">         
-                        <input type="checkbox" id="modal-lower-right-talus" value=1 onClick="selectByID()" data-id="lower-right-talus">      
-                        <input type="checkbox" id="modal-lower-right-navicular" value=1 onClick="selectByID()" data-id="lower-right-navicular">       
-                        <input type="checkbox" id="modal-lower-right-cuboid" value=1 onClick="selectByID()" data-id="lower-right-cuboid">
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-calcaneus" value=1 onClick="selectByID()" data-id="lower-right-calcaneus">         
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-talus" value=1 onClick="selectByID()" data-id="lower-right-talus">      
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-navicular" value=1 onClick="selectByID()" data-id="lower-right-navicular">       
+                        <input type="checkbox" class="lower-right-checkboxes" id="modal-lower-right-cuboid" value=1 onClick="selectByID()" data-id="lower-right-cuboid">
                     </div>
                 </div>
             </div>
@@ -1464,31 +1464,121 @@ include_once __DIR__ . '/../_header.php';
                 <div class="modal-body">
                     <div class ="container">
                         <img id="footImage" src="/img/footImage.jpg"/>
-                        <input type="checkbox" id="modal-lower-left-phalanges-1" value=1 onClick="selectByID()" data-id="lower-left-phalanges-1">
-                        <input type="checkbox" id="modal-lower-left-phalanges-2" value=1 onClick="selectByID()" data-id="lower-left-phalanges-2">
-                        <input type="checkbox" id="modal-lower-left-phalanges-3" value=1 onClick="selectByID()" data-id="lower-left-phalanges-3">
-                        <input type="checkbox" id="modal-lower-left-phalanges-4" value=1 onClick="selectByID()" data-id="lower-left-phalanges-4">
-                        <input type="checkbox" id="modal-lower-left-phalanges-5" value=1 onClick="selectByID()" data-id="lower-left-phalanges-5">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-1" value=1 onClick="selectByID()" data-id="lower-left-phalanges-1">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-2" value=1 onClick="selectByID()" data-id="lower-left-phalanges-2">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-3" value=1 onClick="selectByID()" data-id="lower-left-phalanges-3">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-4" value=1 onClick="selectByID()" data-id="lower-left-phalanges-4">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-phalanges-5" value=1 onClick="selectByID()" data-id="lower-left-phalanges-5">
 
-                        <input type="checkbox" id="modal-lower-left-metatarsals-1" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-1">
-                        <input type="checkbox" id="modal-lower-left-metatarsals-2" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-2">
-                        <input type="checkbox" id="modal-lower-left-metatarsals-3" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-3">
-                        <input type="checkbox" id="modal-lower-left-metatarsals-4" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-4">
-                        <input type="checkbox" id="modal-lower-left-metatarsals-5" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-5">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-1" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-1">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-2" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-2">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-3" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-3">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-4" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-4">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-metatarsals-5" value=1 onClick="selectByID()" data-id="lower-left-metatarsals-5">
 
-                        <input type="checkbox" id="modal-lower-left-cuneiform-med" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-med">
-                        <input type="checkbox" id="modal-lower-left-cuneiform-intermed" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-intermed">
-                        <input type="checkbox" id="modal-lower-left-cuneiform-lat" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-lat">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-cuneiform-med" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-med">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-cuneiform-intermed" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-intermed">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-cuneiform-lat" value=1 onClick="selectByID()" data-id="lower-left-cuneiform-lat">
 
-                        <input type="checkbox" id="modal-lower-left-calcaneus" value=1 onClick="selectByID()" data-id="lower-left-calcaneus">         
-                        <input type="checkbox" id="modal-lower-left-talus" value=1 onClick="selectByID()" data-id="lower-left-talus">      
-                        <input type="checkbox" id="modal-lower-left-navicular" value=1 onClick="selectByID()" data-id="lower-left-navicular">       
-                        <input type="checkbox" id="modal-lower-left-cuboid" value=1 data-id="lower-left-cuboid" onClick="selectByID()">
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-calcaneus" value=1 onClick="selectByID()" data-id="lower-left-calcaneus">         
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-talus" value=1 onClick="selectByID()" data-id="lower-left-talus">      
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-navicular" value=1 onClick="selectByID()" data-id="lower-left-navicular">       
+                        <input type="checkbox" class="lower-left-checkboxes" id="modal-lower-left-cuboid" value=1 data-id="lower-left-cuboid" onClick="selectByID()">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!--right Hand Image Modal-->
+    <div class="modal fade" id="right-hand-modal" tabindex="-1" role="dialog" aria-labelledby="right-hand-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="right-hand-label">Interactive Hand Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class ="container">
+                        <img id="handImage" src="/img/handImage.jpg"/>
+                        
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-phalanges-5" value="1" onClick="selectByID()" data-id="right-phalanges-5"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-phalanges-4" value="1" onClick="selectByID()" data-id="right-phalanges-4"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-phalanges-3" value="1" onClick="selectByID()" data-id="right-phalanges-3"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-phalanges-2" value="1" onClick="selectByID()" data-id="right-phalanges-2"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-phalanges-1" value="1" onClick="selectByID()" data-id="right-phalanges-1"/>
+
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-metacarpals-5" value="1" onClick="selectByID()" data-id="right-metacarpals-5"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-metacarpals-4" value="1" onClick="selectByID()" data-id="right-metacarpals-4"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-metacarpals-3" value="1" onClick="selectByID()" data-id="right-metacarpals-3"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-metacarpals-2" value="1" onClick="selectByID()" data-id="right-metacarpals-2"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-metacarpals-1" value="1" onClick="selectByID()" data-id="right-metacarpals-1"/>
+                        
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-hamate" value="1" onClick="selectByID()" data-id="right-hamate"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-pistiform" value="1" onClick="selectByID()" data-id="right-pistiform"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-triquetral" value="1" onClick="selectByID()" data-id="right-triquetral"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-lunate" value="1" onClick="selectByID()" data-id="right-lunate"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-trapezoid" value="1" onClick="selectByID()" data-id="right-trapezoid"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-trapezium" value="1" onClick="selectByID()" data-id="right-trapezium"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-scaphoid" value="1" onClick="selectByID()" data-id="right-scaphoid"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-capitellum" value="1" onClick="selectByID()" data-id="right-capitellum"/>
+
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-ulna-dist" value="1" onClick="selectByID()" data-id="right-ulna-dist"/>
+                        <input type="checkbox" class="right-checkboxes" id="modal-right-radius-dist" value="1" onClick="selectByID()" data-id="right-radius-dist"/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Left Hand Image Modal-->
+    <div class="modal fade" id="left-hand-modal" tabindex="-1" role="dialog" aria-labelledby="left-hand-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="left-hand-label">Interactive Hand Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class ="container">
+                        <img id="handImage" src="/img/handImage.jpg"/>
+
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-phalanges-5" value="1" onClick="selectByID()" data-id="left-phalanges-5"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-phalanges-4" value="1" onClick="selectByID()" data-id="left-phalanges-4"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-phalanges-3" value="1" onClick="selectByID()" data-id="left-phalanges-3"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-phalanges-2" value="1" onClick="selectByID()" data-id="left-phalanges-2"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-phalanges-1" value="1" onClick="selectByID()" data-id="left-phalanges-1"/>
+
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-metacarpals-5" value="1" onClick="selectByID()" data-id="left-metacarpals-5"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-metacarpals-4" value="1" onClick="selectByID()" data-id="left-metacarpals-4"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-metacarpals-3" value="1" onClick="selectByID()" data-id="left-metacarpals-3"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-metacarpals-2" value="1" onClick="selectByID()" data-id="left-metacarpals-2"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-metacarpals-1" value="1" onClick="selectByID()" data-id="left-metacarpals-1"/>
+                        
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-hamate" value="1" onClick="selectByID()" data-id="left-hamate"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-pistiform" value="1" onClick="selectByID()" data-id="left-pistiform"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-triquetral" value="1" onClick="selectByID()" data-id="left-triquetral"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-lunate" value="1" onClick="selectByID()" data-id="left-lunate"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-trapezoid" value="1" onClick="selectByID()" data-id="left-trapezoid"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-trapezium" value="1" onClick="selectByID()" data-id="left-trapezium"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-scaphoid" value="1" onClick="selectByID()" data-id="left-scaphoid"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-capitellum" value="1" onClick="selectByID()" data-id="left-capitellum"/>
+
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-ulna-dist" value="1" onClick="selectByID()" data-id="left-ulna-dist"/>
+                        <input type="checkbox" class="left-checkboxes" id="modal-left-radius-dist" value="1" onClick="selectByID()" data-id="left-radius-dist"/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 
     <script type="text/javascript">
         var surgery_side = null;

@@ -54,8 +54,12 @@ include_once __DIR__ . '/../_header.php';
                         </div>
                         <div class="col-lg-7 mb-2">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-secondary" id="userModalAccountType">
-                                <select name="user-roles" id="user-roles">
+
+                                <label id="userModalAccountType">
+<!--                                 <select class="selectpicker" id="user-roles" name="user-roles" data-none-selected-text="-- Select Role --"> -->
+
+<!--                                 </select> -->
+                                <select class="selectpicker" name="user-roles" id="user-roles">
                                     <option value="-1">-- Select Role --</option>
                                 </select>
                                 </label>
@@ -90,6 +94,7 @@ include_once __DIR__ . '/../_header.php';
                     $.each(result.roles, function(index){
                         $('#user-roles').append('<option value="'+result.roles[index][0]+'">'+result.roles[index][1]+'</option>');
                     });
+                    $('#user-roles').selectpicker('refresh');
                 }
             }
         );
@@ -146,7 +151,7 @@ include_once __DIR__ . '/../_header.php';
 
         function submit_user() {
             if (userModalLinkblue.val() === null || userModalLinkblue.val() === '') {
-                showError('You must supply an user linkblue');
+                showError('You must supply a user linkblue');
                 return;
             }
 

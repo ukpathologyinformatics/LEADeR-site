@@ -104,9 +104,9 @@ include_once __DIR__ . '/../_header.php';
     <script type="text/javascript">
         $(document).ready( function () {
             $('#search-table').DataTable({
-                searching: false
-                            //serverSide: true,
-                            //ajax: '/view-all'
+                searching: false,
+                //serverSide: true,
+                //ajax: '/new-query/search-table'
             });
         });
 

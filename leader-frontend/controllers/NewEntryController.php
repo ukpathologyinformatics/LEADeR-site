@@ -28,6 +28,12 @@ class NewEntryController {
         echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
     }
 
+    public static function addOperation(UserSession $userSession) {
+        header('Content-Type: application/json');
+        $ret = NewEntryClass::addOperation($userSession);
+        echo json_encode((object) array_filter($ret, function($value) { return $value !== null; }));
+    }
+
     public static function fillClassDropdown(UserSession $userSession) {
         header('Content-Type: application/json');
         $ret = NewEntryClass::fillClassDropdown($userSession);

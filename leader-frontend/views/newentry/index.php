@@ -1361,11 +1361,14 @@ include_once __DIR__ . '/../_header.php';
                     </div>
                     <div class="row">
                         <div class="col-md-3 left-modal-stuff input-group">
-                            <select class="selectpicker" id="surgery-name" name="surgery-name" title="Surgery Name" data-live-search="true" data-live-search-placeholder="Search"></select>
+                            <select class="selectpicker" data-width="100%" id="surgery-name" name="surgery-name" title="Surgery Name" data-live-search="true" data-live-search-placeholder="Search"></select>
 <!--                             <span class="input-group-text">Surgery Name</span> -->
 <!--                             <textarea id="surgery-name" name="surgery-name" class="form-control" aria-label="Surgery Name"></textarea> -->
                         </div>
-                        <div class="col-md-9 right-modal-stuff input-group">
+                        <div class="col-md-1 left-modal-stuff input-group">
+                            <button id = "surgery-add" type="button" class="btn btn-primary"  data-toggle="modal" data-target="#addSurgeryModal">+Add</button>
+                        </div>
+                        <div class="col-md-8 right-modal-stuff input-group">
                             <span class="input-group-text">Notes</span>
                             <textarea id="surgery-notes" name="surgery-notes" class="form-control" aria-label="Notes"></textarea>
                         </div>
@@ -1375,6 +1378,37 @@ include_once __DIR__ . '/../_header.php';
                     <button id="delete-surgery" style="display:none" type="button" class="btn btn-danger">Delete</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <button id="add-surgery-submit" type="button" class="btn btn-primary" data-update-id="" onclick="addSurgery(this)">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--     Add Surgery Modal -->
+    <div class="modal fade" id="addSurgeryModal" tabindex="-1" role="dialog" aria-labelledby="addSurgeryModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addSurgeryModalLabel">Add Operation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 mb-3 form-floating">
+                            <input class="form-control" type="text" style="pointer-events: auto;" name="addSurgeryModalName" id="addSurgeryModalName" placeholder="Operation Name" />
+                            <label for="classificationModalName">Operation Name</label>
+                        </div>
+                        <div class="col-sm-12 mb-3 form-floating">
+                            <input class="form-control" type="text" style="pointer-events: auto;" name="addSurgeryModalCode" id="addSurgeryModalCode" placeholder="CPT Code" />
+                            <label for="classificationModalCode">CPT Code</label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="add_operation();">Add Operation</button>
                 </div>
             </div>
         </div>
@@ -1592,9 +1626,9 @@ include_once __DIR__ . '/../_header.php';
 
         function clear_surgical_form() {
             $('#surgicalModal #surgery-name').val('');
-            $('#surgicalModal #surgery-date').val('');
-            $('#surgicalModal #surgeon').val('');
-            $('#surgicalModal #age').val('');
+            //$('#surgicalModal #surgery-date').val('');
+            //$('#surgicalModal #surgeon').val('');
+            //$('#surgicalModal #age').val('');
             $('#surgicalModal #surgery-notes').val('');
             $('#surgicalModal #cpt-code').val('');
         }
@@ -1907,6 +1941,7 @@ include_once __DIR__ . '/../_header.php';
                 return false;
             }
 
+
             dropdown = classificationId.slice(0, -4);
             select = document.getElementById(dropdown);
             select.add(new Option(name));
@@ -1918,6 +1953,37 @@ include_once __DIR__ . '/../_header.php';
                 url : '/new-entry/add-classification',
                 type : 'POST',
                 data : 'name='+name+'&code='+code+'&location='+location,
+
+                success : function(data) {
+                    console.log('Data: '+JSON.stringify(data));
+                },
+                error : function(request,error)
+                {
+                    console.log("Request: "+JSON.stringify(request));
+                }
+            });
+        }
+
+        function add_operation() {
+            let name = $('#addSurgeryModalName').val();
+            if (name == "") {
+                showError("Operation name cannot be blank.");
+                return false;
+            }
+            let code = $('#addSurgeryModalCode').val();
+            if (code == "") {
+                showError("CPT code cannot be blank.");
+                return false;
+            }
+
+            $('#surgery-name').append("<option id='"+ code +"' value='"+name+"'>"+ name +"</option>");
+            $('#surgery-name').selectpicker('refresh');
+            $('#addSurgeryModal').modal('hide');
+            showSuccess("Added Operation to List");
+            $.ajax({
+                url : '/new-entry/add-operation',
+                type : 'POST',
+                data : 'name='+name+'&code='+code,
 
                 success : function(data) {
                     console.log('Data: '+JSON.stringify(data));

@@ -140,6 +140,19 @@ class NewEntryClass {
         return array('success' => $success, 'error_message' => $error_message);
     }
 
+    public static function addOperation(UserSession $userSession) {
+        $success = false;
+        $error_message = null;
+        $name = $_POST['name'];
+        $code = $_POST['code'];
+        $submit = DB::run("INSERT INTO surgery (CPT_code, surgery_name) VALUES (?, ?)", [$code, $name]);
+        if ($submit != false) {
+            $success = true;
+        }
+
+        return array('success' => $success, 'error_message' => $error_message);
+    }
+
     public static function fillClassDropdown(UserSession $userSession) {
         $success = false;
         $error_message = null;

@@ -1621,7 +1621,6 @@ include_once __DIR__ . '/../_header.php';
             $('#add-surgery-submit').html('Add');
             $('#delete-surgery').css('display', 'none');
             $('#surgicalModal').modal('show');
-
         }
 
         function clear_surgical_form() {
@@ -1687,6 +1686,7 @@ include_once __DIR__ . '/../_header.php';
                 return false;
             }
             let notes = $('#surgicalModal #surgery-notes').val();
+            let surg_side = surgery_side;
 
             let surgery_info = {
                 "surg-name": surg_name,
@@ -1694,76 +1694,17 @@ include_once __DIR__ . '/../_header.php';
                 "surgeon": surgeon,
                 "age": age,
                 "notes": notes,
-                "cpt": cpt_code
+                "cpt": cpt_code,
+                "surg-side": surg_side
             }
             let encoded_surg = JSON.stringify(surgery_info);
             //base64 encode json obj
             //let encoded_surg = btoa(JSON.stringify(surgery_info));
             // $('#'+surgery_side+'-surgery-list').append("<li id='"+surgery_side+"-surgery-"+surgery_counter+"' data-value="+ encoded_surg +">"+ surg_name +"</li>");
-            $('#'+surgery_side+'-surgeries').append("<option id='"+surgery_side+"-surgery-"+surg_name+"' value="+ encoded_surg +" selected>"+ surg_name +"</option>");
-            $('#'+surgery_side+'-surgeries').selectpicker('refresh');
+            $('#lower-'+surgery_side+'-surgeries').append("<option id='"+surg_side+"-surgery-"+surg_name+"' value="+ encoded_surg +" selected>"+ surg_name +"</option>");
+            $('#lower-'+surgery_side+'-surgeries').selectpicker('refresh');
             $('#surgicalModal').modal('hide');
             showSuccess("Added Surgery to List");
-//             $.ajax({
-//                 url : '/new-entry/add-surgery',
-//                 type : 'POST',
-//                 data : 'surg-name='+surg_name+'&surg-date='+surg_date+'&surgeon='+surgeon+'&age='+age+'&notes='+notes+'&cpt='+cpt_code,
-//
-//                 success : function(data) {
-//                     console.log('Data: '+JSON.stringify(data));
-//                 },
-//                 error : function(request,error)
-//                 {
-//                     console.log("Request: "+JSON.stringify(request));
-//                 }
-//             });
-            // } else {
-            //     let target_li = sub_button.attr('data-update-id');
-            //     let surg_name = $('#surgicalModal #surgery-name').val();
-            //     if (surg_name == "") {
-            //         showError("Surgery name cannot be blank.");
-            //         return false;
-            //     }
-            //     let surg_date = $('#surgicalModal #surgery-date').val();
-            //     if (surg_date == "") {
-            //         showError("Date cannot be blank.");
-            //         return false;
-            //     }
-            //     surg_date = Date.parse(surg_date);
-            //     if (isNaN(surg_date)){
-            //         showError("Cannot parse date.");
-            //         return false;
-            //     }
-            //     let surgeon = $('#surgicalModal #surgeon').val();
-            //     if (surgeon == "") {
-            //         showError("Attending surgeon cannot be blank.");
-            //         return false;
-            //     }
-            //     let age = $('#surgicalModal #age').val();
-            //     if (age == ""){
-            //         showError("Age cannot be blank.");
-            //         return false;
-            //     }
-            //     if(isNaN(age)){
-            //         showError("Age must be a number.");
-            //         return false;
-            //     }
-            //     let notes = $('#surgicalModal #surgery-notes').val();
-
-            //     let surgery_info = {
-            //         "surg-name": surg_name,
-            //         "surg-date": surg_date,
-            //         "surgeon": surgeon,
-            //         "age": age,
-            //         "notes": notes
-            //     }
-            //     //base64 encode json obj
-            //     let encoded_surg = btoa(JSON.stringify(surgery_info));
-            //     $('#'+target_li).attr('data-value', encoded_surg);
-            //     $('#'+target_li).html(surg_name);
-            //     $('#surgicalModal').modal('hide');
-            //     showSuccess("Updated Surgery");
-            // }
         }
 
         $(document).ready(function() {
@@ -2013,10 +1954,12 @@ include_once __DIR__ . '/../_header.php';
             $('#add-surgery-submit').attr('data-update-id', '');
         });
 
-        $('#lower-right-surgical-pro, #lower-left-surgical-pro, #upper-right-surgical-pro, #upper-left-surgical-pro').click(function(){
-            showSurgicalModal();
+        $('#lower-right-surgical-pro, #lower-left-surgical-pro').click(function(){
             const tempArr = this.id.split('-');
-            surgery_side = tempArr.slice(0, 2).join('-');
+            //surgery_side = tempArr.slice(0, 2).join('-');
+            surgery_side = tempArr.slice(1, 2)[0];
+            showSurgicalModal();
+
         });
 
         // clear everything on page either upper or lower
@@ -2181,7 +2124,7 @@ include_once __DIR__ . '/../_header.php';
 //                 filtered_entry['lower-left-classification'] = lower_left_class;
 //                 filtered_entry['lower-right-classification'] = lower_right_class;
 
-                console.log(filtered_entry);
+                //console.log(filtered_entry);
 
                 $.ajax({
                     url : '/new-entry/add-entry',

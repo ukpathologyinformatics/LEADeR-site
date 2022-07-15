@@ -75,9 +75,10 @@ class NewEntryClass {
             //var_dump($surgeries);
             foreach ($surgeries as $operation) {
                 $surgery = json_decode($operation, true);
+                $side = $surgery['surg-side'][0];
                 //var_dump($surgery);
                 //var_dump($surgery["cpt"]);
-                DB::run("INSERT INTO patient_surgery (patient_id, surgery_id, surgery_date, surgery_notes, attending_surgeon, age) VALUES (?, ?, ?, ?, ?, ?)", [$int_id, $surgery["cpt"], $surgery["surg-date"], $surgery["notes"], $surgery["surgeon"], $surgery["age"]]);
+                DB::run("INSERT INTO patient_surgery (patient_id, surgery_id, surgery_date, surgery_notes, attending_surgeon, age, side) VALUES (?, ?, ?, ?, ?, ?, ?)", [$int_id, $surgery["cpt"], $surgery["surg-date"], $surgery["notes"], $surgery["surgeon"], $surgery["age"], $side]);
 
             }
             //foreach ($codes as $class_name) {
@@ -95,9 +96,10 @@ class NewEntryClass {
             //var_dump($surgeries);
             foreach ($surgeries as $operation) {
                 $surgery = json_decode($operation, true);
+                $side = $surgery['surg-side'][0];
                 //var_dump($surgery);
                 //var_dump($surgery["cpt"]);
-                DB::run("INSERT INTO patient_surgery (patient_id, surgery_id, surgery_date, surgery_notes, attending_surgeon, age) VALUES (?, ?, ?, ?, ?, ?)", [$int_id, $surgery["cpt"], $surgery["surg-date"], $surgery["notes"], $surgery["surgeon"], $surgery["age"]]);
+                DB::run("INSERT INTO patient_surgery (patient_id, surgery_id, surgery_date, surgery_notes, attending_surgeon, age, side) VALUES (?, ?, ?, ?, ?, ?, ?)", [$int_id, $surgery["cpt"], $surgery["surg-date"], $surgery["notes"], $surgery["surgeon"], $surgery["age"], $side]);
 
             }
             //foreach ($codes as $class_name) {

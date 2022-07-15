@@ -14,7 +14,7 @@ include_once __DIR__ . '/../_header.php';
         <h5>Choose Search Criteria</h5>
         <div class="all-searches">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <div class="first-search">
                         <select class="selectpicker search-criteria" data-width="100%" data-none-selected-text="Criteria" multiple data-live-search="true" data-live-search-placeholder="Search">
                             <optgroup label="Longitudinal">
@@ -98,6 +98,12 @@ include_once __DIR__ . '/../_header.php';
                         </select>
                     </div>
 
+                </div>
+                <div class="col-md-2">
+                    <select class="selectpicker search-option" data-width="100%" data-none-selected-text="is True/False">
+                        <option id="search-option-true" value="search-option-true">is True</option>
+                        <option id="search-option-false" value="search-option-false">is False</option>
+                    </select>
                 </div>
                 <div class="col-md-2">
                     <button id="add-criteria" class="btn btn-primary" type="button">+Add</button>

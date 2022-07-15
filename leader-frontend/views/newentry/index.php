@@ -1624,7 +1624,7 @@ include_once __DIR__ . '/../_header.php';
         }
 
         function clear_surgical_form() {
-            $('#surgicalModal #surgery-name').val('');
+            $('#surgicalModal #surgery-name').selectpicker('val', '-1');
             //$('#surgicalModal #surgery-date').val('');
             //$('#surgicalModal #surgeon').val('');
             //$('#surgicalModal #age').val('');

@@ -22,80 +22,80 @@ include_once __DIR__ . '/../_header.php';
                                 <optgroup label="Longitudinal">
                                     <option id="lower-right-longitudinal-search" value="lower-right-longitudinal">Lower Right Longitudinal</option>
                                     <option id="lower-left-longitudinal-search" value="lower-left-longitudinal">Lower Left Longitudinal</option>
-                                    <option id="upper-right-longitudinal-search" value="right-longitudinal">Upper Right Longitudinal</option>
-                                    <option id="upper-left-longitudinal-search" value="left-longitudinal">Upper Left Longitudinal</option>
+                                    <option id="upper-right-longitudinal-search" value="upper-right-longitudinal">Upper Right Longitudinal</option>
+                                    <option id="upper-left-longitudinal-search" value="upper-left-longitudinal">Upper Left Longitudinal</option>
                                 </optgroup>
                                 <optgroup label="Transverse">
                                     <option id="lower-right-transverse-search" value="lower-right-transverse">Lower Right Transverse</option>
                                     <option id="lower-left-transverse-search" value="lower-left-transverse">Lower Left Transverse</option>
-                                    <option id="upper-right-transverse-search" value="right-transverse">Upper Right Transverse</option>
-                                    <option id="upper-left-transverse-search" value="left-transverse">Upper Left Transverse</option>
+                                    <option id="upper-right-transverse-search" value="upper-right-transverse">Upper Right Transverse</option>
+                                    <option id="upper-left-transverse-search" value="upper-left-transverse">Upper Left Transverse</option>
                                 </optgroup>
                                 <optgroup label="EARS">
                                     <option id="lower-right-ears-search" value="lower-right-ears">Lower Right EARS</option>
                                     <option id="lower-left-ears-search" value="lower-left-ears">Lower Left EARS</option>
-                                    <option id="upper-right-ears-search" value="right-ears">Upper Right EARS</option>
-                                    <option id="upper-left-ears-search" value="left-ears">Upper Left EARS</option>
+                                    <option id="upper-right-ears-search" value="upper-right-ears">Upper Right EARS</option>
+                                    <option id="upper-left-ears-search" value="upper-left-ears">Upper Left EARS</option>
                                 </optgroup>
                                 <optgroup label="Congenital">
                                     <option id="lower-right-congenital-search" value="lower-right-congenital">Lower Right Congenital</option>
                                     <option id="lower-left-congenital-search" value="lower-left-congenital">Lower Left Congenital</option>
-                                    <option id="upper-right-congenital-search" value="right-congenital">Upper Right Congenital</option>
-                                    <option id="upper-left-congenital-search" value="left-congenital">Upper Left Congenital</option>
+                                    <option id="upper-right-congenital-search" value="upper-right-congenital">Upper Right Congenital</option>
+                                    <option id="upper-left-congenital-search" value="upper-left-congenital">Upper Left Congenital</option>
                                 </optgroup>
                                 <optgroup label="Acquired">
                                     <option id="lower-right-acquired-search" value="lower-right-acquired">Lower Right Acquired</option>
                                     <option id="lower-left-acquired-search" value="lower-left-acquired">Lower Left Acquired</option>
-                                    <option id="upper-right-acquired-search" value="right-acquired">Upper Right Acquired</option>
-                                    <option id="upper-left-acquired-search" value="left-acquired">Upper Left Acquired</option>
+                                    <option id="upper-right-acquired-search" value="upper-right-acquired">Upper Right Acquired</option>
+                                    <option id="upper-left-acquired-search" value="upper-left-acquired">Upper Left Acquired</option>
                                 </optgroup>
                                 <optgroup label="Tumor">
                                     <option id="lower-right-tumor-search" value="lower-right-tumor">Lower Right Tumor</option>
                                     <option id="lower-left-tumor-search" value="lower-left-tumor">Lower Left Tumor</option>
-                                    <option id="upper-right-tumor-search" value="right-tumor">Upper Right Tumor</option>
-                                    <option id="upper-left-tumor-search" value="left-tumor">Upper Left Tumor</option>
+                                    <option id="upper-right-tumor-search" value="upper-right-tumor">Upper Right Tumor</option>
+                                    <option id="upper-left-tumor-search" value="upper-left-tumor">Upper Left Tumor</option>
                                 </optgroup>
                                 <optgroup label="Trauma">
                                     <option id="lower-right-trauma-search" value="lower-right-trauma">Lower Right Trauma</option>
                                     <option id="lower-left-trauma-search" value="lower-left-trauma">Lower Left Trauma</option>
-                                    <option id="upper-right-trauma-search" value="right-trauma">Upper Right Trauma</option>
-                                    <option id="upper-left-trauma-search" value="left-trauma">Upper Left Trauma</option>
+                                    <option id="upper-right-trauma-search" value="upper-right-trauma">Upper Right Trauma</option>
+                                    <option id="upper-left-trauma-search" value="upper-left-trauma">Upper Left Trauma</option>
                                 </optgroup>
                                 <optgroup label="Burn">
                                     <option id="lower-right-burn-search" value="lower-right-burn">Lower Right Burn</option>
                                     <option id="lower-left-burn-search" value="lower-left-burn">Lower Left Burn</option>
-                                    <option id="upper-right-burn-search" value="right-burn">Upper Right Burn</option>
-                                    <option id="upper-left-burn-search" value="left-burn">Upper Left Burn</option>
+                                    <option id="upper-right-burn-search" value="upper-right-burn">Upper Right Burn</option>
+                                    <option id="upper-left-burn-search" value="upper-left-burn">Upper Left Burn</option>
                                 </optgroup>
                                 <optgroup label="Infection">
                                     <option id="lower-right-infection-search" value="lower-right-infection">Lower Right Infection</option>
                                     <option id="lower-left-infection-search" value="lower-left-infection">Lower Left Infection</option>
-                                    <option id="upper-right-infection-search" value="right-infection">Upper Right Infection</option>
-                                    <option id="upper-left-infection-search" value="left-infection">Upper Left Infection</option>
+                                    <option id="upper-right-infection-search" value="upper-right-infection">Upper Right Infection</option>
+                                    <option id="upper-left-infection-search" value="upper-left-infection">Upper Left Infection</option>
                                 </optgroup>
                                 <optgroup label="Lawnmower">
                                     <option id="lower-right-lawnmower-search" value="lower-right-lawnmower">Lower Right Lawnmower</option>
                                     <option id="lower-left-lawnmower-search" value="lower-left-lawnmower">Lower Left Lawnmower</option>
-                                    <option id="upper-right-lawnmower-search" value="right-lawnmower">Upper Right Lawnmower</option>
-                                    <option id="upper-left-lawnmower-search" value="left-lawnmower">Upper Left Lawnmower</option>
+                                    <option id="upper-right-lawnmower-search" value="upper-right-lawnmower">Upper Right Lawnmower</option>
+                                    <option id="upper-left-lawnmower-search" value="upper-left-lawnmower">Upper Left Lawnmower</option>
                                 </optgroup>
                                 <optgroup label="MVC">
                                     <option id="lower-right-mvc-search" value="lower-right-mvc">Lower Right MVC</option>
                                     <option id="lower-left-mvc-search" value="lower-left-mvc">Lower Left MVC</option>
-                                    <option id="upper-right-mvc-search" value="right-mvc">Upper Right MVC</option>
-                                    <option id="upper-left-mvc-search" value="left-mvc">Upper Left MVC</option>
+                                    <option id="upper-right-mvc-search" value="upper-right-mvc">Upper Right MVC</option>
+                                    <option id="upper-left-mvc-search" value="upper-left-mvc">Upper Left MVC</option>
                                 </optgroup>
                                 <optgroup label="Recreational">
                                     <option id="lower-right-recreational-search" value="lower-right-recreational">Lower Right Recreational</option>
                                     <option id="lower-left-recreational-search" value="lower-left-recreational">Lower Left Recreational</option>
-                                    <option id="upper-right-recreational-search" value="right-recreational">Upper Right Recreational</option>
-                                    <option id="upper-left-recreational-search" value="left-recreational">Upper Left Recreational</option>
+                                    <option id="upper-right-recreational-search" value="upper-right-recreational">Upper Right Recreational</option>
+                                    <option id="upper-left-recreational-search" value="upper-left-recreational">Upper Left Recreational</option>
                                 </optgroup>
                                 <optgroup label="Vascular">
                                     <option id="lower-right-vascular-search" value="lower-right-vascular">Lower Right Vascular</option>
                                     <option id="lower-left-vascular-search" value="lower-left-vascular">Lower Left Vascular</option>
-                                    <option id="upper-right-vascular-search" value="right-vascular">Upper Right Vascular</option>
-                                    <option id="upper-left-vascular-search" value="left-vascular">Upper Left Vascular</option>
+                                    <option id="upper-right-vascular-search" value="upper-right-vascular">Upper Right Vascular</option>
+                                    <option id="upper-left-vascular-search" value="upper-left-vascular">Upper Left Vascular</option>
                                 </optgroup>
                             </select>
                         </div>

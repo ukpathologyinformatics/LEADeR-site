@@ -12,12 +12,13 @@ include_once __DIR__ . '/../_header.php';
 
     <section id="search-page">
         <h5>Choose Search Criteria</h5>
-        <div class="all-searches">
+        <div class="all-searches" id="all">
             <div id="new-group-0">
                 <div class="row">
                     <div class="col-md-8">
                         <div class="first-search">
-                            <select class="selectpicker search-criteria" data-width="100%" data-none-selected-text="Criteria" multiple data-live-search="true" data-live-search-placeholder="Search">
+                            <select class="selectpicker search-criteria" data-width="100%" data-none-selected-text="Criteria" data-live-search="true" data-live-search-placeholder="Search">
+                                <option value="" selected disabled>Criteria</option>
                                 <optgroup label="Longitudinal">
                                     <option id="lower-right-longitudinal-search" value="lower-right-longitudinal">Lower Right Longitudinal</option>
                                     <option id="lower-left-longitudinal-search" value="lower-left-longitudinal">Lower Left Longitudinal</option>
@@ -103,8 +104,8 @@ include_once __DIR__ . '/../_header.php';
                     <div class="col-md-2">
                         <div class="trueFalse">
                             <select class="selectpicker search-option" data-width="100%" data-none-selected-text="is True/False">
-                                <option id="search-option-true" value="search-option-true">is True</option>
-                                <option id="search-option-false" value="search-option-false">is False</option>
+                                <option id="search-option-true" value="1">is True</option>
+                                <option id="search-option-false" value="0">is False</option>
                             </select>
                         </div>
                     </div>
@@ -147,11 +148,14 @@ include_once __DIR__ . '/../_header.php';
     <script type="text/javascript">
         var numCriteria=0;
         var numGroup=0;
+        var currentGroups = [0];
 
         function addOrCriteria() {
             numGroup++;
+            currentGroups.push(numGroup);
+            //console.log(currentGroups);
             let bigDiv = $('<div id="new-group-' + numGroup + '"/>');
-            let newDiv = $('<div id="new-criteria_' + numCriteria + '"/>');
+            let newDiv = $('<div id="new-criteria-' + numCriteria + '"/>');
             let col8Div = $('<div class="col-md-8"/>');
             let col2Div = $('<div class="col-md-2"/>');
             let colButtonDiv = $('<div class="col-md-2"/>');
@@ -187,8 +191,8 @@ include_once __DIR__ . '/../_header.php';
             //let currentGroup = current.data('group');
             let currentGroup = $(current).attr('data-group');
             //let currentGroup = currentGroupClass.substr(17, 1);
-            console.log(currentGroup);
-            let newDiv = $('<div id="new-criteria_' + numCriteria + '"/>');
+            //console.log(currentGroup);
+            let newDiv = $('<div id="new-criteria-' + numCriteria + '"/>');
             let col8Div = $('<div class="col-md-8"/>');
             let col2Div = $('<div class="col-md-2"/>');
             let colButtonDiv = $('<div class="col-md-2"/>');
@@ -222,10 +226,15 @@ include_once __DIR__ . '/../_header.php';
             //console.log(group);
             let numChildren = (document.getElementById("new-group-" + group).childElementCount) - 1;
             if (numChildren > 1 || group == 0) {
-                let element = document.getElementById('new-criteria_' + idNum);
+                let element = document.getElementById('new-criteria-' + idNum);
                 element.remove();
             }
             else {
+                //console.log(currentGroups);
+                let index = currentGroups.indexOf(parseInt(group, 10));
+                //console.log(index);
+                currentGroups.splice(index, 1);
+                //console.log(currentGroups);
                 let element = document.getElementById("new-group-" + group);
                 element.remove();
             }
@@ -243,51 +252,131 @@ include_once __DIR__ . '/../_header.php';
         $('#search').click(function (){
             $('#search-table').DataTable().rows().remove();
             $('#search-table').DataTable().destroy();
+            //let numOrs = document.getElementById("all").childElementCount;
+            //console.log(numOrs);
             let entries = [];
-            let numSelects = 0;
-            $(".search-criteria").each(function(){
-                let id = $(this).val();
-                if (typeof(id) == "object") {
-                    numSelects++;
-                }
-            });
             let counter = 0;
-            $(".search-criteria").each(function(){
-                let id = $(this).val();
-                if (typeof(id) == "object") {
-                    $.ajax({
-                        url : '/new-query/search-table',
-                        type : 'GET',
-                        data: 'parameters='+id,
-
-                        success : function(data) {
-                            //console.log(data['data']);
-
-                            data['data'].forEach(function(currentValue, index, arr){
-                                if (!entries.includes(currentValue["patient_id"])) {
-                                    entries.push(currentValue["patient_id"]);
-                                    //console.log(currentValue["patient_id"]);
-                                    $('#search-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td><td>"+currentValue["surgery_id"]+"</td></tr>");
-                                }
-
-                            });
-                            if (counter == numSelects-1) {
-                                $('#search-table').DataTable({
-                                    searching: false
-                                        //serverSide: true,
-                                        //ajax: '/view-all'
-                                });
-                            }
-                            counter++;
-
-                        },
-                        error : function(request,error)
-                        {
-                            console.log("Request: "+JSON.stringify(request));
-                        }
-                    });
+//             let numSelects = 0;
+//             $(".search-criteria").each(function(){
+//                 let id = $(this).val();
+//                 //console.log(typeof(id));
+//                 if (id !== "") {
+//                     numSelects++;
+//                 }
+// //                 if (typeof(id) == "object") {
+// //                     numSelects++;
+// //                 }
+//             });
+            //console.log(numSelects);
+            currentGroups.forEach(function(currentValue, index, arr){
+                let currentDiv = document.getElementById("new-group-" + currentValue);
+                let divChildren = currentDiv.childElementCount;
+                if (currentValue > 0) {
+                    divChildren--;
                 }
+                let allCriteria = currentDiv.getElementsByClassName("search-criteria");
+                values = []
+                for (var j = 0; j < allCriteria.length; j++) {
+                    if(typeof allCriteria[j].value !== "undefined") {
+                        values.push(allCriteria[j].value);
+                    }
+                }
+                let allCriteriaOptions = currentDiv.getElementsByClassName("search-option");
+                options = []
+                for (var j = 0; j < allCriteriaOptions.length; j++) {
+                    if(typeof allCriteriaOptions[j].value !== "undefined") {
+                        options.push(allCriteriaOptions[j].value);
+                    }
+                }
+                //console.log(values);
+                //console.log(options);
+                $.ajax({
+                    url : '/new-query/search-table',
+                    type : 'GET',
+                    data: 'parameters='+values+'&options='+options,
+
+                    success : function(data) {
+                        console.log(data['data']);
+
+                        data['data'].forEach(function(currentValue, index, arr){
+                            if (!entries.includes(currentValue["patient_id"])) {
+                                entries.push(currentValue["patient_id"]);
+                                //console.log(currentValue["patient_id"]);
+                                $('#search-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td><td>"+currentValue["surgery_id"]+"</td></tr>");
+                            }
+
+                        });
+                        counter++;
+                        if (counter == arr.length) {
+                            $('#search-table').DataTable({
+                                searching: false
+                                    //serverSide: true,
+                                    //ajax: '/view-all'
+                            });
+                        }
+
+
+                    },
+                    error : function(request,error)
+                    {
+                        console.log("Request: "+JSON.stringify(request));
+                    }
+                });
+                //console.log(test)
+//                 parameters = []
+//
+//                 for (var j = 0; j < divChildren; j++) {
+//                     parameters.push()
+//                 }
+                //console.log(i+" has "+divChildren+" children.");
             });
+//             let entries = [];
+//             let numSelects = 0;
+//             $(".search-criteria").each(function(){
+//                 let id = $(this).val();
+//                 if (typeof(id) == "object") {
+//                     numSelects++;
+//                 }
+//             });
+//             console.log(numSelects);
+//             let counter = 0;
+//             $(".search-criteria").each(function(){
+//                 let id = $(this).val();
+//                 if (typeof(id) == "object") {
+//                     console.log(id);
+//                     $.ajax({
+//                         url : '/new-query/search-table',
+//                         type : 'GET',
+//                         data: 'parameters='+id,
+//
+//                         success : function(data) {
+//                             //console.log(data['data']);
+//
+//                             data['data'].forEach(function(currentValue, index, arr){
+//                                 if (!entries.includes(currentValue["patient_id"])) {
+//                                     entries.push(currentValue["patient_id"]);
+//                                     //console.log(currentValue["patient_id"]);
+//                                     $('#search-table').append("<tr><td>"+currentValue["patient_id"]+"</td><td>"+currentValue["file_status"]+"</td><td>"+currentValue["icd_code"]+"</td><td>"+currentValue["code_id"]+"</td><td>"+currentValue["surgery_id"]+"</td></tr>");
+//                                 }
+//
+//                             });
+//                             if (counter == numSelects-1) {
+//                                 $('#search-table').DataTable({
+//                                     searching: false
+//                                         //serverSide: true,
+//                                         //ajax: '/view-all'
+//                                 });
+//                             }
+//                             counter++;
+//
+//                         },
+//                         error : function(request,error)
+//                         {
+//                             console.log("Request: "+JSON.stringify(request));
+//                         }
+//                     });
+//                 }
+//             });
         });
     </script>
 <?php

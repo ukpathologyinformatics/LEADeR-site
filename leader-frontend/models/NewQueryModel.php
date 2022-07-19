@@ -13,12 +13,28 @@ class SearchTableClass {
         $success = false;
         $error_message = null;
         $criteria = $_GET['parameters'];
+        $optionsTemp = $_GET['options'];
         $parameters = explode(",", $criteria);
+        $options = explode(",", $optionsTemp);
+        //var_dump($parameters);
+        //var_dump($options);
         $all_data = array();
         $patient_ids = array();
-        $statement = "SELECT * FROM patient LEFT JOIN patient_icd ON patient.patient_id=patient_icd.patient_id WHERE entry LIKE '%$parameters[0]%'";
+        if ($options[0] == '1') {
+            $statement = "SELECT * FROM patient LEFT JOIN patient_icd ON patient.patient_id=patient_icd.patient_id WHERE entry LIKE '%$parameters[0]%'";
+        }
+        else {
+            $statement = "SELECT * FROM patient LEFT JOIN patient_icd ON patient.patient_id=patient_icd.patient_id WHERE entry NOT LIKE '%$parameters[0]%'";
+        }
+
         for ($i = 1;$i < count($parameters);$i++) {
-            $statement .= " AND entry LIKE '%$parameters[$i]%'";
+            if ($options[$i] == '1') {
+                $statement .= " AND entry LIKE '%$parameters[$i]%'";
+            }
+            else {
+                $statement .= " AND entry NOT LIKE '%$parameters[$i]%'";
+            }
+
         }
         try {
             $SELECT = DB::run($statement);

@@ -78,6 +78,7 @@ CREATE TABLE patient_surgery (
 	surgery_notes VARCHAR(250) default '', 
 	attending_surgeon VARCHAR(40) default '',
 	age FLOAT default NULL,
+	side CHAR(1) default NULL,
 	CONSTRAINT PK_patient_surgery PRIMARY KEY (patient_id, surgery_id)
 );
 END

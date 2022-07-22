@@ -77,6 +77,9 @@
         $router->map('GET', '/new-entry/fill-surgery-dropdown', function() {
             NewEntryController::fillSurgeryDropdown(get_session());
         }, 'newentry-fillsurgerydropdown');
+        $router->map('POST', '/new-entry/add-operation', function() {
+            NewEntryController::addOperation(get_session());
+        }, 'newentry-addoperation');
     } catch (Exception $e) {
         die("Failed to create route(s) from NewEntryController section: " . $e->getMessage());
     }
